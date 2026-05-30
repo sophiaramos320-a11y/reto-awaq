@@ -1,0 +1,23 @@
+# Handle line endings automatically for text files
+* text=auto eol=lf
+
+# Force Unity text assets to be treated as binary for merging to prevent corruption
+*.unity merge=binary
+*.prefab merge=binary
+*.asset merge=binary
+*.mat merge=binary
+*.meta merge=binary
+
+# Define huge media files to use Git LFS (Large File Storage)
+*.3df merge=lfs diff=lfs -text
+*.3ds merge=lfs diff=lfs -text
+*.fbx merge=lfs diff=lfs -text
+*.obj merge=lfs diff=lfs -text
+*.psd merge=lfs diff=lfs -text
+*.png merge=lfs diff=lfs -text
+*.jpg merge=lfs diff=lfs -text
+*.tga merge=lfs diff=lfs -text
+*.wav merge=lfs diff=lfs -text
+*.mp3 merge=lfs diff=lfs -text
+*.mp4 merge=lfs diff=lfs -text
+*.mov merge=lfs diff=lfs -text
