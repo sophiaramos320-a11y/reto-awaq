@@ -1,0 +1,7 @@
+RETO_V1/Library/ 
+RETO_V1/Temp/ 
+RETO_V1/Logs/ 
+RETO_V1/UserSettings/ 
+*.pdb 
+*.dll 
+*.log
