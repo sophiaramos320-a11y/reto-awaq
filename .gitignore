@@ -1,9 +1,9 @@
-RETO_V1/Library/
-RETO_V1/Temp/
-RETO_V1/Logs/
-RETO_V1/UserSettings/
-RETO_V1/Builds/
-RETO_V1/Obj/
+**/Library/
+**/Temp/
+**/Logs/
+**/UserSettings/
+**/Builds/
+**/Obj/
 
 *.pdb
 *.dll
