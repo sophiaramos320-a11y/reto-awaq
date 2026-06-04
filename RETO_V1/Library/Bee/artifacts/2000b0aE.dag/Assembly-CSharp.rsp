@@ -421,6 +421,8 @@
 "Assets/Damaris/Scripts/CameraFollow.cs"
 "Assets/Damaris/Scripts/PlayerMovement.cs"
 "Assets/Damaris/Scripts/SceneLoader.cs"
+"Assets/Sophia/ScriptsSophia/DialogueSystem.cs"
+"Assets/Sophia/ScriptsSophia/RestaurantButton.cs"
 "Assets/Sophia/ScriptsSophia/StartButton.cs"
 -langversion:9.0
 /deterministic

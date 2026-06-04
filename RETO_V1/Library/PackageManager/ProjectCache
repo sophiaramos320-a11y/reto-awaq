@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639157841547391983
-    m_Hash: 1477549147
+      ticks: 639161298361727778
+    m_Hash: 3193066503
   m_LockFileStatus:
     m_FilePath: C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639157841547482701
-    m_Hash: 580515466
+      ticks: 639161298361783092
+    m_Hash: 3732911657
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -431,10 +431,12 @@ m_ResolvedPackages:
     - 2.0.10
     - 2.0.11
     - 2.0.12
+    - 2.0.13
     compatible:
     - 2.0.11
     - 2.0.12
-    recommended: 2.0.12
+    - 2.0.13
+    recommended: 2.0.13
     deprecated: []
   dependencies:
   - name: com.unity.modules.ai
