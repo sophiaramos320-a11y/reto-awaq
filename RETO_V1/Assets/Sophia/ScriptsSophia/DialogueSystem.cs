@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video; // 1. IMPORTANTE: Agregamos la librería para controlar video
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject ctaButton; // El botón web completo
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject finalImage; // <-- NUEVO: Objeto de la imagen final
+
+    [Header("Componentes de Video")]
+    [SerializeField] private VideoPlayer foodVideoPlayer; // 2. Agregamos la referencia al VideoPlayer
 
     [Header("Configuración de Diálogo")]
     [SerializeField] private float typingSpeed = 0.03f; // Velocidad del efecto typewriter
@@ -16,9 +21,9 @@ public class DialogueSystem : MonoBehaviour
     // El arreglo con los 3 diálogos que redactamos
     private string[] dialogueLines = new string[]
     {
-        "¡Bienvenido a L’Umbria! Aquí ofrecemos una experiencia fresca y consciente, con un menú diverso que combina alta cocina internacional e ingredientes sustentables.",
-        "Nuestra cocina es un laboratorio vivo operado por los talentosos estudiantes de Ciencias Culinarias, quienes transforman productos locales en platillos excepcionales.",
-        "Te invitamos a disfrutar de sabores con un verdadero propósito. Si quieres explorar más, puedes usar el botón de abajo para revisar nuestro sitio web y el menú completo."
+        "¡Bienvenido a L’Umbria! Aquí ofrecemos una experiencia fresca y consciente, con un menú diverso que combina alta cocina internacional e ingredientes sustentables...",
+        "Nuestra cocina es un laboratorio vivo operado por los talentosos estudiantes de Ciencias Culinarias, quienes transforman productos locales en platillos excepcionales...",
+        "Te invitamos a disfrutar de sabores con un verdadero propósito. Si quieres explorar más, puedes usar el botón de abajo para revisar el sitio web y el menú completo."
     };
 
     private int currentLineIndex = 0;
@@ -56,6 +61,19 @@ public class DialogueSystem : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         ctaButton.SetActive(false); // Asegura que el CTA esté oculto al inicio
+        
+        // <-- NUEVO: Asegura que la imagen esté oculta al iniciar la interacción
+        if (finalImage != null)
+        {
+            finalImage.SetActive(false);
+        }
+
+        // 3. Aseguramos que el video esté apagado al iniciar la interacción
+        if (foodVideoPlayer != null)
+        {
+            foodVideoPlayer.Stop(); 
+        }
+
         currentLineIndex = 0;
         dialogueEnded = false;
         StartCoroutine(TypeText(dialogueLines[currentLineIndex]));
@@ -101,6 +119,18 @@ public class DialogueSystem : MonoBehaviour
         if (ctaButton != null)
         {
             ctaButton.SetActive(true);
+        }
+
+        // <-- NUEVO: El diálogo terminó, encendemos la imagen
+        if (finalImage != null)
+        {
+            finalImage.SetActive(true);
+        }
+
+        // 4. ¡ACCIÓN! El diálogo terminó, encendemos el video de la comida
+        if (foodVideoPlayer != null)
+        {
+            foodVideoPlayer.Play();
         }
     }
 }

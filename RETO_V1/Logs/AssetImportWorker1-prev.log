@@ -1,11 +1,11 @@
-[Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.1f1 (8535861f39e1) revision 8729990'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 16068 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-04T01:20:56.1242692Z"
 System  architecture: x64
 Process architecture: x64
-Date: 2026-06-04T01:20:56Z
+Date: 2026-06-09T14:13:28Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-09T14:13:28.3905952Z"
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.1f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-64416
+51821
 -licensingIpc
 LicenseClient-sophi
 -force-d3d12
@@ -68,14 +68,14 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [8936]  Target information:
+Player connection [35212]  Target information:
 
-Player connection [8936]  * "[IP] 172.23.80.1 [Port] 0 [Flags] 2 [Guid] 2988259537 [EditorId] 2988259537 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [35212]  * "[IP] 172.23.80.1 [Port] 0 [Flags] 2 [Guid] 4202149623 [EditorId] 4202149623 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [8936]  * "[IP] 192.168.1.247 [Port] 0 [Flags] 2 [Guid] 2988259537 [EditorId] 2988259537 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [35212]  * "[IP] 10.22.208.117 [Port] 0 [Flags] 2 [Guid] 4202149623 [EditorId] 4202149623 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [8936] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [8936] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [35212] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [35212] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -91,7 +91,7 @@ Active build profile path: `Assets/Settings/Build Profiles/Web - Desktop - Devel
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `m_BuildTarget`, value `20`
 Got setting from build profile YAML, name `m_Subtarget`, value `0`
-Refreshing native plugins compatible for Editor in 41.13 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 7.69 ms, found 2 plugins.
 Initialize engine version: 6000.4.1f1 (8535861f39e1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1/Assets
@@ -256,13 +256,13 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56924
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009122 seconds.
+Registered in 0.031636 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -321,6 +321,12 @@ Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
+[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-09T14:13:33.7299144Z"
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
@@ -337,23 +343,22 @@ Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.822 seconds
-Domain Reload Profiling: 3931ms
-	BeginReloadAssembly (490ms)
-	RebuildCommonClasses (183ms)
-	RebuildNativeTypeToScriptingClass (93ms)
-	initialDomainReloadingComplete (270ms)
-	LoadAllAssembliesAndSetupDomain (1068ms)
-		LoadAssemblies (490ms)
-		AnalyzeDomain (1025ms)
-			TypeCache.Refresh (1011ms)
-				TypeCache.ScanAssembly (955ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (1828ms)
+- Finished resetting the current domain, in  0.865 seconds
+Domain Reload Profiling: 1923ms
+	BeginReloadAssembly (269ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (121ms)
+	LoadAllAssembliesAndSetupDomain (592ms)
+		LoadAssemblies (264ms)
+		AnalyzeDomain (577ms)
+			TypeCache.Refresh (575ms)
+				TypeCache.ScanAssembly (555ms)
+	FinalizeReload (867ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (272ms)
-			BeforeProcessingInitializeOnLoad (378ms)
-			ProcessInitializeOnLoadAttributes (416ms)
+			InitializePlatformSupportModulesInManaged (75ms)
+			BeforeProcessingInitializeOnLoad (179ms)
+			ProcessInitializeOnLoadAttributes (178ms)
 			ProcessInitializeOnLoadMethodAttributes (331ms)
 ========================================================================
 Worker process is ready to serve import requests
@@ -361,22 +366,16 @@ Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Got setting from build profile YAML, name `m_Development`, value `1`
 [Licensing::Module] Licensing is not yet initialized.
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.1'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
-[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-04T01:21:04.92339Z"
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              041aca7541e34468b95ab730fce3d62e
-  Correlation Id:          9bd07acb2ee76270dc7956a034f491b3
-  External correlation Id: 7588588369919094017
+  Session Id:              6b2ab908a26545088ea2c16315972628
+  Correlation Id:          8c1e811913914b6a45c76c208a0a9881
+  External correlation Id: 3534516497237570840
   Machine Id:              ioxvigdvOk9iBIePM6NJcBbgHv0=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.01s, validation: 0.01s, handshake: 5.24s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-04T01:21:10.175779Z"
-[Licensing::Module] Licensing Background thread has ended after 14.05s
-[Licensing::Module] Licensing is initialized (took 5.95s).
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.00s, validation: 0.00s, handshake: 4.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-09T14:13:37.7880116Z"
+[Licensing::Module] Licensing Background thread has ended after 9.40s
+[Licensing::Module] Licensing is initialized (took 3.43s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: 4674122308681-UnityPersXXXX
@@ -385,7 +384,7 @@ Got setting from build profile YAML, name `m_Development`, value `1`
   Expiration: Unlimited
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
 Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
@@ -411,691 +410,129 @@ Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngin
 Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
 Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 95.09 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 26.61 ms, found 2 plugins.
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.421 seconds
-Domain Reload Profiling: 16543ms
-	BeginReloadAssembly (7499ms)
-		DisableScriptedObjects (401ms)
-		CreateAndSetChildDomain (214ms)
-	RebuildCommonClasses (466ms)
-	RebuildNativeTypeToScriptingClass (116ms)
-	initialDomainReloadingComplete (404ms)
-	LoadAllAssembliesAndSetupDomain (2631ms)
-		LoadAssemblies (2416ms)
-		AnalyzeDomain (885ms)
-			TypeCache.Refresh (668ms)
-				TypeCache.ScanAssembly (600ms)
-			BuildScriptInfoCaches (190ms)
-			ResolveRequiredComponents (22ms)
-	FinalizeReload (5427ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			BeforeProcessingInitializeOnLoad (855ms)
-			ProcessInitializeOnLoadAttributes (1693ms)
-			ProcessInitializeOnLoadMethodAttributes (1756ms)
-			AfterProcessingInitializeOnLoad (50ms)
-		AwakeInstancesAfterBackupRestoration (162ms)
-Refreshing native plugins compatible for Editor in 43.82 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2974 unused Assets / (1.2 MB). Loaded Objects now: 3596.
-Memory consumption went from 92.8 MB to 91.6 MB.
-Total: 42.575200 ms (FindLiveObjects: 0.736000 ms CreateObjectMapping: 1.067800 ms MarkObjects: 37.421000 ms  DeleteObjects: 3.343500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 18631.110697 seconds.
-  path: Assets/Sophia/ScenesSophia/Recomendaciones.unity
-  importAddress: Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/ScenesSophia/Recomendaciones.unity using Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd62f497d2c57978465d6e21ee545feae') in 0.5111089 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44df3ea3dd56c9e1e98c2ae6e834133b DependenciesID=0499f5cf0ab3f9249464d97f3266a8cc StaticDependenciesID=8f0979ef491c5e200e381242ee15bfef 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 146.154281 seconds.
-  path: Assets/Sophia/SpritesSophia/2.png
-  importAddress: Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/SpritesSophia/2.png using Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ad955dbde3c428a5d74a451f06b0114c') in 0.4689441 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7eb546b24be99b77901ca858c52147cb DependenciesID=e1a6df81fed7712fdf400591f77e6013 StaticDependenciesID=21d4bc22a5317a77eca2da773fe79348 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000094 seconds.
-  path: Assets/Sophia/SpritesSophia/3.png
-  importAddress: Guid(49945ab4b4bd35847b7ff8373ee67131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/SpritesSophia/3.png using Guid(49945ab4b4bd35847b7ff8373ee67131) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '55d7bfaee640067e774a847c44264695') in 0.0633957 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dd651d147998198bb730a952763e2209 DependenciesID=04108c808b95158e5d81a1f11943a310 StaticDependenciesID=880351ff0537efa6825b1e559c003706 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.427098 seconds.
-  path: Assets/Sophia/SpritesSophia/2.png
-  importAddress: Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/SpritesSophia/2.png using Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8e38e272567d05deee5f83472091df32') in 0.4651652 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63e70415323aab6983a7b07644d999b7 DependenciesID=918df9b1abcb094bee2fcf1f1698af42 StaticDependenciesID=9f9a78159d41eda5208da24216b7099d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 3.52 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.889 seconds
-Domain Reload Profiling: 2171ms
-	BeginReloadAssembly (329ms)
-		DisableScriptedObjects (30ms)
-		CreateAndSetChildDomain (81ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (69ms)
-	LoadAllAssembliesAndSetupDomain (832ms)
-		LoadAssemblies (832ms)
-		AnalyzeDomain (139ms)
-			TypeCache.Refresh (11ms)
-			BuildScriptInfoCaches (118ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (890ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			BeforeProcessingInitializeOnLoad (135ms)
-			ProcessInitializeOnLoadAttributes (256ms)
-			ProcessInitializeOnLoadMethodAttributes (298ms)
-			AfterProcessingInitializeOnLoad (4ms)
-		AwakeInstancesAfterBackupRestoration (36ms)
-Refreshing native plugins compatible for Editor in 7.96 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2970 unused Assets / (0.7 MB). Loaded Objects now: 3602.
-Memory consumption went from 93.6 MB to 92.9 MB.
-Total: 27.652700 ms (FindLiveObjects: 1.033800 ms CreateObjectMapping: 0.831300 ms MarkObjects: 23.564700 ms  DeleteObjects: 2.220000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Import Request.
-  Time since last request: 1587.882547 seconds.
-  path: Assets/Sophia/SpritesSophia/2.png
-  importAddress: Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/SpritesSophia/2.png using Guid(649bdcafa8046dd44a05a86d4dadf591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '26c0d68f7fdd77c8f084822166d5b483') in 1.2302391 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=938411d5e366fc18e1a3da4e645811be DependenciesID=15db6759b87c47fe8c68bbffc2bf278d StaticDependenciesID=bc071a2a853f04c40e1d9d257980fdcc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 15105.683970 seconds.
-  path: Assets/Sophia/Video/New Render Texture.renderTexture
-  importAddress: Guid(9dd4267c70f96634f8c6cad23b8ed4e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Video/New Render Texture.renderTexture using Guid(9dd4267c70f96634f8c6cad23b8ed4e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '50ce80afa1ed81a460a596e5401b2c82') in 3.0673576 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2e4eab4ee08e1c4accfbdb9821a329dc DependenciesID=ce56a16cfe7dfd1d88a50c60954b8b6c StaticDependenciesID=4eceb9e21f5c77a197417d91c203f318 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 61.30 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.644 seconds
-Domain Reload Profiling: 18005ms
-	BeginReloadAssembly (6351ms)
-		DisableScriptedObjects (1038ms)
-		ReleaseScriptingObjects (7ms)
-		CreateAndSetChildDomain (2374ms)
-	RebuildCommonClasses (226ms)
-	RebuildNativeTypeToScriptingClass (92ms)
-	initialDomainReloadingComplete (709ms)
-	LoadAllAssembliesAndSetupDomain (4973ms)
-		LoadAssemblies (5298ms)
-		AnalyzeDomain (1122ms)
-			TypeCache.Refresh (137ms)
-			BuildScriptInfoCaches (882ms)
-			ResolveRequiredComponents (22ms)
-	FinalizeReload (5653ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
-			BeforeProcessingInitializeOnLoad (923ms)
-			ProcessInitializeOnLoadAttributes (1661ms)
-			ProcessInitializeOnLoadMethodAttributes (1558ms)
-			AfterProcessingInitializeOnLoad (30ms)
-			EditorAssembliesLoaded (3ms)
-		AwakeInstancesAfterBackupRestoration (164ms)
 Refreshing native plugins compatible for Editor in 31.82 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2970 unused Assets / (470.3 KB). Loaded Objects now: 3603.
-Memory consumption went from 95.5 MB to 95.1 MB.
-Total: 60.712900 ms (FindLiveObjects: 1.361500 ms CreateObjectMapping: 0.653600 ms MarkObjects: 54.658800 ms  DeleteObjects: 4.029800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 4.41 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 6.61 ms, found 2 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.585 seconds
-Domain Reload Profiling: 6625ms
-	BeginReloadAssembly (755ms)
-		DisableScriptedObjects (80ms)
-		CreateAndSetChildDomain (112ms)
-	RebuildCommonClasses (98ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (115ms)
-	LoadAllAssembliesAndSetupDomain (1048ms)
-		LoadAssemblies (1175ms)
-		AnalyzeDomain (288ms)
-			TypeCache.Refresh (13ms)
-			BuildScriptInfoCaches (261ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (4587ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			BeforeProcessingInitializeOnLoad (1009ms)
-			ProcessInitializeOnLoadAttributes (1601ms)
-			ProcessInitializeOnLoadMethodAttributes (1448ms)
-			AfterProcessingInitializeOnLoad (28ms)
-		AwakeInstancesAfterBackupRestoration (146ms)
-Refreshing native plugins compatible for Editor in 5.32 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2970 unused Assets / (0.7 MB). Loaded Objects now: 3604.
-Memory consumption went from 96.3 MB to 95.6 MB.
-Total: 29.433500 ms (FindLiveObjects: 0.953500 ms CreateObjectMapping: 0.467500 ms MarkObjects: 23.938700 ms  DeleteObjects: 4.069700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 50.25 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2940 unused Assets / (0.7 MB). Loaded Objects now: 3605.
-Memory consumption went from 97.0 MB to 96.3 MB.
-Total: 261.947200 ms (FindLiveObjects: 3.539500 ms CreateObjectMapping: 0.755700 ms MarkObjects: 253.892100 ms  DeleteObjects: 3.753200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Import Request.
-  Time since last request: 1767.344379 seconds.
-  path: Assets/Sophia/ScriptsSophia/DialogueSystem.cs
-  importAddress: Guid(9620b922948bf0544a9c4d5bdb7f7dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/ScriptsSophia/DialogueSystem.cs using Guid(9620b922948bf0544a9c4d5bdb7f7dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4ee0a209f8d17be459c1c497a7c08d3e') in 0.1725369 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0bb83d943b17f9a3aeb52192abceee4c DependenciesID=f909d7295db2c0893691374dccc83948 StaticDependenciesID=e757973a3405668fa48b0efbd7525867 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 25.33 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.233 seconds
-Domain Reload Profiling: 20439ms
-	BeginReloadAssembly (8038ms)
-		DisableScriptedObjects (625ms)
-		ReleaseScriptingObjects (3ms)
-		CreateAndSetChildDomain (1401ms)
-	RebuildCommonClasses (537ms)
-	RebuildNativeTypeToScriptingClass (171ms)
-	initialDomainReloadingComplete (986ms)
-	LoadAllAssembliesAndSetupDomain (7472ms)
-		LoadAssemblies (11088ms)
-		AnalyzeDomain (1392ms)
-			TypeCache.Refresh (266ms)
-				TypeCache.ScanAssembly (4ms)
-			BuildScriptInfoCaches (1077ms)
-			ResolveRequiredComponents (28ms)
-	FinalizeReload (3235ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			BeforeProcessingInitializeOnLoad (730ms)
-			ProcessInitializeOnLoadAttributes (1042ms)
-			ProcessInitializeOnLoadMethodAttributes (779ms)
-			AfterProcessingInitializeOnLoad (14ms)
-		AwakeInstancesAfterBackupRestoration (124ms)
-Refreshing native plugins compatible for Editor in 7.12 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2971 unused Assets / (0.9 MB). Loaded Objects now: 3606.
-Memory consumption went from 95.6 MB to 94.7 MB.
-Total: 22.493700 ms (FindLiveObjects: 0.605400 ms CreateObjectMapping: 0.325300 ms MarkObjects: 19.900300 ms  DeleteObjects: 1.660100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 9.93 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.298 seconds
-Domain Reload Profiling: 5237ms
-	BeginReloadAssembly (1085ms)
-		DisableScriptedObjects (59ms)
-		CreateAndSetChildDomain (233ms)
-	RebuildCommonClasses (244ms)
-	RebuildNativeTypeToScriptingClass (56ms)
-	initialDomainReloadingComplete (265ms)
-	LoadAllAssembliesAndSetupDomain (1287ms)
-		LoadAssemblies (1423ms)
-		AnalyzeDomain (399ms)
-			TypeCache.Refresh (41ms)
-			BuildScriptInfoCaches (332ms)
-			ResolveRequiredComponents (22ms)
-	FinalizeReload (2300ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			BeforeProcessingInitializeOnLoad (377ms)
-			ProcessInitializeOnLoadAttributes (767ms)
-			ProcessInitializeOnLoadMethodAttributes (645ms)
-			AfterProcessingInitializeOnLoad (14ms)
-		AwakeInstancesAfterBackupRestoration (61ms)
-Refreshing native plugins compatible for Editor in 7.10 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2971 unused Assets / (0.6 MB). Loaded Objects now: 3607.
-Memory consumption went from 96.4 MB to 95.8 MB.
-Total: 20.517900 ms (FindLiveObjects: 0.654700 ms CreateObjectMapping: 0.272700 ms MarkObjects: 17.425800 ms  DeleteObjects: 2.160400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 6.15 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.445 seconds
-Domain Reload Profiling: 3179ms
-	BeginReloadAssembly (570ms)
-		DisableScriptedObjects (74ms)
-		CreateAndSetChildDomain (161ms)
-	RebuildCommonClasses (62ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (127ms)
-	LoadAllAssembliesAndSetupDomain (953ms)
-		LoadAssemblies (886ms)
-		AnalyzeDomain (256ms)
-			TypeCache.Refresh (87ms)
-			BuildScriptInfoCaches (148ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (1447ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			BeforeProcessingInitializeOnLoad (237ms)
-			ProcessInitializeOnLoadAttributes (403ms)
-			ProcessInitializeOnLoadMethodAttributes (462ms)
-			AfterProcessingInitializeOnLoad (10ms)
-		AwakeInstancesAfterBackupRestoration (65ms)
-Refreshing native plugins compatible for Editor in 8.53 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2971 unused Assets / (1.0 MB). Loaded Objects now: 3608.
-Memory consumption went from 97.2 MB to 96.1 MB.
-Total: 23.997800 ms (FindLiveObjects: 0.774100 ms CreateObjectMapping: 0.343700 ms MarkObjects: 20.472400 ms  DeleteObjects: 2.400400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 4.53 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.345 seconds
-Domain Reload Profiling: 3277ms
-	BeginReloadAssembly (339ms)
-		DisableScriptedObjects (44ms)
-		CreateAndSetChildDomain (54ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (74ms)
-	LoadAllAssembliesAndSetupDomain (458ms)
-		LoadAssemblies (492ms)
-		AnalyzeDomain (138ms)
-			TypeCache.Refresh (6ms)
-			BuildScriptInfoCaches (126ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (2347ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			BeforeProcessingInitializeOnLoad (380ms)
-			ProcessInitializeOnLoadAttributes (818ms)
-			ProcessInitializeOnLoadMethodAttributes (753ms)
-			AfterProcessingInitializeOnLoad (8ms)
-		AwakeInstancesAfterBackupRestoration (74ms)
-Refreshing native plugins compatible for Editor in 11.34 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2971 unused Assets / (0.5 MB). Loaded Objects now: 3609.
-Memory consumption went from 98.0 MB to 97.4 MB.
-Total: 19.126700 ms (FindLiveObjects: 0.804400 ms CreateObjectMapping: 0.828300 ms MarkObjects: 16.534100 ms  DeleteObjects: 0.956100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 7.28 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.809 seconds
-Domain Reload Profiling: 2707ms
-	BeginReloadAssembly (314ms)
-		DisableScriptedObjects (46ms)
-		CreateAndSetChildDomain (55ms)
-	RebuildCommonClasses (43ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (61ms)
-	LoadAllAssembliesAndSetupDomain (468ms)
-		LoadAssemblies (455ms)
-		AnalyzeDomain (146ms)
-			TypeCache.Refresh (6ms)
-			BuildScriptInfoCaches (132ms)
+- Finished resetting the current domain, in  1.024 seconds
+Domain Reload Profiling: 7048ms
+	BeginReloadAssembly (4448ms)
+		DisableScriptedObjects (699ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (1455ms)
+		LoadAssemblies (1367ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (137ms)
+				TypeCache.ScanAssembly (117ms)
+			BuildScriptInfoCaches (51ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (1810ms)
+	FinalizeReload (1025ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (223ms)
-			ProcessInitializeOnLoadAttributes (540ms)
-			ProcessInitializeOnLoadMethodAttributes (723ms)
-			AfterProcessingInitializeOnLoad (18ms)
-		AwakeInstancesAfterBackupRestoration (99ms)
-Refreshing native plugins compatible for Editor in 12.01 ms, found 2 plugins.
+			BeforeProcessingInitializeOnLoad (168ms)
+			ProcessInitializeOnLoadAttributes (334ms)
+			ProcessInitializeOnLoadMethodAttributes (310ms)
+			AfterProcessingInitializeOnLoad (5ms)
+		AwakeInstancesAfterBackupRestoration (33ms)
+Refreshing native plugins compatible for Editor in 2.84 ms, found 2 plugins.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2971 unused Assets / (0.8 MB). Loaded Objects now: 3610.
-Memory consumption went from 98.8 MB to 97.9 MB.
-Total: 28.241400 ms (FindLiveObjects: 0.710400 ms CreateObjectMapping: 0.468700 ms MarkObjects: 25.706700 ms  DeleteObjects: 1.351900 ms)
+Unloading 2981 unused Assets / (0.8 MB). Loaded Objects now: 3605.
+Memory consumption went from 93.7 MB to 92.9 MB.
+Total: 10.780500 ms (FindLiveObjects: 0.270100 ms CreateObjectMapping: 0.132900 ms MarkObjects: 9.223400 ms  DeleteObjects: 1.151400 ms)
 
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Import Request.
+  Time since last request: 219097.043939 seconds.
+  path: Assets/Sophia/Fonts/Sophia.unitypackage
+  importAddress: Guid(c9e3e8ce556ace74383b20146382ad1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Sophia/Fonts/Sophia.unitypackage using Guid(c9e3e8ce556ace74383b20146382ad1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2a59311b886f84ea0549df29bdd90241') in 0.4146327 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ae80da5ccc1b3b15f533b0672b9e1b50 DependenciesID=1755b481674331ed5be8b9fe02eee951 StaticDependenciesID=304e8e24aeb29751eb01f5d921141f85 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sophia/ScriptsSophia/UICardElement.cs
+  importAddress: Guid(fc0809a12808e274c8b6a23ecb3fe59d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Sophia/ScriptsSophia/UICardElement.cs using Guid(fc0809a12808e274c8b6a23ecb3fe59d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ba74c9a6939a1a29e17c3debad209675') in 0.0439371 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a42d2e6a625ff8ed2a5283fe75797f80 DependenciesID=76e54ada67e02f42426156af43fca05f StaticDependenciesID=c087b741fb480ee78de5a4e7a57083c3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 8.68 ms, found 2 plugins.
+Begin MonoManager ReloadAssembly
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 8.32 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.781 seconds
+Domain Reload Profiling: 3680ms
+	BeginReloadAssembly (285ms)
+		DisableScriptedObjects (42ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (465ms)
+		LoadAssemblies (462ms)
+		AnalyzeDomain (123ms)
+			TypeCache.Refresh (10ms)
+			BuildScriptInfoCaches (106ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (2782ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			BeforeProcessingInitializeOnLoad (687ms)
+			ProcessInitializeOnLoadAttributes (734ms)
+			ProcessInitializeOnLoadMethodAttributes (748ms)
+			AfterProcessingInitializeOnLoad (13ms)
+		AwakeInstancesAfterBackupRestoration (70ms)
+Refreshing native plugins compatible for Editor in 5.21 ms, found 2 plugins.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2941 unused Assets / (0.6 MB). Loaded Objects now: 3611.
-Memory consumption went from 99.4 MB to 98.8 MB.
-Total: 15.765600 ms (FindLiveObjects: 0.604800 ms CreateObjectMapping: 0.234800 ms MarkObjects: 13.293600 ms  DeleteObjects: 1.630200 ms)
+Unloading 2977 unused Assets / (0.8 MB). Loaded Objects now: 3608.
+Memory consumption went from 94.4 MB to 93.5 MB.
+Total: 14.149100 ms (FindLiveObjects: 0.710300 ms CreateObjectMapping: 0.203800 ms MarkObjects: 12.242900 ms  DeleteObjects: 0.990300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 EnvironmentDependencyValues requested are different than current active one (requested -> active):
@@ -1129,7 +566,7 @@ Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngin
 Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
 Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 4.84 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 3.26 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -1140,190 +577,395 @@ Native extension for WebGL target not found
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.039 seconds
-Domain Reload Profiling: 4204ms
-	BeginReloadAssembly (405ms)
-		DisableScriptedObjects (33ms)
-		CreateAndSetChildDomain (90ms)
-	RebuildCommonClasses (47ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (56ms)
-	LoadAllAssembliesAndSetupDomain (643ms)
-		LoadAssemblies (671ms)
-		AnalyzeDomain (175ms)
-			TypeCache.Refresh (21ms)
-			BuildScriptInfoCaches (146ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (3040ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			BeforeProcessingInitializeOnLoad (352ms)
-			ProcessInitializeOnLoadAttributes (833ms)
-			ProcessInitializeOnLoadMethodAttributes (1304ms)
-			AfterProcessingInitializeOnLoad (18ms)
-		AwakeInstancesAfterBackupRestoration (111ms)
-Refreshing native plugins compatible for Editor in 11.98 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2972 unused Assets / (1.0 MB). Loaded Objects now: 3612.
-Memory consumption went from 100.3 MB to 99.3 MB.
-Total: 23.978500 ms (FindLiveObjects: 0.544600 ms CreateObjectMapping: 0.284900 ms MarkObjects: 21.596300 ms  DeleteObjects: 1.550300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Import Request.
-  Time since last request: 608.044375 seconds.
-  path: Assets/Sophia/ScriptsSophia/RestaurantButton.cs
-  importAddress: Guid(f4fa85b4c59748c4aabe4526786a045d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/ScriptsSophia/RestaurantButton.cs using Guid(f4fa85b4c59748c4aabe4526786a045d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f7e14c8861309ce23a103861ce5a89f6') in 0.022789 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cef13bf82823e61e560eee74473aa3c6 DependenciesID=90c1921a17c7a4446d82e61d38ccfb23 StaticDependenciesID=d9ab60812d255fb854ef2088a42348ae 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 9.44 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.163 seconds
-Domain Reload Profiling: 3714ms
-	BeginReloadAssembly (491ms)
-		DisableScriptedObjects (38ms)
-		CreateAndSetChildDomain (98ms)
-	RebuildCommonClasses (87ms)
-	RebuildNativeTypeToScriptingClass (27ms)
-	initialDomainReloadingComplete (84ms)
-	LoadAllAssembliesAndSetupDomain (862ms)
-		LoadAssemblies (926ms)
-		AnalyzeDomain (186ms)
-			TypeCache.Refresh (16ms)
-			BuildScriptInfoCaches (164ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (2163ms)
-		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			BeforeProcessingInitializeOnLoad (369ms)
-			ProcessInitializeOnLoadAttributes (702ms)
-			ProcessInitializeOnLoadMethodAttributes (641ms)
-			AfterProcessingInitializeOnLoad (16ms)
-		AwakeInstancesAfterBackupRestoration (67ms)
-Refreshing native plugins compatible for Editor in 8.37 ms, found 2 plugins.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2972 unused Assets / (0.7 MB). Loaded Objects now: 3613.
-Memory consumption went from 95.7 MB to 95.0 MB.
-Total: 15.013300 ms (FindLiveObjects: 0.740400 ms CreateObjectMapping: 0.266400 ms MarkObjects: 12.794700 ms  DeleteObjects: 1.209100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-EnvironmentDependencyValues requested are different than current active one (requested -> active):
-  graphicsApiMask: 2048 -> 264192
-========================================================================
-Received Import Request.
-  Time since last request: 64.405917 seconds.
-  path: Assets/Sophia/ScriptsSophia/RestaurantButton.cs
-  importAddress: Guid(f4fa85b4c59748c4aabe4526786a045d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/ScriptsSophia/RestaurantButton.cs using Guid(f4fa85b4c59748c4aabe4526786a045d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '17c3ea46468a466c966116fe31aa71a8') in 0.006248 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cef13bf82823e61e560eee74473aa3c6 DependenciesID=64703959003a9f41832f60071cc29432 StaticDependenciesID=a5bb6eab066cee088fdbd39eaa85d0e0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
-Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
-Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
-Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
-Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
-Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Symbol file LoadedFromMemory is not a mono symbol file
-Refreshing native plugins compatible for Editor in 6.55 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.188 seconds
-Domain Reload Profiling: 2172ms
-	BeginReloadAssembly (321ms)
-		DisableScriptedObjects (37ms)
-		CreateAndSetChildDomain (65ms)
-	RebuildCommonClasses (75ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (509ms)
-		LoadAssemblies (476ms)
-		AnalyzeDomain (167ms)
-			TypeCache.Refresh (7ms)
-			BuildScriptInfoCaches (151ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (1189ms)
+- Finished resetting the current domain, in  1.040 seconds
+Domain Reload Profiling: 1825ms
+	BeginReloadAssembly (285ms)
+		DisableScriptedObjects (46ms)
+		CreateAndSetChildDomain (68ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (396ms)
+		LoadAssemblies (399ms)
+		AnalyzeDomain (105ms)
+			TypeCache.Refresh (5ms)
+			BuildScriptInfoCaches (95ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1041ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
-			BeforeProcessingInitializeOnLoad (201ms)
-			ProcessInitializeOnLoadAttributes (351ms)
-			ProcessInitializeOnLoadMethodAttributes (363ms)
-			AfterProcessingInitializeOnLoad (13ms)
-		AwakeInstancesAfterBackupRestoration (43ms)
-Refreshing native plugins compatible for Editor in 9.87 ms, found 2 plugins.
+			BeforeProcessingInitializeOnLoad (160ms)
+			ProcessInitializeOnLoadAttributes (361ms)
+			ProcessInitializeOnLoadMethodAttributes (338ms)
+			AfterProcessingInitializeOnLoad (7ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Refreshing native plugins compatible for Editor in 2.23 ms, found 2 plugins.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2972 unused Assets / (507.7 KB). Loaded Objects now: 3614.
-Memory consumption went from 95.7 MB to 95.2 MB.
-Total: 18.995500 ms (FindLiveObjects: 1.069200 ms CreateObjectMapping: 0.296600 ms MarkObjects: 16.622800 ms  DeleteObjects: 1.003100 ms)
+Unloading 2977 unused Assets / (0.7 MB). Loaded Objects now: 3609.
+Memory consumption went from 95.5 MB to 94.8 MB.
+Total: 9.193600 ms (FindLiveObjects: 0.227700 ms CreateObjectMapping: 0.128700 ms MarkObjects: 7.799600 ms  DeleteObjects: 1.035200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 6.05 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.998 seconds
+Domain Reload Profiling: 1736ms
+	BeginReloadAssembly (280ms)
+		DisableScriptedObjects (42ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (348ms)
+		LoadAssemblies (370ms)
+		AnalyzeDomain (96ms)
+			TypeCache.Refresh (6ms)
+			BuildScriptInfoCaches (86ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (999ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (167ms)
+			ProcessInitializeOnLoadAttributes (294ms)
+			ProcessInitializeOnLoadMethodAttributes (304ms)
+			AfterProcessingInitializeOnLoad (5ms)
+		AwakeInstancesAfterBackupRestoration (32ms)
+Refreshing native plugins compatible for Editor in 2.82 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2977 unused Assets / (453.1 KB). Loaded Objects now: 3610.
+Memory consumption went from 96.6 MB to 96.2 MB.
+Total: 12.699900 ms (FindLiveObjects: 0.594200 ms CreateObjectMapping: 0.213800 ms MarkObjects: 11.204900 ms  DeleteObjects: 0.685100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 17.76 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.585 seconds
+Domain Reload Profiling: 3406ms
+	BeginReloadAssembly (251ms)
+		DisableScriptedObjects (25ms)
+		CreateAndSetChildDomain (62ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (451ms)
+		LoadAssemblies (405ms)
+		AnalyzeDomain (149ms)
+			TypeCache.Refresh (13ms)
+			BuildScriptInfoCaches (125ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (2586ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			BeforeProcessingInitializeOnLoad (473ms)
+			ProcessInitializeOnLoadAttributes (832ms)
+			ProcessInitializeOnLoadMethodAttributes (753ms)
+			AfterProcessingInitializeOnLoad (17ms)
+		AwakeInstancesAfterBackupRestoration (43ms)
+Refreshing native plugins compatible for Editor in 11.27 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2977 unused Assets / (0.9 MB). Loaded Objects now: 3611.
+Memory consumption went from 97.8 MB to 96.8 MB.
+Total: 25.515500 ms (FindLiveObjects: 1.025100 ms CreateObjectMapping: 0.559200 ms MarkObjects: 21.772600 ms  DeleteObjects: 2.154000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 2.83 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.457 seconds
+Domain Reload Profiling: 2286ms
+	BeginReloadAssembly (252ms)
+		DisableScriptedObjects (50ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (461ms)
+		LoadAssemblies (374ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (9ms)
+			BuildScriptInfoCaches (173ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1459ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (149ms)
+			ProcessInitializeOnLoadAttributes (266ms)
+			ProcessInitializeOnLoadMethodAttributes (684ms)
+			AfterProcessingInitializeOnLoad (23ms)
+		AwakeInstancesAfterBackupRestoration (99ms)
+Refreshing native plugins compatible for Editor in 16.08 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2977 unused Assets / (0.6 MB). Loaded Objects now: 3612.
+Memory consumption went from 98.9 MB to 98.3 MB.
+Total: 36.187000 ms (FindLiveObjects: 2.107800 ms CreateObjectMapping: 1.689000 ms MarkObjects: 28.251300 ms  DeleteObjects: 4.129700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 3.24 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.764 seconds
+Domain Reload Profiling: 1839ms
+	BeginReloadAssembly (440ms)
+		DisableScriptedObjects (75ms)
+		CreateAndSetChildDomain (110ms)
+	RebuildCommonClasses (94ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (460ms)
+		LoadAssemblies (503ms)
+		AnalyzeDomain (114ms)
+			TypeCache.Refresh (9ms)
+			BuildScriptInfoCaches (99ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (765ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (120ms)
+			ProcessInitializeOnLoadAttributes (246ms)
+			ProcessInitializeOnLoadMethodAttributes (229ms)
+			AfterProcessingInitializeOnLoad (4ms)
+		AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 9.04 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2977 unused Assets / (0.5 MB). Loaded Objects now: 3613.
+Memory consumption went from 100.0 MB to 99.5 MB.
+Total: 14.740900 ms (FindLiveObjects: 0.666900 ms CreateObjectMapping: 0.307600 ms MarkObjects: 13.123700 ms  DeleteObjects: 0.638800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
+========================================================================
+Received Import Request.
+  Time since last request: 1842.479180 seconds.
+  path: Assets/Sophia/ScenesSophia/Recomendaciones.unity
+  importAddress: Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Sophia/ScenesSophia/Recomendaciones.unity using Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ef23e1e347fb723891522d6280b1edc8') in 0.5455716 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=67cd0ca5782632fceb88ad3222549ae9 DependenciesID=6852887630a8a8715ffa90e282be32e6 StaticDependenciesID=6b33c472f7fab947d8e2751f36fd918b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 11.08 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.454 seconds
+Domain Reload Profiling: 9463ms
+	BeginReloadAssembly (1323ms)
+		DisableScriptedObjects (86ms)
+		CreateAndSetChildDomain (367ms)
+	RebuildCommonClasses (67ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (208ms)
+	LoadAllAssembliesAndSetupDomain (4398ms)
+		LoadAssemblies (3940ms)
+		AnalyzeDomain (1065ms)
+			TypeCache.Refresh (88ms)
+			BuildScriptInfoCaches (895ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (3455ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			BeforeProcessingInitializeOnLoad (776ms)
+			ProcessInitializeOnLoadAttributes (916ms)
+			ProcessInitializeOnLoadMethodAttributes (970ms)
+			AfterProcessingInitializeOnLoad (13ms)
+		AwakeInstancesAfterBackupRestoration (90ms)
+Refreshing native plugins compatible for Editor in 14.48 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2977 unused Assets / (444.3 KB). Loaded Objects now: 3614.
+Memory consumption went from 96.4 MB to 96.0 MB.
+Total: 45.707000 ms (FindLiveObjects: 2.137400 ms CreateObjectMapping: 0.589400 ms MarkObjects: 37.530100 ms  DeleteObjects: 5.427400 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 EnvironmentDependencyValues requested are different than current active one (requested -> active):
