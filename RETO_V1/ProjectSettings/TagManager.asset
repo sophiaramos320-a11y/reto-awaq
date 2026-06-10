@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - notif
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Background Green
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: StoneSits
+    uniqueID: 393495871
+    locked: 0
+  - name: BackgroundGreens
+    uniqueID: 4156085839
+    locked: 0
+  - name: Structure
+    uniqueID: 3624907513
+    locked: 0
+  - name: ParkingLot
+    uniqueID: 397533963
+    locked: 0
+  - name: Charac
+    uniqueID: 1649456947
+    locked: 0
+  - name: Dialogue
+    uniqueID: 2713183157
+    locked: 0
+  - name: CostumUi
+    uniqueID: 2930437251
+    locked: 0
+  - name: 
+    uniqueID: 2447751331
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []
