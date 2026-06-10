@@ -421,7 +421,15 @@
 "Assets/Damaris/Scripts/CameraFollow.cs"
 "Assets/Damaris/Scripts/PlayerMovement.cs"
 "Assets/Damaris/Scripts/SceneLoader.cs"
+"Assets/Sophia/ScriptsSophia/DialogueSystem.cs"
+"Assets/Sophia/ScriptsSophia/GeneradorHorario.cs"
+"Assets/Sophia/ScriptsSophia/PopupManager.cs"
+"Assets/Sophia/ScriptsSophia/RestaurantButton.cs"
+"Assets/Sophia/ScriptsSophia/ScriptTallers.cs"
+"Assets/Sophia/ScriptsSophia/ScrollListManager.cs"
 "Assets/Sophia/ScriptsSophia/StartButton.cs"
+"Assets/Sophia/ScriptsSophia/TalleresButton.cs"
+"Assets/Sophia/ScriptsSophia/UICardElement.cs"
 -langversion:9.0
 /deterministic
 /optimize+
