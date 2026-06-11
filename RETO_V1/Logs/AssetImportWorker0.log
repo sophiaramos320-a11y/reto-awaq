@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.1f1 (8535861f39e1) revision 8729990'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 16068 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-11T09:34:57.932149Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-11T10:43:43.8720738Z"
 System  architecture: x64
 Process architecture: x64
-Date: 2026-06-11T09:34:57Z
+Date: 2026-06-11T10:43:43Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.1f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52654
+53084
 -licensingIpc
 LicenseClient-sophi
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [32688]  Target information:
+Player connection [31776]  Target information:
 
-Player connection [32688]  * "[IP] 192.168.1.247 [Port] 0 [Flags] 2 [Guid] 930459061 [EditorId] 930459061 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [31776]  * "[IP] 192.168.1.247 [Port] 0 [Flags] 2 [Guid] 1459045899 [EditorId] 1459045899 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [32688] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [32688] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [31776] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [31776] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -89,7 +89,7 @@ Active build profile path: `Assets/Settings/Build Profiles/Web - Desktop - Devel
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `m_BuildTarget`, value `20`
 Got setting from build profile YAML, name `m_Subtarget`, value `0`
-Refreshing native plugins compatible for Editor in 34.07 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 4.36 ms, found 2 plugins.
 Initialize engine version: 6000.4.1f1 (8535861f39e1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1/Assets
@@ -329,19 +329,13 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56296
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.1'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
-[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-11T09:35:00.9396232Z"
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006470 seconds.
+Registered in 0.002873 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -416,40 +410,46 @@ Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.303 seconds
-Domain Reload Profiling: 2706ms
-	BeginReloadAssembly (402ms)
+- Finished resetting the current domain, in  0.633 seconds
+Domain Reload Profiling: 1581ms
+	BeginReloadAssembly (355ms)
 		CreateAndSetChildDomain (3ms)
-	RebuildCommonClasses (118ms)
-	RebuildNativeTypeToScriptingClass (37ms)
-	initialDomainReloadingComplete (210ms)
-	LoadAllAssembliesAndSetupDomain (632ms)
-		LoadAssemblies (395ms)
-		AnalyzeDomain (600ms)
-			TypeCache.Refresh (598ms)
-				TypeCache.ScanAssembly (564ms)
-	FinalizeReload (1308ms)
+	RebuildCommonClasses (73ms)
+	RebuildNativeTypeToScriptingClass (56ms)
+	initialDomainReloadingComplete (126ms)
+	LoadAllAssembliesAndSetupDomain (336ms)
+		LoadAssemblies (340ms)
+		AnalyzeDomain (323ms)
+			TypeCache.Refresh (321ms)
+				TypeCache.ScanAssembly (299ms)
+	FinalizeReload (635ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (157ms)
-			BeforeProcessingInitializeOnLoad (290ms)
-			ProcessInitializeOnLoadAttributes (317ms)
-			ProcessInitializeOnLoadMethodAttributes (347ms)
+			InitializePlatformSupportModulesInManaged (76ms)
+			BeforeProcessingInitializeOnLoad (146ms)
+			ProcessInitializeOnLoadAttributes (174ms)
+			ProcessInitializeOnLoadMethodAttributes (134ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Got setting from build profile YAML, name `m_Development`, value `1`
 [Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
+[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-11T10:43:47.2429952Z"
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              6fc33e924aef4836965b520e017c9584
-  Correlation Id:          cd071f2f5d6e016704d671fe454092c8
-  External correlation Id: 4612755193773829444
+  Session Id:              cec45677d1cc44f09e09bd6152f0fd8a
+  Correlation Id:          470c565b3126a76d2dab19364688e116
+  External correlation Id: 7496173998086976597
   Machine Id:              ioxvigdvOk9iBIePM6NJcBbgHv0=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.00s, validation: 0.00s, handshake: 3.13s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-11T09:35:04.0751577Z"
-[Licensing::Module] Licensing Background thread has ended after 6.14s
-[Licensing::Module] Licensing is initialized (took 0.04s).
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.00s, validation: 0.00s, handshake: 2.56s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-11T10:43:49.8042552Z"
+[Licensing::Module] Licensing Background thread has ended after 5.93s
+[Licensing::Module] Licensing is initialized (took 3.09s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: 4674122308681-UnityPersXXXX
@@ -458,7 +458,7 @@ Got setting from build profile YAML, name `m_Development`, value `1`
   Expiration: Unlimited
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
 Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
@@ -486,104 +486,140 @@ Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tes
 Symbol file LoadedFromMemory is not a mono symbol file
 Script 'Camera' has the same name as built-in Unity component.
 AddComponent and GetComponent will not work with this script.
-Refreshing native plugins compatible for Editor in 12.73 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 3.83 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 5.81 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.79 ms, found 2 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.008 seconds
-Domain Reload Profiling: 5138ms
-	BeginReloadAssembly (1334ms)
-		DisableScriptedObjects (731ms)
-		CreateAndSetChildDomain (77ms)
-	RebuildCommonClasses (102ms)
-	RebuildNativeTypeToScriptingClass (31ms)
-	initialDomainReloadingComplete (209ms)
-	LoadAllAssembliesAndSetupDomain (1452ms)
-		LoadAssemblies (1396ms)
-		AnalyzeDomain (305ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (195ms)
-			BuildScriptInfoCaches (72ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (2010ms)
+- Finished resetting the current domain, in  1.085 seconds
+Domain Reload Profiling: 5500ms
+	BeginReloadAssembly (3634ms)
+		DisableScriptedObjects (173ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (86ms)
+	LoadAllAssembliesAndSetupDomain (618ms)
+		LoadAssemblies (560ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (146ms)
+				TypeCache.ScanAssembly (126ms)
+			BuildScriptInfoCaches (60ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1086ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			BeforeProcessingInitializeOnLoad (340ms)
-			ProcessInitializeOnLoadAttributes (793ms)
-			ProcessInitializeOnLoadMethodAttributes (498ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (172ms)
+			ProcessInitializeOnLoadAttributes (327ms)
+			ProcessInitializeOnLoadMethodAttributes (337ms)
 			AfterProcessingInitializeOnLoad (8ms)
 		AwakeInstancesAfterBackupRestoration (47ms)
-Refreshing native plugins compatible for Editor in 7.77 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 6.34 ms, found 2 plugins.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2987 unused Assets / (0.7 MB). Loaded Objects now: 3627.
-Memory consumption went from 95.3 MB to 94.6 MB.
-Total: 19.434900 ms (FindLiveObjects: 0.698100 ms CreateObjectMapping: 0.297600 ms MarkObjects: 17.205200 ms  DeleteObjects: 1.225200 ms)
+Unloading 2988 unused Assets / (0.7 MB). Loaded Objects now: 3628.
+Memory consumption went from 97.5 MB to 96.8 MB.
+Total: 11.939300 ms (FindLiveObjects: 0.526700 ms CreateObjectMapping: 0.205200 ms MarkObjects: 10.120500 ms  DeleteObjects: 1.082100 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 136906.334800 seconds.
-  path: Assets/Sophia/Sprites/Grass.prefab
-  importAddress: Guid(654b0edc90337bf4ab228d529d847a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Grass.prefab using Guid(654b0edc90337bf4ab228d529d847a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1bb5f63452c2582b42e4d0232da61b49') in 0.382478 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c65797a85a09162d52628e4a4937a31b DependenciesID=f23fb5ce37506c18d2a6f6aa726f8acb StaticDependenciesID=88f86cd61802f476bb17e7469101a7db 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.524665 seconds.
-  path: Assets/Sophia/Sprites/Reocmendaciones
-  importAddress: Guid(d64ac60e9cebca24bb40f2fba9b81434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Reocmendaciones using Guid(d64ac60e9cebca24bb40f2fba9b81434) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd94e851860a0265a3e99fb00e09e4614') in 0.0042131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=384a28de506af8153d663b96d50fb13a DependenciesID=de88eeacd5c766657b319a18155f7703 StaticDependenciesID=4838158501b4c923a8305e3d0a2d66d9 
+  Time since last request: 141029.060415 seconds.
+  path: Assets/Sophia/ScenesSophia/Recomendaciones.unity
+  importAddress: Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/ScenesSophia/Recomendaciones.unity using Guid(6ce8e0fa51bdaad4ab37e97cb6695143) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b08f2b014dc1e87d2f0f175b3576d281') in 0.0110485 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d74a2e6d57ed47486ad03ad0b68f5bf3 DependenciesID=9d6588597df5b190eab17e1271fbebc8 StaticDependenciesID=cc8cb14ecf7e03e66ea2ee98a6d43c7c 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.064976 seconds.
-  path: Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png
-  importAddress: Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png using Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '37914cf6018567fda5abe776dfaf8c2b') in 0.1336632 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c27c0b7524aee6344b314a30617b622 DependenciesID=482fe9058bfd9cf778fdc597dc0d6dd6 StaticDependenciesID=88b7559439cb34ca961ea5debe7a0329 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.424012 seconds.
-  path: Assets/Sophia/Sprites/Materials
-  importAddress: Guid(f327f7275a92fae469df8124297dcfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Materials using Guid(f327f7275a92fae469df8124297dcfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '29263a4d7ea01004b480726e10d096d3') in 0.0015531 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a397e379fdae13d83b302850726c1331 DependenciesID=c62c9ddfd98763df78884e96b6760c16 StaticDependenciesID=9565c73078a624db604a4e7d182f1b06 
+  Time since last request: 0.000053 seconds.
+  path: Assets/Sophia/ScriptsSophia/UIToggleFilter.cs
+  importAddress: Guid(f088ab8201835824bb0f3b9b332f344c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Sophia/ScriptsSophia/UIToggleFilter.cs using Guid(f088ab8201835824bb0f3b9b332f344c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1374ed923f75b864a5df4f5a6d9f280b') in 0.1262433 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be0ea1dea58afcd0e3c784f053daf6d1 DependenciesID=f7db5d37548a64b59da4b4de3cde79bf StaticDependenciesID=47518372741819f0c032e58d33f8093c 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.074502 seconds.
-  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat
-  importAddress: Guid(e600f9894a7155b4fa0ca0150201853a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat using Guid(e600f9894a7155b4fa0ca0150201853a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '01d164108796dba7aacd77d30ac755ad') in 0.1107412 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a1635c587d9f40892347cdf5ba004900 DependenciesID=72e1389dede6cae1aac47208f96fc04f StaticDependenciesID=9286c54259b66ab391eabbf3c41c1313 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.000135 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  importAddress: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f4ab421a04668ebbdc4434f4a0eb6245') in 0.0769433 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8c1579d2245c3fe2d7ebb0d7ac42354d DependenciesID=b8663cc3d12832e72d2c6ba5bb16dd7d StaticDependenciesID=fe1575f81ef89220833d019c6755fbe6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (18).mat
-  importAddress: Guid(256b93550976b144dae0092c5430889a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (18).mat using Guid(256b93550976b144dae0092c5430889a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '60ebda3eec9c3dfe9d5c181c0adf05ee') in 0.0361224 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c16e14c480cf756d943097eccf3e551 DependenciesID=4736a2700c31b5d3376be591f36a448c StaticDependenciesID=90bcc8b82d697137da0e6cb4a967b33f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+Received Prepare
+Begin MonoManager ReloadAssembly
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.DataPrivacy.Tests.dll at Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Analytics.StandardEvents.EditorTests.dll at Library/ScriptAssemblies/Unity.Analytics.StandardEvents.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.XR.LegacyInputHelpers.Tests.dll at Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Editor.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Advertisements.Tests.dll at Library/ScriptAssemblies/UnityEngine.Advertisements.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Apple.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Apple.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.AppleMacos.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.AppleMacos.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.Security.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.Security.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.Purchasing.WinRT.dll at Library/ScriptAssemblies/UnityEngine.Purchasing.WinRT.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.SpatialTracking.Tests.dll at Library/ScriptAssemblies/UnityEngine.SpatialTracking.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Symbol file LoadedFromMemory is not a mono symbol file
+Script 'Camera' has the same name as built-in Unity component.
+AddComponent and GetComponent will not work with this script.
+Refreshing native plugins compatible for Editor in 4.95 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.050 seconds
+Domain Reload Profiling: 2943ms
+	BeginReloadAssembly (298ms)
+		DisableScriptedObjects (56ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (453ms)
+		LoadAssemblies (465ms)
+		AnalyzeDomain (114ms)
+			TypeCache.Refresh (7ms)
+			BuildScriptInfoCaches (102ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (2052ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			BeforeProcessingInitializeOnLoad (348ms)
+			ProcessInitializeOnLoadAttributes (767ms)
+			ProcessInitializeOnLoadMethodAttributes (550ms)
+			AfterProcessingInitializeOnLoad (15ms)
+		AwakeInstancesAfterBackupRestoration (47ms)
+Refreshing native plugins compatible for Editor in 4.27 ms, found 2 plugins.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2984 unused Assets / (0.6 MB). Loaded Objects now: 3631.
+Memory consumption went from 98.2 MB to 97.6 MB.
+Total: 20.376800 ms (FindLiveObjects: 1.162400 ms CreateObjectMapping: 0.203800 ms MarkObjects: 17.684800 ms  DeleteObjects: 1.318300 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (13).mat
-  importAddress: Guid(f2f926fc2aa94d3468a797e787b5181c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (13).mat using Guid(f2f926fc2aa94d3468a797e787b5181c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c94376048c95eb0c43d138bdd955054d') in 0.0396549 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=050afd9c0fa6079aaf36d4b40b8d275e DependenciesID=44bb545786584857ab7d8b7729b87087 StaticDependenciesID=247997eaca3e405bccda21834588afc4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Prepare: number of updated asset objects reloaded= 0
+EnvironmentDependencyValues requested are different than current active one (requested -> active):
+  graphicsApiMask: 2048 -> 264192
