@@ -63,6 +63,7 @@
     <Compile Include="Assets\Damaris\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\GeneradorHorario.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\PopupManager.cs" />
+    <Compile Include="Assets\Sophia\ScriptsSophia\UIToggleFilter.cs" />
     <Compile Include="Assets\Sophia\Scripts\Camera.cs" />
     <Compile Include="Assets\Damaris\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\DialogueSystem.cs" />

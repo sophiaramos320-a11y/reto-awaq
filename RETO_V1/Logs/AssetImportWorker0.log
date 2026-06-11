@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.1f1 (8535861f39e1) revision 8729990'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'es' Physical Memory: 16068 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-11T09:34:57.932149Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi" at "2026-06-11T04:12:09.4045618Z"
 System  architecture: x64
 Process architecture: x64
-Date: 2026-06-11T04:12:09Z
+Date: 2026-06-11T09:34:57Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.1f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64978
+52654
 -licensingIpc
 LicenseClient-sophi
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [30444]  Target information:
+Player connection [32688]  Target information:
 
-Player connection [30444]  * "[IP] 192.168.1.247 [Port] 0 [Flags] 2 [Guid] 4244478550 [EditorId] 4244478550 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [32688]  * "[IP] 192.168.1.247 [Port] 0 [Flags] 2 [Guid] 930459061 [EditorId] 930459061 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-407KKC6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [30444] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [30444] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [32688] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [32688] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -89,7 +89,7 @@ Active build profile path: `Assets/Settings/Build Profiles/Web - Desktop - Devel
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `m_BuildTarget`, value `20`
 Got setting from build profile YAML, name `m_Subtarget`, value `0`
-Refreshing native plugins compatible for Editor in 21.21 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 34.07 ms, found 2 plugins.
 Initialize engine version: 6000.4.1f1 (8535861f39e1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/sophi/Desktop/Games/Unity-Reto/Reto-Awaq/RETO_V1/Assets
@@ -329,13 +329,19 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56748
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56296
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
+[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-11T09:35:00.9396232Z"
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.034994 seconds.
+Registered in 0.006470 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -410,47 +416,40 @@ Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.284 seconds
-Domain Reload Profiling: 7707ms
-	BeginReloadAssembly (1276ms)
-		CreateAndSetChildDomain (4ms)
-	RebuildCommonClasses (428ms)
-	RebuildNativeTypeToScriptingClass (1050ms)
-	initialDomainReloadingComplete (999ms)
-	LoadAllAssembliesAndSetupDomain (1662ms)
-		LoadAssemblies (1283ms)
-		AnalyzeDomain (1558ms)
-			TypeCache.Refresh (1545ms)
-				TypeCache.ScanAssembly (1470ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (2292ms)
+- Finished resetting the current domain, in  1.303 seconds
+Domain Reload Profiling: 2706ms
+	BeginReloadAssembly (402ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (118ms)
+	RebuildNativeTypeToScriptingClass (37ms)
+	initialDomainReloadingComplete (210ms)
+	LoadAllAssembliesAndSetupDomain (632ms)
+		LoadAssemblies (395ms)
+		AnalyzeDomain (600ms)
+			TypeCache.Refresh (598ms)
+				TypeCache.ScanAssembly (564ms)
+	FinalizeReload (1308ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (289ms)
-			BeforeProcessingInitializeOnLoad (538ms)
-			ProcessInitializeOnLoadAttributes (547ms)
-			ProcessInitializeOnLoadMethodAttributes (546ms)
+			InitializePlatformSupportModulesInManaged (157ms)
+			BeforeProcessingInitializeOnLoad (290ms)
+			ProcessInitializeOnLoadAttributes (317ms)
+			ProcessInitializeOnLoadMethodAttributes (347ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Got setting from build profile YAML, name `m_Development`, value `1`
 [Licensing::Module] Licensing is not yet initialized.
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.1'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-sophi"
-[Licensing::IpcConnector] LicenseClient-sophi channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1" at "2026-06-11T04:12:22.0506576Z"
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              8b24884d37c74defa1f29361ce764e0c
-  Correlation Id:          d30491dbeb71ace267423a48cf7001b4
-  External correlation Id: 3395382927370289624
+  Session Id:              6fc33e924aef4836965b520e017c9584
+  Correlation Id:          cd071f2f5d6e016704d671fe454092c8
+  External correlation Id: 4612755193773829444
   Machine Id:              ioxvigdvOk9iBIePM6NJcBbgHv0=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.00s, validation: 0.01s, handshake: 6.54s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-11T04:12:28.5983796Z"
-[Licensing::Module] Licensing Background thread has ended after 19.19s
-[Licensing::Module] Licensing is initialized (took 7.27s).
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sophi-6000.4.1" (connect: 0.00s, validation: 0.00s, handshake: 3.13s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sophi-6000.4.1-notifications" at "2026-06-11T09:35:04.0751577Z"
+[Licensing::Module] Licensing Background thread has ended after 6.14s
+[Licensing::Module] Licensing is initialized (took 0.04s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: 4674122308681-UnityPersXXXX
@@ -459,6 +458,7 @@ Got setting from build profile YAML, name `m_Development`, value `1`
   Expiration: Unlimited
 Got setting from build profile YAML, name `Color Space`, value `1`
 Got setting from build profile YAML, name `Color Space`, value `1`
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
 Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
@@ -486,1525 +486,104 @@ Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tes
 Symbol file LoadedFromMemory is not a mono symbol file
 Script 'Camera' has the same name as built-in Unity component.
 AddComponent and GetComponent will not work with this script.
-Refreshing native plugins compatible for Editor in 58.64 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 12.73 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 7.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 5.81 ms, found 2 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.245 seconds
-Domain Reload Profiling: 13394ms
-	BeginReloadAssembly (8005ms)
-		DisableScriptedObjects (52ms)
-		CreateAndSetChildDomain (105ms)
-	RebuildCommonClasses (104ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (233ms)
-	LoadAllAssembliesAndSetupDomain (1784ms)
-		LoadAssemblies (1527ms)
-		AnalyzeDomain (524ms)
-			TypeCache.Refresh (312ms)
-				TypeCache.ScanAssembly (264ms)
-			BuildScriptInfoCaches (192ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (3248ms)
+- Finished resetting the current domain, in  2.008 seconds
+Domain Reload Profiling: 5138ms
+	BeginReloadAssembly (1334ms)
+		DisableScriptedObjects (731ms)
+		CreateAndSetChildDomain (77ms)
+	RebuildCommonClasses (102ms)
+	RebuildNativeTypeToScriptingClass (31ms)
+	initialDomainReloadingComplete (209ms)
+	LoadAllAssembliesAndSetupDomain (1452ms)
+		LoadAssemblies (1396ms)
+		AnalyzeDomain (305ms)
+			TypeCache.Refresh (225ms)
+				TypeCache.ScanAssembly (195ms)
+			BuildScriptInfoCaches (72ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (2010ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			BeforeProcessingInitializeOnLoad (498ms)
-			ProcessInitializeOnLoadAttributes (1144ms)
-			ProcessInitializeOnLoadMethodAttributes (868ms)
-			AfterProcessingInitializeOnLoad (18ms)
-		AwakeInstancesAfterBackupRestoration (83ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 10.10 ms, found 2 plugins.
+			InitializePlatformSupportModulesInManaged (6ms)
+			BeforeProcessingInitializeOnLoad (340ms)
+			ProcessInitializeOnLoadAttributes (793ms)
+			ProcessInitializeOnLoadMethodAttributes (498ms)
+			AfterProcessingInitializeOnLoad (8ms)
+		AwakeInstancesAfterBackupRestoration (47ms)
+Refreshing native plugins compatible for Editor in 7.77 ms, found 2 plugins.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2987 unused Assets / (1.0 MB). Loaded Objects now: 3607.
-Memory consumption went from 94.0 MB to 93.1 MB.
-Total: 37.680400 ms (FindLiveObjects: 0.886900 ms CreateObjectMapping: 1.207500 ms MarkObjects: 32.988000 ms  DeleteObjects: 2.589800 ms)
+Unloading 2987 unused Assets / (0.7 MB). Loaded Objects now: 3627.
+Memory consumption went from 95.3 MB to 94.6 MB.
+Total: 19.434900 ms (FindLiveObjects: 0.698100 ms CreateObjectMapping: 0.297600 ms MarkObjects: 17.205200 ms  DeleteObjects: 1.225200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 117552.891354 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_2.asset
-  importAddress: Guid(fabd18c6472405245b20eef7cb5ee3bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_2.asset using Guid(fabd18c6472405245b20eef7cb5ee3bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b2f7ab1d95474c495540cd0beda2ec48') in 0.4980024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bc4b2c0b8de747474efe22250e359a1e DependenciesID=31565596eb0457a36377dc5a3c238f23 StaticDependenciesID=4c74d2bef5ded2162d3197ed3009ab10 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000096 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_53.asset
-  importAddress: Guid(b582a793ebd123e4ba5f4ca704ed259e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_53.asset using Guid(b582a793ebd123e4ba5f4ca704ed259e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '239e7b04d31664370d6aec31bfb43e79') in 0.026479 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7a516a286b76dde80c92d361fe136da2 DependenciesID=58aa9aabb2db7c5b56164994143a3f9e StaticDependenciesID=213655baf733053e64899fcd9bf9cd55 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000140 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 03.prefab
-  importAddress: Guid(9e7797bb065982d4497d030f065d6e2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 03.prefab using Guid(9e7797bb065982d4497d030f065d6e2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c422af486d6d00daa45e4351e30b959c') in 0.1133714 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=138994301b47691f6cc54f461b23f11d DependenciesID=65989f5904045a3595554dc3dc6b50b6 StaticDependenciesID=062ed4eb4a83bb08bd7ddc6c8d7134dd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000080 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 01.prefab
-  importAddress: Guid(ac719b1d0f58391469cc19fd947ca44c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 01.prefab using Guid(ac719b1d0f58391469cc19fd947ca44c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0ceba1c237d35bd106723ef458521c55') in 0.1070379 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=613f3339426e09b98efc4f09b9b67441 DependenciesID=19fc49a9b5060387b6457ed219cc9a1b StaticDependenciesID=69e04949a6b5ad2b0a0f9a67cf5bb4d7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_41.asset
-  importAddress: Guid(4dfdf77930f6d2b4b986bb91965139a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_41.asset using Guid(4dfdf77930f6d2b4b986bb91965139a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ae5901681ddc70e9d3cde7f2aa3cceb8') in 0.0238623 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=07f61a00598ed5141a1913705f670d00 DependenciesID=d463381a1d24216430ff647e72cc30ae StaticDependenciesID=69ea96dbc9fbe374a3ea3058c45ae4a4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000855 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_16.asset
-  importAddress: Guid(503914639ae436b4e82c313961715c35) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_16.asset using Guid(503914639ae436b4e82c313961715c35) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3e1a2039e6acc03adc97c238650be68a') in 0.0161189 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e8cd74f3dadc0ee36dd7a787baaa9013 DependenciesID=bf040181c6e6498cf57c4e110cb31000 StaticDependenciesID=e7be5b99663418d0e643524c89ac99f7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000152 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 03.prefab
-  importAddress: Guid(f3cc2373308c11848977b28d974a9de0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pot 03.prefab using Guid(f3cc2373308c11848977b28d974a9de0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c233dcd25823e380c8af8b18bbb335e8') in 0.0526905 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1089b3918809bf37c8d456afe74b1b81 DependenciesID=3e27793298d3e6174c7836103cce05a9 StaticDependenciesID=4659a47578c7a023624115e0e0bd05f9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000078 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_70.asset
-  importAddress: Guid(fd4aeaac2d8a79d41842e2b88e17c21b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_70.asset using Guid(fd4aeaac2d8a79d41842e2b88e17c21b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '01f25745d70144eb067b8f6c5f9b5208') in 0.0343174 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ad18da8e02f824f843305352df695211 DependenciesID=7d2fd931264516b95b3d8ff0d4c09144 StaticDependenciesID=3db0deced3d9c5359feb99ef35b7aa97 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 L.prefab
-  importAddress: Guid(6bc7a266104dec640a8bc2ab2e5cd968) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 L.prefab using Guid(6bc7a266104dec640a8bc2ab2e5cd968) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2a8508ca782298e1ce7ba7e753c39306') in 0.0366531 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=91300237b19ecddde23135f03a6d0ca2 DependenciesID=4d22d16568eb55539a08dab97e628e35 StaticDependenciesID=677436ffe39e839019cb2e9b1e3dc570 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF.shader
-  importAddress: Guid(e32e69fdbc5750f418ad8c22dd2f6646) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF.shader using Guid(e32e69fdbc5750f418ad8c22dd2f6646) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7a70f57d213a3e55b36d4c033d35db73') in 0.0455164 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1dfc4c4ecad306734a94357be2eae92f DependenciesID=d6dd99856bc064d0deee16dd862f4986 StaticDependenciesID=9a34bb6edbbb8f9706d5127cdd458b89 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Sophia/Scripts/Profile.cs
-  importAddress: Guid(3e5e89f75b69cfd4a8916a3c2f61ee67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Scripts/Profile.cs using Guid(3e5e89f75b69cfd4a8916a3c2f61ee67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b5e2525ea2dc7aecc36f454eedd78731') in 0.0155388 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3ca30ab25b3c2135ed1dc14cdd925c33 DependenciesID=c7666bd5a3d943d062a8e648373561f4 StaticDependenciesID=eb7070731712f40f61e5b0008d463b62 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000312 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Props.png
-  importAddress: Guid(29c9cded5e558164aaf8c9bf08aa1510) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Props.png using Guid(29c9cded5e558164aaf8c9bf08aa1510) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8c5d62b5a2d64d4a82bb7e647054db08') in 0.332562 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e3fcdd080c16074e3becbf90b3087bc7 DependenciesID=53f392fd8931477fef630d06f434d030 StaticDependenciesID=b02b016b24700d290cec47187b6ecf76 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 50
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000086 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 6.asset
-  importAddress: Guid(162b2c3c7ed3c8240995ad1799a0339a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 6.asset using Guid(162b2c3c7ed3c8240995ad1799a0339a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '192646e3cbfd3b0ffe366de11dde3778') in 0.019898 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=395b891da7ee00687789a42a2396e4da DependenciesID=3a61a3ff73326111544fab55cf5d7bd1 StaticDependenciesID=4f801a2ce6c337afd0e7cd5c17bea85b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000086 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_65.asset
-  importAddress: Guid(ef0294efc5ee6d942bbb0a1c274da1a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_65.asset using Guid(ef0294efc5ee6d942bbb0a1c274da1a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dd1b4465e995d320ce56c3d0a5146139') in 0.0222671 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5fd5a81dc1a5958dab31ad2b259bae7e DependenciesID=812b22a884792ac3699a4574f9b7f90d StaticDependenciesID=c8664fcf0789a786413420b8660c4983 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000086 seconds.
-  path: Assets/Sophia/Fonts/Minecraft-Regular.otf
-  importAddress: Guid(a101fddb5be00994c9c6c6b0c81d2558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Fonts/Minecraft-Regular.otf using Guid(a101fddb5be00994c9c6c6b0c81d2558) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9413068e9969007e0f47f1479c1a5ff2') in 0.4713024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1987dcdd87ea625029e2b10a865a335d DependenciesID=04c262f1fb089d4f9b52a9618cf29cc5 StaticDependenciesID=c3b234fba90aae7b08cf3e0116ca1f73 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMPro_Mobile.cginc
-  importAddress: Guid(ee6b2270982b85e4ea8ed91145587b10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMPro_Mobile.cginc using Guid(ee6b2270982b85e4ea8ed91145587b10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b0f9d9bff254b71296be13eee6b8ee94') in 0.01048 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6c6f543b033fa528fe7de651d0d0003d DependenciesID=35f1f11047e07cf250d1f24c3bad7d90 StaticDependenciesID=7ecdc90a51429057116a3ecf9d3be9c9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000546 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 02.prefab
-  importAddress: Guid(713b33322b495794e92184973ece3034) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone 02.prefab using Guid(713b33322b495794e92184973ece3034) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4b5f311e1275ee5c4dbbcb1fcb063579') in 0.0449462 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8adc9f52698979c1bc7a9f9593ec1d5e DependenciesID=352e99125863f2e93fd3bccc23dacc19 StaticDependenciesID=696856f1f3f0bef63447af10cab5c636 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_21.asset
-  importAddress: Guid(1af63b822fabf26419deb451b4adc515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_21.asset using Guid(1af63b822fabf26419deb451b4adc515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2602c14e74f29a3842f336fc14471617') in 0.0253933 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b7d8a8364504f1edb27b9c98df13d1d4 DependenciesID=207084f13915a13935ea244f4296e818 StaticDependenciesID=767dbfb10281cc3de41213bbd70537fb 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF SSD.shader
-  importAddress: Guid(385931e8fd8b69f4fb1c8d7b701b306d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF SSD.shader using Guid(385931e8fd8b69f4fb1c8d7b701b306d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '89ac4a707fad176324cae6b01f693285') in 0.0257225 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2af311535bcdcbe53d943ed88c38f39d DependenciesID=e6d410b354220a8f2ab22f2467d4a566 StaticDependenciesID=2e5967d450f55dcffda4735c1a1141a1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_35.asset
-  importAddress: Guid(9d6c18cd380d5004c9f822deee6e523f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_35.asset using Guid(9d6c18cd380d5004c9f822deee6e523f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9d9d0c94ce70b2551d033e7b0cee5d39') in 0.0267947 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bfb148f1c92e3f843e6fde1ca688f2de DependenciesID=993642cf8d8038ca5f4ea8f4e8c2d2ed StaticDependenciesID=48347aa17a9c47a02cf21ff9ccbb34a4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_15.asset
-  importAddress: Guid(782fb9e50c00f2043abd8b2c3245d83d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_15.asset using Guid(782fb9e50c00f2043abd8b2c3245d83d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '19d3aeb4c714202d7862cdab0a9d2b95') in 0.0221961 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9619758bd415150680906e42a8d98982 DependenciesID=97d169ec687eb0fe51f4a05f04c759ff StaticDependenciesID=09026b3b1a8c1b5a9896e43cf0337647 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_55.asset
-  importAddress: Guid(7545dac8dcb9b6a48aa8ff5fd623e811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_55.asset using Guid(7545dac8dcb9b6a48aa8ff5fd623e811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '663f8ac426d2a4cf54e7e99afc2754c7') in 0.0235112 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2caefc3b59fa7f90bde37dffb96f6e9a DependenciesID=2dd2a8e375ce8184d8f7eaddc4211f67 StaticDependenciesID=821ce7ca80dea1fbeda8e240859d21a7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003917 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_16.asset
-  importAddress: Guid(9adc64847915fb44dbb13ed54821f7f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_16.asset using Guid(9adc64847915fb44dbb13ed54821f7f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd8ff3a95b3158a0d0588d1eb9c121857') in 0.0212175 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6cd596f5c7333131165076d0687de7db DependenciesID=80911447179a41571e472128c46399a4 StaticDependenciesID=71793427259b7cb3266bb4def70db684 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002604 seconds.
-  path: Assets/Sophia/TextMesh Pro/Resources
-  importAddress: Guid(a44fa0f6287083e4583c480f3bd0a84a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Resources using Guid(a44fa0f6287083e4583c480f3bd0a84a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ed1a41f991c3d2fadcf87a25e6fea1cd') in 0.0596246 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5746c638730dbe754d365318b0d58bd DependenciesID=09cb9040674830d1d9917a4406752ac2 StaticDependenciesID=dbb370ce325840045acaa7dbd2e820fd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000806 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_7.asset
-  importAddress: Guid(7ce0e64acc4968343b4d0742ee6963a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_7.asset using Guid(7ce0e64acc4968343b4d0742ee6963a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a065340f280117fa48da4b1a4d28643d') in 0.0431232 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e62e6ab1f84486a1ceae68c4120637f9 DependenciesID=0ee8ca3c2b93cbb3c8f8782c3ffd8988 StaticDependenciesID=3a6f7fbb5cfe97ffdbfbd483bd9a3771 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003435 seconds.
-  path: Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (10).png
-  importAddress: Guid(508ac24c182bb2940b5ac8d4f7ce4530) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (10).png using Guid(508ac24c182bb2940b5ac8d4f7ce4530) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f3d45b08fc1e9cde305a43a01925e870') in 0.0780502 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2c8afc0dc4d256be88b2aad473fa54ea DependenciesID=a862473710430b7b3f2eb96f06b64459 StaticDependenciesID=c013884b6356c2c688fe024bd9f22d0a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_30.asset
-  importAddress: Guid(ff09438222d182d478c56becdab860de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_30.asset using Guid(ff09438222d182d478c56becdab860de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1e811bcf262637c1bfb3489ebb02470a') in 0.0278792 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c53d88b15977aa2ccd41376ce863280a DependenciesID=2eca0fe3b7ce09a52ecf47cb3c36a72a StaticDependenciesID=161d27a9ade78b10179b27fe64ce9604 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Sophia/Fonts/Minecraft-Regular SDF.asset
-  importAddress: Guid(6b46ae0902fd6094fbbe31b174eb4da0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Fonts/Minecraft-Regular SDF.asset using Guid(6b46ae0902fd6094fbbe31b174eb4da0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '13fa15da44d508d13b0f949932cd4c53') in 0.1706682 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a2dafea0d788b9f951d880280b4577cc DependenciesID=7d3cf641a4924dd0d1c0431b89912c44 StaticDependenciesID=5206ce7bf41c6a58dbed427ccaf2ec0b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000085 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_32.asset
-  importAddress: Guid(f8a08cc7e1ef4bd41ad3d91c4ae0824a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_32.asset using Guid(f8a08cc7e1ef4bd41ad3d91c4ae0824a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd2cf03cc5f5ff19182a14b143abe0b6d') in 0.0253371 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c400fa1aca7895cffd8739f4d5e440d7 DependenciesID=6b2a29ff932d1249e111aa037e06e075 StaticDependenciesID=295ce91841751c3b780ffdd67a200def 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_37.asset
-  importAddress: Guid(36928b9ff4f11f543833d3dbad299083) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_37.asset using Guid(36928b9ff4f11f543833d3dbad299083) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b4c2f26bdf540e66b7ece57704ae6142') in 0.0255839 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bb9a262db44e7ee6a8ff9136843d984f DependenciesID=2e2e49d66b7c6955284b5de3fe04f0f8 StaticDependenciesID=46a6700e800222f42e0966ab559c19c5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/volcanoActive00.asset
-  importAddress: Guid(8f090c07885fc32469f873e967ee0367) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/volcanoActive00.asset using Guid(8f090c07885fc32469f873e967ee0367) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4c61f48f4f3476b1d475c36d2601e2fc') in 0.0220979 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4bbabb8670add36499fa7808f21ebd55 DependenciesID=afcb3ad1611bbff98bfc4d65307903ea StaticDependenciesID=15abf540fbc259401ba7a5e6b86f0a3e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_33.asset
-  importAddress: Guid(46b9ac16ba9ac6d4a9d82ef266ac5150) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_33.asset using Guid(46b9ac16ba9ac6d4a9d82ef266ac5150) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '28847091670f9daf5e93ba7bbca7ae7a') in 0.0210544 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b5234afb83b7a28b195b3841ca87884c DependenciesID=d38af5858931f48e4dba851982944b6a StaticDependenciesID=850656314902e833f35a7be2f0176b9b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000221 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_28.asset
-  importAddress: Guid(263019a6872a03d43ba1d0e880c6cbe7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_28.asset using Guid(263019a6872a03d43ba1d0e880c6cbe7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ac4f33308d46c9cd472b943c4de5d493') in 0.0304358 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=727b4aa1391e0fe318842f30ed112615 DependenciesID=168c6e6e93efb62fc65994829adddbc6 StaticDependenciesID=040327dc3f2d6d6d5ab6ffc169e16cc2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 5.asset
-  importAddress: Guid(9d261fa57a186304eb7c71bcd3920f52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 5.asset using Guid(9d261fa57a186304eb7c71bcd3920f52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '814c8f790d7f60edf1a797d50bfc03da') in 0.024038 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dc4a2d1c8a9eb7e7a388c6ebae4349ed DependenciesID=0b439c54e03e304ab1e303329281ad91 StaticDependenciesID=6fbe62b462097f4ddcdd06e4a31240cc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/Scenes/HorizontesScene.unity
-  importAddress: Guid(3ab7c4445d6ddc34ca66645efb81afbb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scenes/HorizontesScene.unity using Guid(3ab7c4445d6ddc34ca66645efb81afbb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ed7404a88fc1b79c54fb86691bd9e2d6') in 0.0195301 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=26d05589875dc49215017a575208f05d DependenciesID=3bee8f0201c18a7496c042d17a2b6cb0 StaticDependenciesID=b377c6d00e72e6ac4986eeecde436f14 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000573 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 14.asset
-  importAddress: Guid(f705d9780fd6a6847a33cc62a5c4b9ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 14.asset using Guid(f705d9780fd6a6847a33cc62a5c4b9ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '992bedfce18d273b13a13f0a21de68e3') in 0.0195106 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=37d62f8d625d00cf6f8739e4e3d4a8e9 DependenciesID=42da03a07129e0d17a83246c4f1d4460 StaticDependenciesID=415ad790dd4afa8174a12c258980c81d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat
-  importAddress: Guid(e600f9894a7155b4fa0ca0150201853a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat using Guid(e600f9894a7155b4fa0ca0150201853a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1b560d9fc51e497b29391694670270f5') in 0.025984 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=27df77faa6c2d80fd1fdd3e76a6ce6d1 DependenciesID=23497c439a1ef8815c2be2f47f84d610 StaticDependenciesID=6824d0554ee59f39fc07506241ff6eac 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000467 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_18.asset
-  importAddress: Guid(d7d9f3e4055a5f240a9233260063765c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_18.asset using Guid(d7d9f3e4055a5f240a9233260063765c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cc529c7ffd6d23d3a6629c0d28f324ad') in 0.0198413 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b724af142ae868c0fd789d262673e6c8 DependenciesID=8b8c60fe6380c55a956235af2cbaa052 StaticDependenciesID=f4c7cbcdd62eba6665f6c32eaf664d88 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000097 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
-  importAddress: Guid(7430d4a27d376fb408c96706fcf7100c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader using Guid(7430d4a27d376fb408c96706fcf7100c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '02c3d48cc1528fd37f18bac1607ac8b1') in 0.0236221 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e49f18cb140951f77157d86aa846b872 DependenciesID=ea70461b7e746e37d9447392e2d3d683 StaticDependenciesID=45046c4fa466d68a35e235f3af1e51ae 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001081 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/plains_castle00.png
-  importAddress: Guid(97c990d13571d614c9f638ee4e0a3473) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/plains_castle00.png using Guid(97c990d13571d614c9f638ee4e0a3473) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f9c72af2cba254b4d2f6c2147a0718e0') in 0.039241 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=443678c893dd950943db172be475c0bd DependenciesID=c17beac4401d1b8d78a5f92ba0f72da2 StaticDependenciesID=32aecdeb384779e266e73057e1aba05d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_28.asset
-  importAddress: Guid(18cbc117f3291f642b4ac9ca0aa22178) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_28.asset using Guid(18cbc117f3291f642b4ac9ca0aa22178) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '39e72f01eea7d9712708c990b77853a9') in 0.0156531 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=89f74fdd9c2df952b659e2c35998b477 DependenciesID=4b2edc78e2512e48883c64ae06b01955 StaticDependenciesID=4634d45288d2d6a1db505f62d3c31641 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000085 seconds.
-  path: Assets/Sophia/Fonts/Minecraft-Regular SDF.asset
-  importAddress: Guid(6b46ae0902fd6094fbbe31b174eb4da0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Fonts/Minecraft-Regular SDF.asset using Guid(6b46ae0902fd6094fbbe31b174eb4da0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b9c1fb50648d7b21b381a214c1e72a1d') in 0.0684685 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=448114ed25d05fde084d2dcc5a219b6c DependenciesID=e451353f9abab176056ed02c08f9074d StaticDependenciesID=bb50a82a3595520ee34055e4fe35f7bc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000120 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_37.asset
-  importAddress: Guid(51fb58566819d2b40acbadd50bc4bfe9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_37.asset using Guid(51fb58566819d2b40acbadd50bc4bfe9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2d0b40f6a7f155bd06f49561c817691a') in 0.0162033 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2fe55dcdae79653c2e3a46134454f265 DependenciesID=a17c90562994ca78e0dd0d641a6a90bb StaticDependenciesID=6f2084b35c9cfbd58a9c3266ada5d953 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000122 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_57.asset
-  importAddress: Guid(a31d991a7c3fabe47ae3ffe6f1a40010) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_57.asset using Guid(a31d991a7c3fabe47ae3ffe6f1a40010) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aa88727aebeb66dfbee8bb2c3540f32e') in 0.0209169 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=57fda719a3bfc0638800070b19a73b35 DependenciesID=08d673bfd4336a28864a862d393edfb6 StaticDependenciesID=8ca9c22a16612a0d395d13deabcfb942 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Struct.png
-  importAddress: Guid(dda6bbdb704d84847b38f9eced72bf59) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Struct.png using Guid(dda6bbdb704d84847b38f9eced72bf59) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f8ddfb9d75e351028d40b6748882e6ab') in 0.1040671 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=45a6173e4315300f388222d5a78c6d98 DependenciesID=f3ad7738408887c6af8c7c0465389eec StaticDependenciesID=76f6593b15b35a796085847477b7a6d3 
+  Time since last request: 136906.334800 seconds.
+  path: Assets/Sophia/Sprites/Grass.prefab
+  importAddress: Guid(654b0edc90337bf4ab228d529d847a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Grass.prefab using Guid(654b0edc90337bf4ab228d529d847a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1bb5f63452c2582b42e4d0232da61b49') in 0.382478 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c65797a85a09162d52628e4a4937a31b DependenciesID=f23fb5ce37506c18d2a6f6aa726f8acb StaticDependenciesID=88f86cd61802f476bb17e7469101a7db 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Sophia/TextMesh Pro/Fonts/LiberationSans.ttf
-  importAddress: Guid(d6192cb6c5cb98448b5c893cb9da60cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(d6192cb6c5cb98448b5c893cb9da60cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e85180c0157ec7eb0527292a476b5109') in 0.0430259 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a6b522154b2420a8af6607119dfeb079 DependenciesID=53054930a4869d7c0479442fed27ce5e StaticDependenciesID=ee5327415debacbfb3c102180b80404b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_25.asset
-  importAddress: Guid(4d9beb44058664246934faa275dafb48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_25.asset using Guid(4d9beb44058664246934faa275dafb48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '22b1369d315052806886c7c6c5d10620') in 0.0339978 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b295e8dc80bc3c809ba811e24c7e9ebb DependenciesID=70079ab573a7bc0680b56d66bc1c828b StaticDependenciesID=c5a6b9712d601b508d058d4f62173551 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_8.asset
-  importAddress: Guid(ffa3466f9c9d64241a5dfed873df45ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_8.asset using Guid(ffa3466f9c9d64241a5dfed873df45ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5bde36afa08a75845e7b89e966f03201') in 0.0274072 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5352bd561df7bf69c5bd30f0bbc26f9c DependenciesID=59339a8d277035e79375d54366409d25 StaticDependenciesID=039d380ba0b8e9574c697587722dfe3a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Sophia/Sprites/illustrated-layout-of-soccer-field-isolated-on-transparent-background_645192-574.avif
-  importAddress: Guid(7c236365dd47871439046e62dc5ed412) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/illustrated-layout-of-soccer-field-isolated-on-transparent-background_645192-574.avif using Guid(7c236365dd47871439046e62dc5ed412) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f5e4675f0499bc2af7c4accb305fc5ce') in 0.0140618 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6250009aa7aa4eca44c62f3f2a5d5aa6 DependenciesID=593b5820d019c69bf8faa232c8287fd4 StaticDependenciesID=97b88395a8a8993d4e90505d5c256d14 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/plains_castle00.asset
-  importAddress: Guid(1e8636c58adbad7449a8d41b6a74989f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/plains_castle00.asset using Guid(1e8636c58adbad7449a8d41b6a74989f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7e3ecc7a4200fbe8846305772691efde') in 0.0178181 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=83c0d5715b22086cfe713500c6ecbfd4 DependenciesID=4f08c989225bf1898ee3c1a67ef2d922 StaticDependenciesID=f82451e928c39d33e3947033ccd6f0a2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/mountain00.asset
-  importAddress: Guid(00d601cd3e5d6df4ca65373be16c934d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/mountain00.asset using Guid(00d601cd3e5d6df4ca65373be16c934d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ad6bb8d0669312ccdbea79f627e02da5') in 0.0342072 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d84acf6799247918e45270c56c633169 DependenciesID=75240e1d187fe21b7448a56e5a9fb690 StaticDependenciesID=6ecbeecb33740fe8dbaf9f978d8f7396 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000085 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_43.asset
-  importAddress: Guid(ada4c775f3d0f8e459af2867f50f7b33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_43.asset using Guid(ada4c775f3d0f8e459af2867f50f7b33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1dee8ad8686321eb8bef0c600e2b6eeb') in 0.0216603 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9d0c3aa4094b509e90d33ae037e5b7ff DependenciesID=3d675c78cd05131c64cde15975885853 StaticDependenciesID=9a2696d3b5da025524c14a6da7748b97 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000144 seconds.
-  path: Assets/Damaris/Font/PixeloidSans-Bold.ttf
-  importAddress: Guid(97483b086c284254c8284d8e8869b238) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Font/PixeloidSans-Bold.ttf using Guid(97483b086c284254c8284d8e8869b238) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '63270157d5d748c7976bb07d0bfea485') in 0.0321895 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=feaf7d62b70cbfa215a7939c4e974e3f DependenciesID=7304299d65c2c0829bcc9a2831b79e19 StaticDependenciesID=a55c4db7f35bec1556e769e646bfa43a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000095 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_4.asset
-  importAddress: Guid(9ddec2508ba86d049ad1a5db035fccd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_4.asset using Guid(9ddec2508ba86d049ad1a5db035fccd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8e8284ba609d47dd04729579ebb23f45') in 0.020697 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4feb92613b6a8a629010298a7c894c2e DependenciesID=91604221a14c4c2ad148d6c7772c3e84 StaticDependenciesID=72926819609a607dc44578c0be27c176 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000097 seconds.
-  path: Assets/DefaultVolumeProfile.asset
-  importAddress: Guid(3f9215ea0144899419cfbc0957140d3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/DefaultVolumeProfile.asset using Guid(3f9215ea0144899419cfbc0957140d3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'af37b7e50f1acf66c896bbff7550d907') in 0.0129498 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be5679adad3733b81d326abab7bf8821 DependenciesID=c719cee263e5323c78b9116333aca381 StaticDependenciesID=d50bc633a58f5d696eece60dd156fe8f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000289 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_28.asset
-  importAddress: Guid(807535e7b0c9a254dba2bbdefd002f02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_28.asset using Guid(807535e7b0c9a254dba2bbdefd002f02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '58c4f6e1a6e3dfad11795f56cd45826e') in 0.0180425 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4fd7091e46b9f48fe3c6ed2fe119f4b8 DependenciesID=a4cf257992a2d9c64b1a2790dd50af6b StaticDependenciesID=a267cc5e6638d135e54602a1d0140dba 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene
-  importAddress: Guid(58a8ab8247148d64d912aba6d6cf3ba1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene using Guid(58a8ab8247148d64d912aba6d6cf3ba1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '676bcdf31adda183f6621f85313396a3') in 0.0112627 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7682d26eb5cd412029af8ef401e9cbf2 DependenciesID=50b2f38b36527e8168f79469f650833a StaticDependenciesID=9632121f87a08e396dfe84d25720919f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000264 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMPro_Surface.cginc
-  importAddress: Guid(559a61d0fa3ab9d4ca4748f07fbdbb4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMPro_Surface.cginc using Guid(559a61d0fa3ab9d4ca4748f07fbdbb4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a0f17035eb009231431006e3dec24908') in 0.0162356 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=792f24d7cfbc64462c52130feb6830fe DependenciesID=79d136497cda3e88727e134ff9ee9f53 StaticDependenciesID=a9fa9ae8bf25e4f10094590fc8057a84 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_44.asset
-  importAddress: Guid(14b9173a0e78eef40bf67c5f1dba6f10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_44.asset using Guid(14b9173a0e78eef40bf67c5f1dba6f10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '55de8e70393d74b3f8bb8b5ec3e5c4f5') in 0.0188305 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fbef5dd09d1257995e0c11984a4c2aaa DependenciesID=3554771b07beb2a906246e143f0088b5 StaticDependenciesID=b5fbacf73ce61c72d8d0eab0c9b20dfa 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/Damaris/Animations/walkup.anim
-  importAddress: Guid(751563e4a3c4c7a48bc7a3fc386e5811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Animations/walkup.anim using Guid(751563e4a3c4c7a48bc7a3fc386e5811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6d7944b49f603a6040edd136ad406c08') in 0.0477425 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d5326aa1e29da3c6525a5a2e6b811a51 DependenciesID=c31683255e66322a6b8c03a282ee4ff2 StaticDependenciesID=21d748767b200ae1dc7b5efada594144 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_42.asset
-  importAddress: Guid(8159d41dde44ab340a514cf609a4bb8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_42.asset using Guid(8159d41dde44ab340a514cf609a4bb8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '25bdc05bf6afc8abc0bc725b9d3e2f19') in 0.0192968 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=70129663631cdc8417353b482967610d DependenciesID=74b674011e67bd860dd0e14c2e007676 StaticDependenciesID=611ee1c54a516d255c3706c53335df99 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000146 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_43.asset
-  importAddress: Guid(896402d1e799a8645a67922ab6d793b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_43.asset using Guid(896402d1e799a8645a67922ab6d793b9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '856e529c3d33d202a6f54359843efe75') in 0.022391 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=82f37239cc9a2e487748807e442ee849 DependenciesID=869793bdbd82249dfe2619d067bf6a24 StaticDependenciesID=f6f3dd85117167131b0561a8f5d4582e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000110 seconds.
-  path: Assets/Settings/Lit2DSceneTemplate.scenetemplate
-  importAddress: Guid(d03ed43fc9d8a4f2e9fa70c1c7916eb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/Lit2DSceneTemplate.scenetemplate using Guid(d03ed43fc9d8a4f2e9fa70c1c7916eb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '290c9bc26b91ec63bd1d21b4b15e4096') in 0.1296945 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6622dbd4b7349422b6664ac8269dcd6c DependenciesID=569fe538af1919a04a29214cab1aee5d StaticDependenciesID=390246813e5a97337dad4fd198d0f6b3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000118 seconds.
-  path: Assets/Damaris/Font
-  importAddress: Guid(6ebb14f83c81ebc4fad8ea1a2dc7a047) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Font using Guid(6ebb14f83c81ebc4fad8ea1a2dc7a047) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd5dcc21d1b6efe0795a2a60ff900c8b3') in 0.012015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a98b46a3a5ff9f92e7f78fd651228cc7 DependenciesID=635040851d2e0cc8c4eb99163768d38a StaticDependenciesID=495fcbf8c68d2c050945ad43e8ec32d3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 4.asset
-  importAddress: Guid(fedab419fdbdeea488795e51c83727c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 4.asset using Guid(fedab419fdbdeea488795e51c83727c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '975dc9892f9b339bdc7802cd42991a9c') in 0.0205545 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b52dc507dce7a7d2c62c906577645071 DependenciesID=e5af94bdc1663de78f6728e45eb21eec StaticDependenciesID=ebb89a1dda990739f4e8c27515bf123f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000340 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_46.asset
-  importAddress: Guid(34c4a150aba65a2479c36b372053f984) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_46.asset using Guid(34c4a150aba65a2479c36b372053f984) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '16aa10f028b7f2500d76bc3dd65e3d74') in 0.0173197 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c787e32090adfb80a431cc61d12c309 DependenciesID=224b3c70108bf3c118ef72ddce10c07e StaticDependenciesID=1ce2095c5050e411cd669d39e05b3d9e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000071 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_64.asset
-  importAddress: Guid(b913f643529d923478930bc64f58debc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_64.asset using Guid(b913f643529d923478930bc64f58debc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '07abc3c50f6cc5a4ed085cdcb9d09f49') in 0.0230756 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5c0c078f8bc60ffbeb82f3c052370a65 DependenciesID=623fa3aa0b745e9e10a8e174fcd25e7d StaticDependenciesID=bc1c6e832bd25ac5a998ad3300fd8ed6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_56.asset
-  importAddress: Guid(5fe40d7b004adde4293bdf59101e1f97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_56.asset using Guid(5fe40d7b004adde4293bdf59101e1f97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'baeeebc134893eb8d438ec9a22954f2f') in 0.0206858 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2fb6b7cbf225cad259fbf7e61e5cbd12 DependenciesID=9a7af23ef40c25f34fd98d33aaac52c9 StaticDependenciesID=05e5ac29820fca0fc2861a1e18ddde4f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000072 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_58.asset
-  importAddress: Guid(fbde4feddd010b84a8e85a316d96b45e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_58.asset using Guid(fbde4feddd010b84a8e85a316d96b45e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a9dd97078d1cb91e77d4381885b78e53') in 0.0307131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3d61905395794a9cada8caeaafe94e5c DependenciesID=68950ba8bc0410badabb37dae03301e9 StaticDependenciesID=1a5770068d56d2ab947c14157afe649e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/jungle00.png
-  importAddress: Guid(e2e66902c768ff34b9e8637f06b1a595) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/jungle00.png using Guid(e2e66902c768ff34b9e8637f06b1a595) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4e60a66e72ef905563efd609e83d6655') in 0.0328843 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33378f6a1c0b6ec2ed97dc53dfddbaae DependenciesID=26007d6e87b5a7411ea5b6554efc0167 StaticDependenciesID=e01a9b168c0c8c0eb0d621cbfcc8bbfb 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 10.prefab
-  importAddress: Guid(dbeab85cbe3b90b41a444794aab794ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 10.prefab using Guid(dbeab85cbe3b90b41a444794aab794ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '607659980b97ab7dacc9af941bc9eac1') in 0.0325778 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=101f557bd9af3ace7dc8c8afb1a5021d DependenciesID=35e2ac7bca6c4ff1d0665b4104e34221 StaticDependenciesID=32e7bfaf912ea7cc07afef155ba11559 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000074 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 M.prefab
-  importAddress: Guid(78e9efbdf9b33994da8dfbe530f65e5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 01 M.prefab using Guid(78e9efbdf9b33994da8dfbe530f65e5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e11f2850cd42a31490f502efbc52b067') in 0.0223161 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3a4227a8acee10a4863ae23cf05135da DependenciesID=736c95b076f82061b0f1e1707e20dca8 StaticDependenciesID=e9b62bc516bc39e1e7557f38e33236ad 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000323 seconds.
-  path: Assets/Scenes/CedroScene.unity
-  importAddress: Guid(03dc58fea8744564daf577683d23be71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/CedroScene.unity using Guid(03dc58fea8744564daf577683d23be71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2e9ee7281cfa61f91251e2db0df67b9a') in 0.0022734 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1b4e660aa11178634851665313653314 DependenciesID=2dfda5bddc69adf3feb660eacd3c103e StaticDependenciesID=a67ac7d990d9a00a36d3c7942bd548e0 
+  Time since last request: 2.524665 seconds.
+  path: Assets/Sophia/Sprites/Reocmendaciones
+  importAddress: Guid(d64ac60e9cebca24bb40f2fba9b81434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Reocmendaciones using Guid(d64ac60e9cebca24bb40f2fba9b81434) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd94e851860a0265a3e99fb00e09e4614') in 0.0042131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=384a28de506af8153d663b96d50fb13a DependenciesID=de88eeacd5c766657b319a18155f7703 StaticDependenciesID=4838158501b4c923a8305e3d0a2d66d9 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/oceanCalm00.png
-  importAddress: Guid(65f97617738bdcf40b2c6a3cc6fed0e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/oceanCalm00.png using Guid(65f97617738bdcf40b2c6a3cc6fed0e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '380fcce4e889bca57e73d5115aaa588a') in 0.0265898 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=470b07e33ba9d07e624f66f8e60612b8 DependenciesID=e71dde00163d37f44bc4f4a8dbf44050 StaticDependenciesID=a21947f8540e9fc4f56424efa9f9ad58 
+  Time since last request: 0.064976 seconds.
+  path: Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png
+  importAddress: Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png using Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '37914cf6018567fda5abe776dfaf8c2b') in 0.1336632 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c27c0b7524aee6344b314a30617b622 DependenciesID=482fe9058bfd9cf778fdc597dc0d6dd6 StaticDependenciesID=88b7559439cb34ca961ea5debe7a0329 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 2.asset
-  importAddress: Guid(2f3b07d6ad9eccc47b6cd451a5df9a45) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 2.asset using Guid(2f3b07d6ad9eccc47b6cd451a5df9a45) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '03959b88d891febedf77089fd8d05f2a') in 0.0197446 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2f98d8b2be02183e8ad8d6c2159f4a7a DependenciesID=3cef67d890a302386f05cfa54b5388ce StaticDependenciesID=fd321250df7757ffeead603af657c7b9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000679 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/SquareTileSpriteAtlas.spriteatlas
-  importAddress: Guid(2415b3d122bd79a4b86ca1bef906a670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/SquareTileSpriteAtlas.spriteatlas using Guid(2415b3d122bd79a4b86ca1bef906a670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '213e6c26c30b8f1565feff92bb9aa5ec') in 0.0240423 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=305659f25fe96262962facf0b50ac813 DependenciesID=83d6d2b9aa94556672cb26ca8fb55814 StaticDependenciesID=a4d961806a6e34dc39cf427ccf9c219a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000270 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 01.prefab
-  importAddress: Guid(4be821d0b78ad5043985b57b738e951b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Gate 01.prefab using Guid(4be821d0b78ad5043985b57b738e951b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bcc6327d54b62860b19694d4d0eb5bed') in 0.0199916 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=07086188ff725b10a8686d90158363ef DependenciesID=135427d4c9e199296175f2a5da014bc3 StaticDependenciesID=3a2483a040b86dae248e73d5cda32fd4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/jungle00.asset
-  importAddress: Guid(2921f75585912224b99f465ae1088e31) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/jungle00.asset using Guid(2921f75585912224b99f465ae1088e31) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '953ff3ce5ccc9f72447075b1d96c824b') in 0.0119314 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=14b1de0e4b0c980d6bbfa7ffae539e95 DependenciesID=063fb0ae9334be7aaf4448cfc23e345d StaticDependenciesID=ba36eb06ae488feb2a1ffa789e7eeed7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
-  importAddress: Guid(007b6ddd39107dc4782bde4d3a751bd3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader using Guid(007b6ddd39107dc4782bde4d3a751bd3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'df22e635b421348c314f77abdd5f88ae') in 0.0131352 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8ee99078dd9764db53b0f9db1f284522 DependenciesID=867b126a7ed08909065420eae4392a4a StaticDependenciesID=1e37b6065f5d48e58e46b874dd161dc9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000364 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_21.asset
-  importAddress: Guid(ab73d3ec979561b4680d6746b4c7f4c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_21.asset using Guid(ab73d3ec979561b4680d6746b4c7f4c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '99663c134f9532f4798f74003bea9c8c') in 0.0146464 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ca9f2fdad8c3de673d8d5d6f195ded95 DependenciesID=d438006f5138c71e9df1c2c46553d584 StaticDependenciesID=eb8a3fb40ced0b9c82e0edf8e1db98cd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/mountain00.png
-  importAddress: Guid(655d1825cbe189d4d97a48fbae36bdbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/mountain00.png using Guid(655d1825cbe189d4d97a48fbae36bdbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b5800c1402f0ac2bb156c85dc090b03b') in 0.0206578 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=450793da39cacc822ea5cffae754b0ad DependenciesID=53ecf50ba56f9bd357820f45af88945d StaticDependenciesID=2d2faf06a2df71c6e5f797983a67cabf 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 3.asset
-  importAddress: Guid(6a5be8683b2bb5c4cafdd9a8407e5654) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 3.asset using Guid(6a5be8683b2bb5c4cafdd9a8407e5654) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8d9fdd16241db994cd1395923c64eaf2') in 0.0187061 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cdad52cd7dc3cd47e12dab2958cd9f04 DependenciesID=3033f04679a60a14d7e372a5e697e734 StaticDependenciesID=d0b1f991dbb7d1bbd8b2dcb48b6a23b0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000163 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_57.asset
-  importAddress: Guid(8a34a97d3972ac841ab5aff6d72e9b1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_57.asset using Guid(8a34a97d3972ac841ab5aff6d72e9b1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4f2a93275713f87d19590090c5b4d693') in 0.0177726 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e116aae3562701d5bb3c4bd088ec14fa DependenciesID=2f7cdde1f615fe99a7052bc6f3a7c6e5 StaticDependenciesID=05e3387543795c1912bebc4682593afc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 02.prefab
-  importAddress: Guid(2e2ac125e54a1e44780363d638b1df34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 02.prefab using Guid(2e2ac125e54a1e44780363d638b1df34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd61635a2d475af5e5053ab2ec3951731') in 0.0337257 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a05d0303541bcc0f1d3ffa31807d3217 DependenciesID=f269a1769f01266f61b766c5d2b15328 StaticDependenciesID=7d401dc9cc36b4b7dc3904a78116071b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
-  importAddress: Guid(bdf0ce64e496ab845849e0c03fdb6a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader using Guid(bdf0ce64e496ab845849e0c03fdb6a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0f03b7cb3b101b415243aec29151809c') in 0.0171349 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b6b5ba3b47a1bed8cca020925c0d2c94 DependenciesID=257e7bf75c37ab1ede117cd14fee24c8 StaticDependenciesID=833069f140698cc7f5e3d04a16afe929 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/Sophia/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
-  importAddress: Guid(7e1158c84ccd56b449073fc82860ed0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(7e1158c84ccd56b449073fc82860ed0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6f2e1ed78b9895f0fd723ca6724426ca') in 0.0987042 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e8594593a2780ba2c1ed4021b89f10a4 DependenciesID=8b4dcd12833dc75808d9db3a8e2e26ac StaticDependenciesID=cd11bb9e1a61fe92e57abba932dea3a9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass
-  importAddress: Guid(3121f6ec1da5159418c5665c84e58ff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass using Guid(3121f6ec1da5159418c5665c84e58ff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a8b226528e09cec939b088c645c3f78e') in 0.0155866 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c723e0f176557a3fb620f4500cc24c2a DependenciesID=836570de95a335a4a5f9054e2ab779cd StaticDependenciesID=bd26199d938c9a4504e17443d327668e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Damaris/Sprites/Screenshot 2026-06-04 160739.png
-  importAddress: Guid(b0b8d59c364091948b18fd7f5f30e196) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Sprites/Screenshot 2026-06-04 160739.png using Guid(b0b8d59c364091948b18fd7f5f30e196) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd1db37edef2979a5104c9382d158c7ba') in 0.1581099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7547535209e0e9e3b1f46e83a7e83b59 DependenciesID=8ba47c4d75adbe8e2552752e08b4bed5 StaticDependenciesID=c8ff7418275d0db95d6df81aaa887365 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_49.asset
-  importAddress: Guid(1d660cc8d1eb4bf4296f634b4f86c885) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_49.asset using Guid(1d660cc8d1eb4bf4296f634b4f86c885) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '544a0ad9eb98fad93f666bd26a196be9') in 0.0406254 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=221d51f5b6e2724625f450d8f0f32310 DependenciesID=f2f104113eddb54739211a40593da147 StaticDependenciesID=cc8a4db86bdd1e35b6dffd96fe134666 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_13.asset
-  importAddress: Guid(9c5fb1582d999bc4b83efb5c4bd7b71b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_13.asset using Guid(9c5fb1582d999bc4b83efb5c4bd7b71b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4580a36d13c35ef9ace864efc7f92459') in 0.0247981 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=872e7d17539e80eeb25c114080d9e309 DependenciesID=9acaaf30070be1636e64389113a23cdc StaticDependenciesID=924fc59e3bbc52015dfc1fee1bde1665 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 1.asset
-  importAddress: Guid(abe9370c58435f244a894542a9d0f78d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 1.asset using Guid(abe9370c58435f244a894542a9d0f78d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '200f82ef7ab5f2378af7284670cb149b') in 0.028804 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d93f53e908457bd02b6d2e28d1b6651b DependenciesID=7325343f6507b468aa6ee371af58f011 StaticDependenciesID=31d0515d4050d1b3426ba3a504cbdfde 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 01.prefab
-  importAddress: Guid(a0a71fda412ad0941ab44f1732ea4c1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Bush 01.prefab using Guid(a0a71fda412ad0941ab44f1732ea4c1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c3901e4c2c439e23659c343cd0ba54ce') in 0.0560222 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f8acd43ba12b351e0cfdb3966cd005c9 DependenciesID=a0238db64184c71cf08783712f77ae30 StaticDependenciesID=064ab989617cec5d27b12d42c90e92df 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 3.asset
-  importAddress: Guid(74fb019e61cfa1144910a53906988a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 3.asset using Guid(74fb019e61cfa1144910a53906988a6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f2955e889a14c01a51d4300e9754594c') in 0.0282974 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=584821723146c8091e51732fc98922e3 DependenciesID=d6a1cc7ad303511654fbce7cc8d43d0d StaticDependenciesID=2cfa685f787afd6c6f5e0cfafa3c8364 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000082 seconds.
-  path: Assets/Damaris/Sprites/1.png
-  importAddress: Guid(2761461af95af824ca7cce5b8ff1c09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Sprites/1.png using Guid(2761461af95af824ca7cce5b8ff1c09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f7600fc97a76ab689b63b9b412c5e1d9') in 0.0369536 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f171f60ed268260e6f23a94769664d39 DependenciesID=97d2d191458f64ccee0ffe4fca7e5a4b StaticDependenciesID=7670f5cad1e6132cc56c0c398f5cf18c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Damaris/Sprites/Screenshot 2026-06-04 160144.png
-  importAddress: Guid(43b1ca4b36a90344ba3507e86e3f5fb3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Sprites/Screenshot 2026-06-04 160144.png using Guid(43b1ca4b36a90344ba3507e86e3f5fb3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aff66836d41f7d1e37f4e7ec1626aea1') in 0.038093 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=08f3a3c318961cc4865d35700af66d33 DependenciesID=2d20d85812d3bc984a1916f75095b67c StaticDependenciesID=d120540fe32cd23c9c066739948a7bca 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000478 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Material/MT FX Rune Glow.mat
-  importAddress: Guid(61b89fe75af132249ba5700ee0334a72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Material/MT FX Rune Glow.mat using Guid(61b89fe75af132249ba5700ee0334a72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3f9b6e151b074d10786d3931f6f69461') in 0.0750081 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fbc19439145f16cfbe2a7c09374b7154 DependenciesID=9587537b3f120ad4d9ef92141ede8c66 StaticDependenciesID=abb9b75ed2da7cc20adbbcaa551a3421 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X2.prefab
-  importAddress: Guid(6d6991dbbdeecb1488bbf78c063d1235) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Rune Pillar X2.prefab using Guid(6d6991dbbdeecb1488bbf78c063d1235) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '34332a201f80fa33ddb6d12fd5577928') in 0.0970231 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=35dc6dc3d71220dcb5aa88b19a38755d DependenciesID=99656bd08df2469b2ee52af9020be018 StaticDependenciesID=0e486895412a49d00f01bff29ccd21b3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (9).png
-  importAddress: Guid(a6edc90b71832634cbc96f1c7415acaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (9).png using Guid(a6edc90b71832634cbc96f1c7415acaf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd29b81bdfb2369145791f5ba76e24fae') in 0.0459127 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8635d5a6fb918772b853c43920b6e26e DependenciesID=8f1f1e0b20db84de3e48a92d80a1bf11 StaticDependenciesID=3c672fd7bd5dee94b549230ca85cf60f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002623 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 12.asset
-  importAddress: Guid(f332210fa22ba8549b6ac4d19975e7b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 12.asset using Guid(f332210fa22ba8549b6ac4d19975e7b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd3877358b3caa305e819ebb43aab1a79') in 0.0277086 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7bd49dcb1f42458f245891a38a5a4c8a DependenciesID=62f22ca3fdc4d1759219db0255c7554b StaticDependenciesID=df303c469d61a207b97c52afba005129 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_38.asset
-  importAddress: Guid(de8a5bc2e5c5a1e4c8c9861234c3bc5f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_38.asset using Guid(de8a5bc2e5c5a1e4c8c9861234c3bc5f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c5bbff864af1a94ad8fd5cade84170ca') in 0.0405945 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=267db1d4a232601244446f114a4a99b2 DependenciesID=3b59a32268dc9804750ebd1575a67792 StaticDependenciesID=bf8fa6e2e5f852f71071e2fd8ee799f3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001396 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_39.asset
-  importAddress: Guid(815a98150ae40f24482bf4ae569f8718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_39.asset using Guid(815a98150ae40f24482bf4ae569f8718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bece9ffd971f95dc1731e8516ed5d542') in 0.0242368 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=56c45612db7f685e7948e941e7393101 DependenciesID=6c3e7c57bd69d2716c7a6b5c2faa1e88 StaticDependenciesID=a6d07cff7c61dd73457fcd9c55b15f65 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_20.asset
-  importAddress: Guid(3721476cf8e9486498f2ce09e849b09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_20.asset using Guid(3721476cf8e9486498f2ce09e849b09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f44e3aa34f5cc68cd7daea8db7c84ddb') in 0.0222676 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7b0f26c7c1aeb454b7f3394b9f68e4e8 DependenciesID=c3c7b8f59ba15a1feb097faead8f8999 StaticDependenciesID=de00dc0ed2f717cfef9005cec0b3ec42 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Wooden Gate 01.prefab
-  importAddress: Guid(6a057178eb028e94fb93bf39262ea3e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Wooden Gate 01.prefab using Guid(6a057178eb028e94fb93bf39262ea3e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f38c489b0d15f4fa5431440b3f2a3611') in 0.0647626 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33e3b715b53579126a912eef3efb0f11 DependenciesID=2fb3d171e37535f6e1aff5b1ef2ad2f5 StaticDependenciesID=2cbfb186615094527c6b01713700d9c2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 03.prefab
-  importAddress: Guid(92a9322ee3bba184f91fbebe53b69bd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Brick 03.prefab using Guid(92a9322ee3bba184f91fbebe53b69bd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bc3e4db615bf18871e9d9ff0f807d8c3') in 0.0442372 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9cabbcbbfe2f9c6a7553d0f25ab1ab1 DependenciesID=3d00f6520f157ea79a2f3f9a0bcf8e3a StaticDependenciesID=d12c8b79e45fadadde67509c6ad8145c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_6.asset
-  importAddress: Guid(aa686c8eec0138b4e90820bbf43c19da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_6.asset using Guid(aa686c8eec0138b4e90820bbf43c19da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9679c59fe17486ae5dc15a739a0d8b2c') in 0.0250261 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8658aa3aa74201661bce5cc3800c2abb DependenciesID=45809f154a1bde1c06dbdef8ffa9775f StaticDependenciesID=efa91d8943a23e6900a0bca83210de4f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 02.prefab
-  importAddress: Guid(2d546d2d8b016864ab41e2185c250eb5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Grass 02.prefab using Guid(2d546d2d8b016864ab41e2185c250eb5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2b97416e318227be1929d69477e468cc') in 0.0342845 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b4d9d6eb5c1feb53ed7c4d87eeeac720 DependenciesID=71d06a82f306a876a591845a099779f8 StaticDependenciesID=be3389923a65e28ee0628dc3aeb18e29 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_22.asset
-  importAddress: Guid(465893449d5293b4eb51f98fe4b64102) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_22.asset using Guid(465893449d5293b4eb51f98fe4b64102) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'eb2260202ab6ebc5a1e8623016f26b27') in 0.0192489 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8237597e817ebb77c41a33f32b3ed555 DependenciesID=dc72e504459af09901aefca20876493c StaticDependenciesID=a6e772ba49808ff30e8188f55740a546 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000093 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_Sprite.shader
-  importAddress: Guid(a37b7696ab6ed154ea4a9d9244b7479b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_Sprite.shader using Guid(a37b7696ab6ed154ea4a9d9244b7479b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '289f94041b18a9c95ed97bceb355dcba') in 0.0161679 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=269e50479be286a4aa04bbdb27d571f6 DependenciesID=e1001ca8ad2b3d153ff2d65fb40a417b StaticDependenciesID=db86f2eae9d95c5c67f979a1cb2b67bb 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000455 seconds.
-  path: Assets/Sophia/TextMesh Pro/Resources/Style Sheets
-  importAddress: Guid(46a19ebb13d7ed64ba47a70cc5000cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Resources/Style Sheets using Guid(46a19ebb13d7ed64ba47a70cc5000cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'faa161c65fd13167d4a85266ee0f6a10') in 0.0120106 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a9ddf680f457014db43c4f1adfaf4238 DependenciesID=b01e08a16fb3e6cdb65dbb52e9ff5bcc StaticDependenciesID=db8958efba7eede19d5eb94f34326bd0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 8.asset
-  importAddress: Guid(a9932c56762082e42ae3a877f0c79f7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 8.asset using Guid(a9932c56762082e42ae3a877f0c79f7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0fc55bf0ea7c1c7967491ee05bd58438') in 0.0239858 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d6559783eb0f7014b4ed3a1171a6a504 DependenciesID=73542c91e73e6baf9018428a3a4f7792 StaticDependenciesID=36d6fe36776657e23b443901d971d1fc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000490 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_8.asset
-  importAddress: Guid(6d58a419459425c46a83457bd33abb8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_8.asset using Guid(6d58a419459425c46a83457bd33abb8c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '848700bc515383db7cfe18c39267a80a') in 0.0213874 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d1230a89be9322e9a911b63c54ddfa14 DependenciesID=d23265e1676a37b53a35fb6d7d254143 StaticDependenciesID=582a01a220822b532e5ddd35070d6923 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 02.prefab
-  importAddress: Guid(cfa0a5ef94fb05d4f97d095a05dc55c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Pillar 02.prefab using Guid(cfa0a5ef94fb05d4f97d095a05dc55c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7fc9fe8a32ead44bcf0720cf6d2c0fbf') in 0.0349167 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fa942f7eb272d8971b06ad4ad645544d DependenciesID=93ff70c1c526b522658ae7b5d6859e57 StaticDependenciesID=9875f7ad7b32706d9fb6518378ff8791 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Scenes/CerezosScene.unity
-  importAddress: Guid(cf0093596d9eb1741a3631ef202aaced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/CerezosScene.unity using Guid(cf0093596d9eb1741a3631ef202aaced) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '23edf60b4e8f3165e189d18f8718ff55') in 0.00284 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a6989b7651e2d11ee83291ed97f233a3 DependenciesID=6e7f3d5971078f6705ae629091fd31d4 StaticDependenciesID=3c9eef1344811f1ab8398fb219d3d288 
+  Time since last request: 18.424012 seconds.
+  path: Assets/Sophia/Sprites/Materials
+  importAddress: Guid(f327f7275a92fae469df8124297dcfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Materials using Guid(f327f7275a92fae469df8124297dcfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '29263a4d7ea01004b480726e10d096d3') in 0.0015531 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a397e379fdae13d83b302850726c1331 DependenciesID=c62c9ddfd98763df78884e96b6760c16 StaticDependenciesID=9565c73078a624db604a4e7d182f1b06 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000291 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_17.asset
-  importAddress: Guid(6d33a98e5dd04de4b835270fcefeabc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_17.asset using Guid(6d33a98e5dd04de4b835270fcefeabc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '263c57647518f5f6b63e878ec577ba6e') in 0.021333 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c56442fdd0b735a3ee5f0883872d871f DependenciesID=9f1b4eb843bcce40b8e92c0711f83d1c StaticDependenciesID=3572f15b1ebd7ffdd74516982986c7fc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/Damaris/Font/PixeloidSans.ttf
-  importAddress: Guid(3ef767b5c61f22747bf47d0b64f60bcf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Font/PixeloidSans.ttf using Guid(3ef767b5c61f22747bf47d0b64f60bcf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '85d90174aab02f1a43f7f6975e37941e') in 0.0254451 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ab57c34f05acad6525111e60121bba37 DependenciesID=b82d25384bc94fc7167c4f971e3c169d StaticDependenciesID=552c2eab87895d1f287a9fe899d690c1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 02.prefab
-  importAddress: Guid(7277dd75e907b27448ec1de08238d0bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Plant/PF Plant - Tree 02.prefab using Guid(7277dd75e907b27448ec1de08238d0bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '97ba7fa899e75f1d952d3e6c4860f7d0') in 0.021377 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f6d232a60e4e8a132e39f1364bcd81c6 DependenciesID=cbbb86f108fdad8f242b23561666c43b StaticDependenciesID=93a9e36223a4747a9a19038d461a9e2f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Sophia/TextMesh Pro/Resources/LineBreaking Following Characters.txt
-  importAddress: Guid(3169e6e370fd84449979b4bb94446a81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Resources/LineBreaking Following Characters.txt using Guid(3169e6e370fd84449979b4bb94446a81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1442d3470804a3d87ff8e8460612f2bd') in 0.0133146 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f31a0ff3fd5d87377663244e92bb5d7a DependenciesID=4e7d6c9f9e3b9be3de88cc1ffc44f46e StaticDependenciesID=ab3fd86ed4b3829fef64f80c490c7e96 
+  Time since last request: 0.074502 seconds.
+  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat
+  importAddress: Guid(e600f9894a7155b4fa0ca0150201853a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (5).mat using Guid(e600f9894a7155b4fa0ca0150201853a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '01d164108796dba7aacd77d30ac755ad') in 0.1107412 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a1635c587d9f40892347cdf5ba004900 DependenciesID=72e1389dede6cae1aac47208f96fc04f StaticDependenciesID=9286c54259b66ab391eabbf3c41c1313 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000646 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/volcanoActive00.png
-  importAddress: Guid(7ae31a8180ce39742905ed117198b940) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/volcanoActive00.png using Guid(7ae31a8180ce39742905ed117198b940) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'de5399d5de8720f134e795fc2fd5b7fd') in 0.0281712 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a4d51ea2970505d492403e9f793739ea DependenciesID=c9a3036d9bf7b2f5f487e5dad02f5d2f StaticDependenciesID=bfb705956726c5a5ed1d0c1dbde2a595 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_23.asset
-  importAddress: Guid(f6b6cd20b4961164798fe1031aef5031) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_23.asset using Guid(f6b6cd20b4961164798fe1031aef5031) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '228ddc89b12ee2ea3b3aceffa0ea5596') in 0.0219247 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=528bec8142cf00992854d1ce654e7835 DependenciesID=d094c4d63f21bd0385aa86d528cf5d38 StaticDependenciesID=89c8ba5f353889f07465b185f89c0648 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_20.asset
-  importAddress: Guid(ed50a80c6ba59cf428ffc19f53876b01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_20.asset using Guid(ed50a80c6ba59cf428ffc19f53876b01) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '65707816e6072bbdf5f8b4a698c5af67') in 0.0536585 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ae228c25f38f552856b9ac3c12c03418 DependenciesID=b878e6e7241e0896a993e4b7ef6b3fa8 StaticDependenciesID=66474132ec9960ba6e80d63af1233507 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002340 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/below_water00.png
-  importAddress: Guid(a4b92a0441606bd499fbf36994da18b3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/below_water00.png using Guid(a4b92a0441606bd499fbf36994da18b3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a2fc00e7d713d26f15c97595b631ae14') in 0.049479 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a38ed9516cdd204dbba2bc6bd3342b72 DependenciesID=dd0971b3530a8c82e6267edf4b430a0c StaticDependenciesID=7417702bf2173c6ea539954efec3c8d7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_14.asset
-  importAddress: Guid(694c62b9b4b97814187f4b31011fc63f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_14.asset using Guid(694c62b9b4b97814187f4b31011fc63f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7e5be3f51e562454d72019a678f6f943') in 0.0221512 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=972a7a591159216310c890e34db7c42f DependenciesID=dae6e2c85e83fcb67377c1aaf5c841dc StaticDependenciesID=48684ab90a85cb6e22d6cc9743eee0ff 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000755 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_24.asset
-  importAddress: Guid(4ab697606f20f594d979700ae90e9bb4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_24.asset using Guid(4ab697606f20f594d979700ae90e9bb4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b15559b5265488ad28f0368de9e7f5bb') in 0.0309771 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=abcf5752c6e8d412ec0c23934f0962ad DependenciesID=49430e7a9b5f9eff9ef5448e7ea61c7a StaticDependenciesID=6d4058f3eb7baac98392a920449885c8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_77.asset
-  importAddress: Guid(2c70e673567fce5449001c086072ff6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_77.asset using Guid(2c70e673567fce5449001c086072ff6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2e3ded960a4e9bfcc967c5db2d47985c') in 0.0333602 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=152a9806fd3cdfe7135067acf8267a2f DependenciesID=451fe791b11627e28c1549471cf73f25 StaticDependenciesID=13435d5932c702a9a1ec7017d009103c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000626 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_63.asset
-  importAddress: Guid(5c16fa21b21d71249ad7a916929bf07c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_63.asset using Guid(5c16fa21b21d71249ad7a916929bf07c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7d4aa8b344f5bca9f7c5da25ebfd7bf3') in 0.0477441 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=84816c22b7cd3fd1037aae86d4fa04b9 DependenciesID=e1eaf3e49e9e1719c85e330260778715 StaticDependenciesID=89884f1fd9053db71bdaa5f5a6379acc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders
-  importAddress: Guid(55469304af2af2e4aa73b4c921403242) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders using Guid(55469304af2af2e4aa73b4c921403242) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '65982cefe9bbcc65b8485eb1ea8330bb') in 0.018383 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1f9d30394894e2a6489864676d5386a9 DependenciesID=7dbcd607b7159f89cf5ccecba56ec9a8 StaticDependenciesID=80de1fc97069ad81b7b1be55e00b10ec 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/oceanCalm00.asset
-  importAddress: Guid(718ab1ce3feed114db83785b89793aab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/oceanCalm00.asset using Guid(718ab1ce3feed114db83785b89793aab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '946eb8d0bcd22896e65cc91e7dca88ed') in 0.0279425 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2960e16f1deed70c8b1827c95b5922c8 DependenciesID=6cd7481b2744297aebf6329fc1993a4e StaticDependenciesID=e9215a3ef8604a878ff11e791791017e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001531 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_74.asset
-  importAddress: Guid(2cb8b647a731de8428f7e949c1ff9427) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_74.asset using Guid(2cb8b647a731de8428f7e949c1ff9427) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '150072c97499ca06c266ad607243b017') in 0.0243266 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eb1c32a99c38c7657ce2d21e8a32be4d DependenciesID=0e30ed0e2e82c72a0b615d325f89908d StaticDependenciesID=b58f9e8f5b8711ecfe67ba72f4ae5c21 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000278 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_51.asset
-  importAddress: Guid(cf1074a43f170c4499f9635a49b52469) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_51.asset using Guid(cf1074a43f170c4499f9635a49b52469) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7a82d72394ae8a70eb7be45887daf092') in 0.0168125 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2660dfee2a152fa5375f0a7e23a3f301 DependenciesID=2251db82dbbd1260a9c549690b3345be StaticDependenciesID=f2e2390014f0783353b69534dfe41be4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000125 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_1.asset
-  importAddress: Guid(8db82f4787b62ca4091d3ae9b71b58ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_1.asset using Guid(8db82f4787b62ca4091d3ae9b71b58ef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8d0d887b09373e24f84c746145b91708') in 0.026241 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3be8ead5a856506b0f6ee7c3b575c131 DependenciesID=dc746da4d6f2e36bf1be52ee3f1e47dc StaticDependenciesID=e15e861e0c866824d9c57eeb545b8c18 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
-  importAddress: Guid(ff4be6a70c553084897d58258eb03a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader using Guid(ff4be6a70c553084897d58258eb03a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '43a7bafd96f1eb43bdada03f1369174b') in 0.0257474 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6ea08f117e6bb3b166ae5c7a68e86d57 DependenciesID=277083cc7c3bc60974690e40dabc8078 StaticDependenciesID=535735514a4fe0fb45c014cd2156fcc5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_8.asset
-  importAddress: Guid(5107c39f6afd46a4ebd538297bc40b5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_8.asset using Guid(5107c39f6afd46a4ebd538297bc40b5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2c19654bfa6e4e6040ab9e8a67cff567') in 0.0199325 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8cfe0ae6c66a2b2b4c03e9855269c3d3 DependenciesID=75168ae97c05931dfd35c5ad67a7aa22 StaticDependenciesID=451decb0fa15685edcbf479be5a95763 
+  Time since last request: 0.000052 seconds.
+  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (18).mat
+  importAddress: Guid(256b93550976b144dae0092c5430889a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (18).mat using Guid(256b93550976b144dae0092c5430889a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '60ebda3eec9c3dfe9d5c181c0adf05ee') in 0.0361224 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c16e14c480cf756d943097eccf3e551 DependenciesID=4736a2700c31b5d3376be591f36a448c StaticDependenciesID=90bcc8b82d697137da0e6cb4a967b33f 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000038 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_27.asset
-  importAddress: Guid(c8f09b5ff9e984340bba83f25fbf5118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_27.asset using Guid(c8f09b5ff9e984340bba83f25fbf5118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f16ce7e8513c02d4deb43c1fa33e00ed') in 0.0211259 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=23ded8766494e0b1d659830589ab9b1e DependenciesID=a4ef95b50275e53725ac9463f580c1f6 StaticDependenciesID=12c22632e87e6d0abce4a3647e1c6f18 
+  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (13).mat
+  importAddress: Guid(f2f926fc2aa94d3468a797e787b5181c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (13).mat using Guid(f2f926fc2aa94d3468a797e787b5181c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c94376048c95eb0c43d138bdd955054d') in 0.0396549 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=050afd9c0fa6079aaf36d4b40b8d275e DependenciesID=44bb545786584857ab7d8b7729b87087 StaticDependenciesID=247997eaca3e405bccda21834588afc4 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/Sophia/TextMesh Pro/Resources/Fonts & Materials
-  importAddress: Guid(e36b21bc8e94b81428e61241ff5c8f67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Resources/Fonts & Materials using Guid(e36b21bc8e94b81428e61241ff5c8f67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8de3eba203577c73fc42b96d425f53b3') in 0.0115739 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=866d03fb716247338bf828b9da33b6fc DependenciesID=5fee372a96fdb75466f48a42fa250244 StaticDependenciesID=5a7d434b88426787058995ad36638b05 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 01.prefab
-  importAddress: Guid(fb2df5b680b64b449a78162ebcd98e97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Crate 01.prefab using Guid(fb2df5b680b64b449a78162ebcd98e97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9eb38fab7ed9fc4fbfe07c2af63b81c4') in 0.0446901 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c636d75c03b75f026af367b06a93058 DependenciesID=7a67c08ad82334cba8a26435671abfab StaticDependenciesID=be1eafed7d30cfaa10ff8411a60d031a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005078 seconds.
-  path: Assets/Sophia/Sprites/Reocmendaciones/pixil-frame-0 (20).png
-  importAddress: Guid(cb1471c77d188e6478fddda62e905b3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/Reocmendaciones/pixil-frame-0 (20).png using Guid(cb1471c77d188e6478fddda62e905b3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '34e2acaf8b860529c18eea4b476617bd') in 0.0657723 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8618946359d9b4b038a816b7518c5728 DependenciesID=dba1b25787df78dc1f343c6f6675a991 StaticDependenciesID=791d152e4b032565b3b8b0ff71d0328b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Settings/UniversalRP.asset
-  importAddress: Guid(681886c5eb7344803b6206f758bf0b1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Settings/UniversalRP.asset using Guid(681886c5eb7344803b6206f758bf0b1c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '83e0a0991b4e5aaf4929089f1ad98519') in 0.0122646 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfb686b11a0454fc23daeb8cd6b9faf3 DependenciesID=c326714bb27f0132c5e4682bda7c975d StaticDependenciesID=fafcc4742f6b9c75fa1a9ea7b723ead2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000102 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_36.asset
-  importAddress: Guid(0f39ce13cb3663f47aa017b24e28c59d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_36.asset using Guid(0f39ce13cb3663f47aa017b24e28c59d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '50ca8340255cfa70521211c0576267be') in 0.0374931 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3fa92ca216c697cb88c5afbe1d9ba210 DependenciesID=780266be11a78f8482a02ee791bdbccc StaticDependenciesID=827cce5026f067d9ff39a59a3becc313 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000221 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_31.asset
-  importAddress: Guid(25c5faa948898434db81d53c701fd51e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_31.asset using Guid(25c5faa948898434db81d53c701fd51e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dc041db6fa33b9503be68311454bc20e') in 0.0152605 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=75c8cf34492a73b66ee7d27d1a9f4748 DependenciesID=8483afdf7baf4e70bf014cf31aec76e0 StaticDependenciesID=3c1872da99d1b69802318bfbf21eadcc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_19.asset
-  importAddress: Guid(593e9d35d4ade4041a13ab33b9a1040f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_19.asset using Guid(593e9d35d4ade4041a13ab33b9a1040f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e42957620e50e21e80f0a24d54cc2c0a') in 0.0183458 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9cf487602e7a0b51d2a6379c1d6ce049 DependenciesID=1f3d7e8378b92ffd05c9f28d1618aa03 StaticDependenciesID=e374b61912e135c102d326fe1be73a53 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000170 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/below_dirt00.png
-  importAddress: Guid(ac3b9336e27c3f1458c6eb4f97a99718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/below_dirt00.png using Guid(ac3b9336e27c3f1458c6eb4f97a99718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7535df7ad31df31625bfc76f05143b63') in 0.0487101 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7c37ee7455190d762915d13d259a4124 DependenciesID=4edb2b639a16d51977424df83bacc668 StaticDependenciesID=67f4e6f23f537e38fa050a8ac960300f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003499 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/plains00.png
-  importAddress: Guid(da3e6bbb84c179140bc2ea270b6958bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Tile Samples/plains00.png using Guid(da3e6bbb84c179140bc2ea270b6958bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2c5e89615a26f6d0ed47be34ef0ca37c') in 0.0352997 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a9f106d6b0709ae5e903ae73b07ff30f DependenciesID=3939bc9bfaa0667347f1661a05ab3715 StaticDependenciesID=4f3f44223fd4c01187017ed2f8e9b6f0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Damaris/Animations/walkleft.anim
-  importAddress: Guid(281b5cd9222354848ab8a097c5d0228e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Damaris/Animations/walkleft.anim using Guid(281b5cd9222354848ab8a097c5d0228e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f3c16d3f5e3a14ef465a1ad935c2b4cb') in 0.0179919 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8d92686de7d50b534c1aa5041ddf8bbc DependenciesID=72bb989c1a64f0b3c02dd856f1111c62 StaticDependenciesID=de4ee8bc997b396556bcd93be7e15d51 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 10.asset
-  importAddress: Guid(5b0fa72a7621582478a135416a07cddb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 10.asset using Guid(5b0fa72a7621582478a135416a07cddb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ce856d0bc7e88f3a27bac7175f82da4f') in 0.0191114 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c0f9340acf294fa57223203108e3cd1 DependenciesID=49faca70989f0597e02f6a2144f853b6 StaticDependenciesID=8d2ba9c640714d98b76f66e284165a2d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000107 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 7.asset
-  importAddress: Guid(bcf612aaeb488bf48b64a976b440426d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Pavement 7.asset using Guid(bcf612aaeb488bf48b64a976b440426d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '25ca46d46fcd80999169fc162d2e444e') in 0.0174564 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=461a65f035f0c6edde57354c13d367ad DependenciesID=df72803c223b5101a02b1b681e183515 StaticDependenciesID=47c940778cbc0d7e6a7a9eb631b21d9f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_22.asset
-  importAddress: Guid(2af854022baea474ba380cc6be59d552) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_22.asset using Guid(2af854022baea474ba380cc6be59d552) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '90387edac4c4678a8d48b106ce63ffd8') in 0.0229836 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0528490460caa1c83cb352f0b1821407 DependenciesID=df32886d5a73bc9401afb6d03354b33e StaticDependenciesID=3119a1a26f62944fef0fbea9ba5de760 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall
-  importAddress: Guid(3835c99b2cffa6c46810cac8fe0022b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall using Guid(3835c99b2cffa6c46810cac8fe0022b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f49123fe750b32f4d635a16f303179a4') in 0.0123257 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f221a95c76963b147d89144cd6c7b320 DependenciesID=1f7835cedf99283188689a2235895d0d StaticDependenciesID=cd0bbcc6982b967ded3021800c77a459 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000284 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall.prefab
-  importAddress: Guid(8d8700121f1eb2c4abda7e8a3dafab76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall.prefab using Guid(8d8700121f1eb2c4abda7e8a3dafab76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bb2fe707f682fe3d5d1f0ab97cff0fa0') in 0.0372116 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=efc214875f0bbca18856efe46a1ec261 DependenciesID=6e00bb39185919aa3a32f1d39b0d5cdc StaticDependenciesID=87586aa5df9a42d81e09b3e58b77112c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000070 seconds.
-  path: Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png
-  importAddress: Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/Reocmendaciones/ContentBox.png using Guid(6e9bb1f61725c6b4797aaa6c85da6b97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '93f2896d4530793f4ce3ef9ca3aa2280') in 0.037503 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4a3ab7763e907a96dedbf263755b0679 DependenciesID=f752d0139ea5a178f38c04973475ec70 StaticDependenciesID=d7818b5abcd8637b7d0459f193cf9a6d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_46.asset
-  importAddress: Guid(ef31c86c3a0172d4b9171070f32c75e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_46.asset using Guid(ef31c86c3a0172d4b9171070f32c75e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0e6edfe01830dec9ac7eeb96db363e5b') in 0.0327154 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b5fdf70060488ab6d20e901d41d6e163 DependenciesID=ff96e73691ae7b6a0efae4219b337704 StaticDependenciesID=5d827219c971b1e699a892311f971bc8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000790 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 4.asset
-  importAddress: Guid(e787fdd8f60de2c4eb002b7e8cd621fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Shadow Tileset Wall 4.asset using Guid(e787fdd8f60de2c4eb002b7e8cd621fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cbe8916e9db35689ac986064db4d8207') in 0.0202203 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7e66a2961d28ad2652be470325f4d74d DependenciesID=2395eab63fdc11d58787819b3cee4d8f StaticDependenciesID=1c876b60eb0e0d1a752d7641efb897d5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_42.asset
-  importAddress: Guid(8741a9edc7643d9498a9f623a07aba3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_42.asset using Guid(8741a9edc7643d9498a9f623a07aba3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dd8e633a5e1f374be36ade0512a7fa62') in 0.0180816 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5eb9fe8e016c4fb8fa51f304fce6732e DependenciesID=e9fde8f001f86bb2b202981b0494d180 StaticDependenciesID=71509d2255df2d8220aae63e19dc2875 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000110 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Well 01.prefab
-  importAddress: Guid(91afc0649ae41a64c860a5d49f05ff40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Well 01.prefab using Guid(91afc0649ae41a64c860a5d49f05ff40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4131e5c53ff10114d19e9497574f5f28') in 0.0313768 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a57b2e878f72a7a79afebeb7e48bfd18 DependenciesID=4c5c7b8b963a489e2771eeab0a110601 StaticDependenciesID=309e7f2a37f109267733bb571f7ce2b4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_23.asset
-  importAddress: Guid(4eda2498ff988b547a51a6ed8b86529e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_23.asset using Guid(4eda2498ff988b547a51a6ed8b86529e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6c6d4356df9763b1a2f0d5c538b8112b') in 0.0141922 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6a0fe09b09dd382857ce85fd3074ae68 DependenciesID=e3cb5cb9cbc1642e8601f81f0e9e3f56 StaticDependenciesID=f227b297687b3c6f304e9e5bc03c8404 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
-  importAddress: Guid(98e478c0c4f40a9498ca43a87b55f5ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/TextMesh Pro/Shaders/TMP_SDF Overlay.shader using Guid(98e478c0c4f40a9498ca43a87b55f5ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1c2b04944b6ae98f35d3a20840f1c3a2') in 0.011588 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2057efc720bba15c390610f4f400b811 DependenciesID=e90ec3118cff1e08f1ab03e3b9399921 StaticDependenciesID=b7487067b6ea6b27823dffb5d2af673e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 14.asset
-  importAddress: Guid(6af3ae26591b05548b82024e5520c670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass Flower 14.asset using Guid(6af3ae26591b05548b82024e5520c670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b356326071a989827fce8d4b67609f42') in 0.0180313 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32b1707e4159202bd027e0d44099ecc1 DependenciesID=dcf27f9d29ab910debfdc21c028ae492 StaticDependenciesID=469309b0d35648d3902176da22fbb926 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_34.asset
-  importAddress: Guid(575769e8231940b448cfdba4aede924b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_34.asset using Guid(575769e8231940b448cfdba4aede924b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b604fcb4d5bb96a4e81abf2247e77080') in 0.0184474 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e13319ba1a20095f4eaafc241675dd62 DependenciesID=b1ae0e9a5a02e885d4713d8d9171c11e StaticDependenciesID=844072c3bfd9ced666ecd6f876ed9b90 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 6.asset
-  importAddress: Guid(463040bb33823754e9e159a83e20321a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass 6.asset using Guid(463040bb33823754e9e159a83e20321a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '226670e8aafa8c80e3b99b665a6ac0a6') in 0.0132639 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=76ccd9f0d1653b391dd61f958814a023 DependenciesID=f664783e883c7fb86d630e1e00c1c0d9 StaticDependenciesID=7037b96c62561a6346b52825bd7ed847 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000686 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_31.asset
-  importAddress: Guid(f6d4829a6950ff94e85270d3fa1f75ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_31.asset using Guid(f6d4829a6950ff94e85270d3fa1f75ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e2e7a4d4cb9f93ce00a87e5b8435d4ac') in 0.0190234 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=13ddaebb333ba11edaae5dc0492a00d9 DependenciesID=7709b4aa99b4764a3fddb6cbd5ef9fc0 StaticDependenciesID=5e48c4f89b179a29be2322d3ec493622 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000101 seconds.
-  path: Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (7).png
-  importAddress: Guid(7edea0ba9e3448846ab59358c0f5c49a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/GrassPark/pixil-frame-0 (7).png using Guid(7edea0ba9e3448846ab59358c0f5c49a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6544a2745fc32c6f97d72c2fd34aba80') in 0.0213001 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8f98e35ced51f8fe0872e170a3e1f7fa DependenciesID=d949f6f8d12ff528e43649c2241f861b StaticDependenciesID=dba2e737968ae2a1b34cac16992ebb8e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Plant.png
-  importAddress: Guid(c3a40e1c46727b94e959990527f8e7fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Plant.png using Guid(c3a40e1c46727b94e959990527f8e7fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '60dabb1141b2abd457a2cae984718508') in 0.1021874 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a270fc7caf75ca812097c807bdab16ae DependenciesID=0497bf18903bf96b196699d829169e94 StaticDependenciesID=50726223d673e40a2bcf1177ed497442 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 30
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000060 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_27.asset
-  importAddress: Guid(96945c2584c47b44ebe75d015b3cde49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_27.asset using Guid(96945c2584c47b44ebe75d015b3cde49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b6d8274af44f613573547a2bc04cc03e') in 0.0191048 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=055101d970afeed1edd27803d1736c2c DependenciesID=1b155fb118a762aa4f26543eef402fb5 StaticDependenciesID=3963ba32bd0916e8866e9c60c8d7ffde 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_48.asset
-  importAddress: Guid(590e2b09452a4594994d97cbc5d5a3e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_48.asset using Guid(590e2b09452a4594994d97cbc5d5a3e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd3101db21302a3bd6159b8549ce82670') in 0.0156693 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e522ec3d254dc3af753ab811fda5965 DependenciesID=92c86ae730cfa4b7883afeb5f92f21df StaticDependenciesID=2f28bd3ae9a22a7ae6fd34ed557eefec 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_7.asset
-  importAddress: Guid(efe5594aca34f2745a57662f43377928) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_7.asset using Guid(efe5594aca34f2745a57662f43377928) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd76f3b78790a9ae3a4071b432261aba8') in 0.0148805 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=631c8b6ddf16896635c6b76274f0334c DependenciesID=5e4da5930c79c69028053172f6464bee StaticDependenciesID=9a05fd813216e07993a96635217bedae 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_66.asset
-  importAddress: Guid(f3dc731f8ee832145b08f4ec52a07b3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_66.asset using Guid(f3dc731f8ee832145b08f4ec52a07b3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '830d28def979f5d7c497c810fdff0cca') in 0.0225916 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8e09557a2a6c0258be77de4849c92093 DependenciesID=950a7af576b0286d21a7e453e6681ec7 StaticDependenciesID=493e98ace7347b8cd29d2b1249b6d55e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Sophia/Scripts/Interaction.cs
-  importAddress: Guid(faf2a414194ebcc4a94e2495a29778c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Scripts/Interaction.cs using Guid(faf2a414194ebcc4a94e2495a29778c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '76474e0ba35ebb0f500fe80993c25a80') in 0.0100211 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3ff76917f8d93df6b8abb630cda0f2b4 DependenciesID=2a94979a16b558ec08d1fc0528ef5d83 StaticDependenciesID=6419c09124facd2fc8a52b136861306f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_37.asset
-  importAddress: Guid(72c1868f4ec438b4bb1113f44fa5c176) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_37.asset using Guid(72c1868f4ec438b4bb1113f44fa5c176) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2db49e21402d3c5f6a38c74434b7cff7') in 0.0186513 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cfdff4cc19258082afeb0011bcc712d9 DependenciesID=1fd83c5363c0d28d39bf3223e56e3e32 StaticDependenciesID=c2f5f82726f95f9d83a84d5d79386037 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_5.asset
-  importAddress: Guid(fb7f15ecd9d9a344793e47b082a9753a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_5.asset using Guid(fb7f15ecd9d9a344793e47b082a9753a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c1c04d4e5e2e245f99795dce4cedbf75') in 0.0149764 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=35039a36b8af284252e5d77e7ca0777c DependenciesID=24c9442bd9adce252c016ef732ec23cf StaticDependenciesID=9213e7891078bb9c48560049b3e73523 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000067 seconds.
-  path: Assets/Sophia/Tiles/pixil-frame-0_38.asset
-  importAddress: Guid(0ac94c7b13a4f3b448d086cf22247c91) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Tiles/pixil-frame-0_38.asset using Guid(0ac94c7b13a4f3b448d086cf22247c91) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '000d44be2d7a27cb5a4f6b6d1257dcda') in 0.0155217 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=49bddb83bdbf1b88d76c0aabe7bb54be DependenciesID=c2909a2cbf56ac4b86664413ac46ca97 StaticDependenciesID=121392e9373d0d25ffb1739e086aa7d9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000221 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 02.prefab
-  importAddress: Guid(82fc30c178d77ba448d65fe8434c568b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs W 02.prefab using Guid(82fc30c178d77ba448d65fe8434c568b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fada1f46d9482f292493fc99ec6cf846') in 0.0224353 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=11fe6db349abfe3cac3c75a36bfaac3f DependenciesID=886b5ed127caf929df4003614364489d StaticDependenciesID=2ebf1f7e6e64cd6bbedd70860e8ea211 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003006 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 W.prefab
-  importAddress: Guid(8eb546cfc24c8c24196899cee5797135) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Props - Stone Bench 01 W.prefab using Guid(8eb546cfc24c8c24196899cee5797135) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'eecf1d97b4d5495ac0879f632fe2bf73') in 0.0333816 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=64a84ba133ba78403c7bcc26257f59fd DependenciesID=fa15556d27f3e455ab6a8fe4be4ec878 StaticDependenciesID=e14a1078cff8805d523ad3e595032da7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_0.asset
-  importAddress: Guid(adf1e302fb349784ba09184eb69dfd8f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_0.asset using Guid(adf1e302fb349784ba09184eb69dfd8f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0318b12a60509dbe240336881a253c49') in 0.021607 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=11b431f9c499ce661ddfd9b6fe2047bd DependenciesID=5ad69240ca7aadaafbf46eb1932a53dd StaticDependenciesID=c305c758bd640f267f6c5f41e4e8e171 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 R.prefab
-  importAddress: Guid(b7a5fce6e52ebbf488a8e8516c6692cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Prefab/Props/PF Struct - Stairs S 02 R.prefab using Guid(b7a5fce6e52ebbf488a8e8516c6692cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a0991a396ac4eaee18c811ad1ad84694') in 0.0250059 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ed2c66e0f70aeb04847cffc6e23df01c DependenciesID=07ddb88b6315ae0fcdfb7bd89eda20ea StaticDependenciesID=e5a242a689fa55c3db9e66a9ea305163 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/forestBroadleaf00.asset
-  importAddress: Guid(34f41d154528ef84881274ecd040cade) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Terrain Tile Hex Samples/Example Scene/Example Tiles/forestBroadleaf00.asset using Guid(34f41d154528ef84881274ecd040cade) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '73f4f4d55abd8755e3c539c1968adaaf') in 0.0201537 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ad576d1b7487557e05060368de6af895 DependenciesID=9d1ac1bb846938f307af291c20a6f9a4 StaticDependenciesID=ec2da86aa846001627cb2169a153273d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000362 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_46.asset
-  importAddress: Guid(ca8588300bdb03149a3be05ab743ed56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_46.asset using Guid(ca8588300bdb03149a3be05ab743ed56) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'df1db045460b54348c43ba996a1e780c') in 0.0236591 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c2686ee7686ebb3d4acccca00585219 DependenciesID=e4f416336c48518a525f9fb8e0885610 StaticDependenciesID=96380d4afdc2aef8d1e86c67dfdd842f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_20.asset
-  importAddress: Guid(d711f37f575c12a4daf5c03e58309fae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_20.asset using Guid(d711f37f575c12a4daf5c03e58309fae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '20d56429c4082c6bebc3ad2e74be2c7e') in 0.0198635 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=905d34ddba13cb0e10c334e694e4ad40 DependenciesID=769f6bb464b9186fe981b2655a4b0269 StaticDependenciesID=1fb39b3327622fb2eb4df2fd078b6a7c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Sophia/Sprites/Materials/pixil-frame-0 (7).mat
-  importAddress: Guid(234fc9b68df6a41459fbe48a30b08381) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Sophia/Sprites/Materials/pixil-frame-0 (7).mat using Guid(234fc9b68df6a41459fbe48a30b08381) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '88fb98ceb3d40fac554bb037ea6bfb62') in 0.018468 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=daacc025cd44e5ccb29151adcd934217 DependenciesID=30ba1e1728ffbccd76557443e61fff70 StaticDependenciesID=a31c4303650a82fa1fd5b04ff3963ef2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000079 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_18.asset
-  importAddress: Guid(e43ab35d6a5685241a17d90925d9a865) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_18.asset using Guid(e43ab35d6a5685241a17d90925d9a865) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ed74feae65f8d2f0a1cc3436fd00c009') in 0.0243989 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2a67697f080ee0c9d2cecab5f6ae7b04 DependenciesID=068fe222f95e4f9b7c4749db76d91e17 StaticDependenciesID=7fe8f4760f200eac622e185b959ff364 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000089 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_42.asset
-  importAddress: Guid(0da41aee1c6ad1947ae6c8b7e23130ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_42.asset using Guid(0da41aee1c6ad1947ae6c8b7e23130ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '16c6f8885c64cca74dcecd136557a2db') in 0.0279397 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1dbb73faf2d871bce4184cf58b57b645 DependenciesID=d9fa61cd58257d928e54f1eb7108cad1 StaticDependenciesID=d574e8ca47ab68464e4dc759097eed44 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png
-  importAddress: Guid(9f8f114589864b6489859a58fbb6baf9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png using Guid(9f8f114589864b6489859a58fbb6baf9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '465c3df90cb110638382d9714913dd2a') in 0.2982393 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=03932d87f97a9bf71cfb4cd376c3d981 DependenciesID=25e7ecf1518ed8b7fe0fde5b4b10203a StaticDependenciesID=28ca94b9cf6d8b537ea752ecd477383f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 63
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000098 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_44.asset
-  importAddress: Guid(6f6e5fa7aced9ba499e35a5f79839641) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Wall/TX Tileset Wall_44.asset using Guid(6f6e5fa7aced9ba499e35a5f79839641) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd57677affc07603b3c73353cd5b4d345') in 0.0223558 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3349a2884a40b9207442bf07a594de90 DependenciesID=a052d206e8d21af453abb0ea709fd0a8 StaticDependenciesID=c2f43173acd678d2b8a15d4baafe0992 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000359 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_35.asset
-  importAddress: Guid(009f3593fa7376e41a0729c7f4181615) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_35.asset using Guid(009f3593fa7376e41a0729c7f4181615) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1280505d01ecbecdc14a37f39609f6af') in 0.0189024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3cb7d96a4374a64451f80660ca7cc3e3 DependenciesID=d75d2ae46f8f232da8c8cf7d7e9d742a StaticDependenciesID=4944caec7232396e75eb0a259fc70e3c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_45.asset
-  importAddress: Guid(ded49c94886a1af41a1b1025eadf0a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Grass/TX Tileset Grass_45.asset using Guid(ded49c94886a1af41a1b1025eadf0a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '94e828e3b3cc80174d49cfccc22ee893') in 0.0301406 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7531ac2c201be5bf70d1e28ef811865f DependenciesID=45c8b1210359c7013a3b5f1f0c2cdaa2 StaticDependenciesID=ec9310ebcd0df77c0cb51049453b9b02 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000077 seconds.
-  path: Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_26.asset
-  importAddress: Guid(2074032077ed0f24da0353a406726e3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Cainos/Pixel Art Top Down - Basic/Tile Palette/TP Stone Ground/TX Tileset Stone Ground_26.asset using Guid(2074032077ed0f24da0353a406726e3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cb926cfd56d301ac7f94a173c1330260') in 0.0260741 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=573a654e53a6b143805a860f1c7eb4a9 DependenciesID=85d9a51101073ff15c989a8df613ecf3 StaticDependenciesID=d4de4d4eaac0f0691746e99e118f991f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000371 seconds.
-  path: Assets/Sophia/Fonts/Ancient Modern Tales.otf
-  importAddress: Guid(cfd2ea8be8d86f441b765f569fec4b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sophia/Fonts/Ancient Modern Tales.otf using Guid(cfd2ea8be8d86f441b765f569fec4b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f96738db9026518900c381befad04779') in 0.0505129 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5177ea3d966b553cdb5f3c8eab25faf2 DependenciesID=643ba4e45f541909f15442cf0e1870f9 StaticDependenciesID=94ed20fb245bf5a29924ba9af5a9796e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

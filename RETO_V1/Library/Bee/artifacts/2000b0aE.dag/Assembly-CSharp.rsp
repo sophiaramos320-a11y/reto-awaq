@@ -435,6 +435,7 @@
 "Assets/Sophia/ScriptsSophia/StartButton.cs"
 "Assets/Sophia/ScriptsSophia/TalleresButton.cs"
 "Assets/Sophia/ScriptsSophia/UICardElement.cs"
+"Assets/Sophia/ScriptsSophia/UIToggleFilter.cs"
 -langversion:9.0
 /deterministic
 /optimize+
