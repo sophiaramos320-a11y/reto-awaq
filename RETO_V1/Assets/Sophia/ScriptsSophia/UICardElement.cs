@@ -12,24 +12,23 @@ public class UICardElement : MonoBehaviour
     private string webUrl; 
 
     private OrganizationData misDatos; 
-    private PopupManager popupManager; // Ya no se busca en el Start()
+    private PopupManager popupManager;
 
     void Start()
     {
-        // Escuchamos el click en la tarjeta entera (si tiene botón)
         if (GetComponent<Button>() != null)
         {
             GetComponent<Button>().onClick.AddListener(AlDarClick);
         }
         
-        // Escuchamos el click en el botón interno específico
+        
         if (actionButton != null)
         {
             actionButton.onClick.AddListener(AlDarClick);
         }
     }
 
-    // NUEVO: El ScrollListManager usará esto para darle el PopupManager directamente
+    
     public void SetPopupManager(PopupManager manager)
     {
         popupManager = manager;

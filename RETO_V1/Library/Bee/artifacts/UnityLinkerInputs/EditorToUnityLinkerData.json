@@ -2,6 +2,13 @@
     "serializedTypes": [],
     "typesInScenes": [
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "BackToMap",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "BuildSettings",
             "fullManagedTypeName": "",
@@ -23,20 +30,29 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "DialogueSystem",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "EditorExtension",
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -45,15 +61,17 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -69,15 +87,17 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -93,15 +113,17 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -117,16 +139,25 @@
             "fullManagedTypeName": "",
             "moduleName": "AI",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "OrgEscena",
+            "moduleName": "",
+            "usedInScenes": []
         },
         {
             "managedAssemblyName": "",
@@ -143,10 +174,24 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "PopupManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "ResourceManager",
             "fullManagedTypeName": "",
             "moduleName": "Core",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "RestaurantButton",
+            "moduleName": "",
             "usedInScenes": []
         },
         {
@@ -160,6 +205,20 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "SceneLoader",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "ScriptTallers",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "ScrollListManager",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -182,6 +241,20 @@
             "nativeClass": "StreamingManager",
             "fullManagedTypeName": "",
             "moduleName": "Streaming",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "TalleresButton",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.TextMeshPro.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "TMPro.TextMeshPro",
+            "moduleName": "",
             "usedInScenes": []
         },
         {
@@ -213,6 +286,29 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UICardElement",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UIToggleFilter",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AnimatorController",
+            "fullManagedTypeName": "UnityEditor.Animations.AnimatorController",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Scenes1/Mapa.unity"
+            ]
+        },
+        {
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "AudioManager",
             "fullManagedTypeName": "UnityEditor.AudioManager",
@@ -239,8 +335,17 @@
             "fullManagedTypeName": "UnityEditor.MonoScript",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -287,19 +392,39 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AnimationClip",
+            "fullManagedTypeName": "UnityEngine.AnimationClip",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Scenes1/Mapa.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Animator",
+            "fullManagedTypeName": "UnityEngine.Animator",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Scenes1/Mapa.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "AudioBehaviour",
             "fullManagedTypeName": "UnityEngine.AudioBehaviour",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -308,15 +433,17 @@
             "fullManagedTypeName": "UnityEngine.AudioListener",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -325,15 +452,17 @@
             "fullManagedTypeName": "UnityEngine.Behaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -342,7 +471,7 @@
             "fullManagedTypeName": "UnityEngine.BoxCollider2D",
             "moduleName": "Physics2D",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity"
+                "Assets/Scenes1/Mapa.unity"
             ]
         },
         {
@@ -351,15 +480,17 @@
             "fullManagedTypeName": "UnityEngine.Camera",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -368,7 +499,17 @@
             "fullManagedTypeName": "UnityEngine.Canvas",
             "moduleName": "UI",
             "usedInScenes": [
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -377,7 +518,16 @@
             "fullManagedTypeName": "UnityEngine.CanvasRenderer",
             "moduleName": "UI",
             "usedInScenes": [
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -386,7 +536,7 @@
             "fullManagedTypeName": "UnityEngine.Collider2D",
             "moduleName": "Physics2D",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity"
+                "Assets/Scenes1/Mapa.unity"
             ]
         },
         {
@@ -395,15 +545,17 @@
             "fullManagedTypeName": "UnityEngine.Component",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -412,15 +564,17 @@
             "fullManagedTypeName": "UnityEngine.Cubemap",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -443,7 +597,16 @@
             "fullManagedTypeName": "UnityEngine.Font",
             "moduleName": "TextRendering",
             "usedInScenes": [
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -452,15 +615,28 @@
             "fullManagedTypeName": "UnityEngine.GameObject",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Light",
+            "fullManagedTypeName": "UnityEngine.Light",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -469,15 +645,17 @@
             "fullManagedTypeName": "UnityEngine.LightmapSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -486,8 +664,27 @@
             "fullManagedTypeName": "UnityEngine.Material",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "MeshRenderer",
+            "fullManagedTypeName": "UnityEngine.MeshRenderer",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/Restaurantes.unity"
             ]
         },
         {
@@ -496,8 +693,26 @@
             "fullManagedTypeName": "UnityEngine.MonoBehaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Motion",
+            "fullManagedTypeName": "UnityEngine.Motion",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Scenes1/Mapa.unity"
             ]
         },
         {
@@ -506,15 +721,17 @@
             "fullManagedTypeName": "UnityEngine.Object",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -530,7 +747,17 @@
             "fullManagedTypeName": "UnityEngine.RectTransform",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -539,7 +766,15 @@
             "fullManagedTypeName": "UnityEngine.Renderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -555,15 +790,17 @@
             "fullManagedTypeName": "UnityEngine.RenderSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -572,7 +809,16 @@
             "fullManagedTypeName": "UnityEngine.Rigidbody2D",
             "moduleName": "Physics2D",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity"
+                "Assets/Scenes1/Mapa.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "RuntimeAnimatorController",
+            "fullManagedTypeName": "UnityEngine.RuntimeAnimatorController",
+            "moduleName": "Animation",
+            "usedInScenes": [
+                "Assets/Scenes1/Mapa.unity"
             ]
         },
         {
@@ -581,8 +827,17 @@
             "fullManagedTypeName": "UnityEngine.Shader",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -591,8 +846,17 @@
             "fullManagedTypeName": "UnityEngine.Sprite",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -601,7 +865,15 @@
             "fullManagedTypeName": "UnityEngine.SpriteRenderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -610,8 +882,17 @@
             "fullManagedTypeName": "UnityEngine.TextAsset",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -620,15 +901,17 @@
             "fullManagedTypeName": "UnityEngine.Texture",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -637,15 +920,17 @@
             "fullManagedTypeName": "UnityEngine.Texture2D",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -654,15 +939,17 @@
             "fullManagedTypeName": "UnityEngine.Transform",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/BibliotecaScene.unity",
-                "Assets/Scenes/CedroScene.unity",
-                "Assets/Scenes/CerezosScene.unity",
-                "Assets/Scenes/HorizontesScene.unity",
-                "Assets/Scenes/LagoScene.unity",
-                "Assets/Scenes/Mapa.unity",
-                "Assets/Scenes/NaranjosScene.unity",
-                "Assets/Scenes/RestauranteScene.unity",
-                "Assets/Sophia/ScenesSophia/Introduction.unity"
+                "Assets/Scenes1/BibliotecaScene.unity",
+                "Assets/Scenes1/CedroScene.unity",
+                "Assets/Scenes1/CerezosScene.unity",
+                "Assets/Scenes1/EdificioTalleres.unity",
+                "Assets/Scenes1/HorizontesScene.unity",
+                "Assets/Scenes1/Introduction.unity",
+                "Assets/Scenes1/Mapa.unity",
+                "Assets/Scenes1/NaranjosScene.unity",
+                "Assets/Scenes1/Recomendaciones.unity",
+                "Assets/Scenes1/Restaurantes.unity",
+                "Assets/Scenes1/Tutorial.unity"
             ]
         },
         {
@@ -682,6 +969,13 @@
         {
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.ContentSizeFitter",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.GraphicRaycaster",
             "moduleName": "",
             "usedInScenes": []
@@ -690,6 +984,55 @@
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.Image",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.Mask",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.RawImage",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.RectMask2D",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.Scrollbar",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.ScrollRect",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.Toggle",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.VerticalLayoutGroup",
             "moduleName": "",
             "usedInScenes": []
         }

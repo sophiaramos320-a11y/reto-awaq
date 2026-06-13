@@ -2,23 +2,23 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Video; // 1. IMPORTANTE: Agregamos la librería para controlar video
+using UnityEngine.Video;
 
 public class DialogueSystem : MonoBehaviour
 {
     [Header("Componentes de UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private GameObject ctaButton; // El botón web completo
+    [SerializeField] private GameObject ctaButton;
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private GameObject finalImage; // <-- NUEVO: Objeto de la imagen final
+    [SerializeField] private GameObject finalImage; 
 
     [Header("Componentes de Video")]
-    [SerializeField] private VideoPlayer foodVideoPlayer; // 2. Agregamos la referencia al VideoPlayer
+    [SerializeField] private VideoPlayer foodVideoPlayer;
 
     [Header("Configuración de Diálogo")]
-    [SerializeField] private float typingSpeed = 0.03f; // Velocidad del efecto typewriter
+    [SerializeField] private float typingSpeed = 0.03f;
 
-    // El arreglo con los 3 diálogos que redactamos
+    
     private string[] dialogueLines = new string[]
     {
         "¡Bienvenido a L’Umbria! Aquí ofrecemos una experiencia fresca y consciente, con un menú diverso que combina alta cocina internacional e ingredientes sustentables...",
@@ -37,21 +37,20 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        // Detecta si el jugador presiona Espacio, Enter o hace clic izquierdo para avanzar
+        
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
         {
             if (dialogueEnded) return;
 
             if (isTyping)
             {
-                // Si el texto se está escribiendo y el usuario presiona el botón, muestra todo el cuadro de inmediato
+                
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[currentLineIndex];
                 isTyping = false;
             }
             else
             {
-                // Si ya terminó de escribirse la línea actual, avanza a la siguiente
                 NextLine();
             }
         }
@@ -60,15 +59,14 @@ public class DialogueSystem : MonoBehaviour
     void StartDialogue()
     {
         dialoguePanel.SetActive(true);
-        ctaButton.SetActive(false); // Asegura que el CTA esté oculto al inicio
+        ctaButton.SetActive(false);
         
-        // <-- NUEVO: Asegura que la imagen esté oculta al iniciar la interacción
+        
         if (finalImage != null)
         {
             finalImage.SetActive(false);
         }
 
-        // 3. Aseguramos que el video esté apagado al iniciar la interacción
         if (foodVideoPlayer != null)
         {
             foodVideoPlayer.Stop(); 
@@ -82,9 +80,9 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TypeText(string line)
     {
         isTyping = true;
-        dialogueText.text = ""; // Limpia el cuadro anterior
+        dialogueText.text = "";
 
-        // Va agregando letra por letra
+        
         foreach (char letter in line.ToCharArray())
         {
             dialogueText.text += letter;
@@ -98,14 +96,14 @@ public class DialogueSystem : MonoBehaviour
     {
         currentLineIndex++;
 
-        // Si aún hay líneas disponibles en el arreglo
+        
         if (currentLineIndex < dialogueLines.Length)
         {
             StartCoroutine(TypeText(dialogueLines[currentLineIndex]));
         }
         else
         {
-            // Fin del diálogo: Aquí activamos la interacción final
+            
             EndDialogue();
         }
     }
@@ -115,19 +113,19 @@ public class DialogueSystem : MonoBehaviour
         dialogueEnded = true;
         isTyping = false;
         
-        // Activamos el botón de CTA justo al final del tercer diálogo
+       
         if (ctaButton != null)
         {
             ctaButton.SetActive(true);
         }
 
-        // <-- NUEVO: El diálogo terminó, encendemos la imagen
+        
         if (finalImage != null)
         {
             finalImage.SetActive(true);
         }
 
-        // 4. ¡ACCIÓN! El diálogo terminó, encendemos el video de la comida
+        
         if (foodVideoPlayer != null)
         {
             foodVideoPlayer.Play();

@@ -5,14 +5,26 @@
         "name": "Animation",
         "dependencies": [
           {
+            "name": "AnimationClip",
+            "scenes": [
+              "Assets/Scenes1/Mapa.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Animator",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes1/Mapa.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AnimatorController",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes1/Mapa.unity"
+            ],
             "dependencyType": 1,
             "icon": null
           },
@@ -20,6 +32,12 @@
             "name": "AnimatorOverrideController",
             "scenes": [],
             "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Motion",
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -36,15 +54,17 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -58,15 +78,17 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -88,6 +110,12 @@
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
           }
         ]
       },
@@ -109,15 +137,17 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -137,15 +167,17 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -165,15 +197,17 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -187,15 +221,17 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -221,22 +257,28 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 1,
             "icon": null
           },
           {
             "name": "Light",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -255,15 +297,17 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -277,8 +321,17 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -297,15 +350,27 @@
           },
           {
             "name": "MeshRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/Restaurantes.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -319,8 +384,17 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -328,15 +402,17 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -368,7 +444,17 @@
           {
             "name": "RectTransform",
             "scenes": [
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -382,15 +468,17 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/BibliotecaScene.unity",
-              "Assets/Scenes/CedroScene.unity",
-              "Assets/Scenes/CerezosScene.unity",
-              "Assets/Scenes/HorizontesScene.unity",
-              "Assets/Scenes/LagoScene.unity",
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Scenes/NaranjosScene.unity",
-              "Assets/Scenes/RestauranteScene.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -403,10 +491,8 @@
           },
           {
             "name": "Renderer",
-            "scenes": [
-              "Assets/Scenes/Mapa.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -424,8 +510,17 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -445,8 +540,17 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/Scenes/Mapa.unity",
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -460,7 +564,15 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
-              "Assets/Scenes/Mapa.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -548,6 +660,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.identifiers"
+          },
+          {
+            "name": "Required by ImageConversion Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.imageconversion"
           },
           {
             "name": "Required by InputForUI Module",
@@ -664,6 +782,18 @@
             "icon": "package/com.unity.modules.unitywebrequest"
           },
           {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
@@ -713,6 +843,17 @@
       {
         "name": "Identifiers",
         "dependencies": []
+      },
+      {
+        "name": "ImageConversion",
+        "dependencies": [
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          }
+        ]
       },
       {
         "name": "InputForUI",
@@ -830,7 +971,7 @@
           {
             "name": "BoxCollider2D",
             "scenes": [
-              "Assets/Scenes/Mapa.unity"
+              "Assets/Scenes1/Mapa.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -850,7 +991,7 @@
           {
             "name": "Rigidbody2D",
             "scenes": [
-              "Assets/Scenes/Mapa.unity"
+              "Assets/Scenes1/Mapa.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -934,6 +1075,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.identifiers"
+          },
+          {
+            "name": "Required by ImageConversion Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.imageconversion"
           },
           {
             "name": "Required by InputForUI Module",
@@ -1050,6 +1197,18 @@
             "icon": "package/com.unity.modules.unitywebrequest"
           },
           {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1101,6 +1260,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.identifiers"
+          },
+          {
+            "name": "Required by ImageConversion Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.imageconversion"
           },
           {
             "name": "Required by InputForUI Module",
@@ -1223,6 +1388,18 @@
             "icon": "package/com.unity.modules.unitywebrequest"
           },
           {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1244,6 +1421,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.unitywebrequest"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
           }
         ]
       },
@@ -1287,7 +1470,16 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1330,7 +1522,17 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/Mapa.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1344,7 +1546,16 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/Sophia/ScenesSophia/Introduction.unity"
+              "Assets/Scenes1/BibliotecaScene.unity",
+              "Assets/Scenes1/CedroScene.unity",
+              "Assets/Scenes1/CerezosScene.unity",
+              "Assets/Scenes1/EdificioTalleres.unity",
+              "Assets/Scenes1/HorizontesScene.unity",
+              "Assets/Scenes1/Introduction.unity",
+              "Assets/Scenes1/NaranjosScene.unity",
+              "Assets/Scenes1/Recomendaciones.unity",
+              "Assets/Scenes1/Restaurantes.unity",
+              "Assets/Scenes1/Tutorial.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1354,6 +1565,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
           }
         ]
       },
@@ -1425,6 +1642,33 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.unityanalytics"
+          },
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
+            "name": "Required by Video Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.video"
+          }
+        ]
+      },
+      {
+        "name": "UnityWebRequestTexture",
+        "dependencies": []
+      },
+      {
+        "name": "Video",
+        "dependencies": [
+          {
+            "name": "VideoPlayer",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },

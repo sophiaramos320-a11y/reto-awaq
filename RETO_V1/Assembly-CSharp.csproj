@@ -58,10 +58,10 @@
     <Compile Include="Assets\Sophia\ScriptsSophia\ScriptTallers.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\StartButton.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\UICardElement.cs" />
+    <Compile Include="Assets\Sophia\Scripts\OrgEscena.cs" />
     <Compile Include="Assets\Damaris\Scripts\BackToMap.cs" />
     <Compile Include="Assets\Damaris\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Damaris\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Sophia\ScriptsSophia\GeneradorHorario.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\PopupManager.cs" />
     <Compile Include="Assets\Sophia\ScriptsSophia\UIToggleFilter.cs" />
     <Compile Include="Assets\Sophia\Scripts\Camera.cs" />

@@ -9,31 +9,43 @@ EditorBuildSettings:
     path: Assets/Scenes/Part1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Sophia/ScenesSophia/Introduction.unity
+    path: Assets/Scenes1/Introduction.unity
     guid: 5cab34fd5a5989d4ab29612b982244f6
   - enabled: 1
-    path: Assets/Scenes/Mapa.unity
+    path: Assets/Scenes1/Mapa.unity
     guid: 8c19dde3c004af24dafda0da31158f4a
   - enabled: 1
-    path: Assets/Scenes/BibliotecaScene.unity
+    path: Assets/Scenes1/BibliotecaScene.unity
     guid: 9ad90f8ff732c8f4a99506659da5b35e
   - enabled: 1
-    path: Assets/Scenes/CedroScene.unity
+    path: Assets/Scenes1/CedroScene.unity
     guid: 03dc58fea8744564daf577683d23be71
   - enabled: 1
-    path: Assets/Scenes/CerezosScene.unity
+    path: Assets/Scenes1/CerezosScene.unity
     guid: cf0093596d9eb1741a3631ef202aaced
   - enabled: 1
-    path: Assets/Scenes/HorizontesScene.unity
+    path: Assets/Scenes1/HorizontesScene.unity
     guid: 3ab7c4445d6ddc34ca66645efb81afbb
-  - enabled: 1
-    path: Assets/Scenes/LagoScene.unity
+  - enabled: 0
+    path: Assets/Scenes1/LagoScene.unity
     guid: cd11f834adfc9d54184d2bcd4ff7f790
   - enabled: 1
-    path: Assets/Scenes/NaranjosScene.unity
+    path: Assets/Scenes1/NaranjosScene.unity
     guid: 83919f181f1b1d442bfbb92f12bb4388
-  - enabled: 1
-    path: Assets/Scenes/RestauranteScene.unity
+  - enabled: 0
+    path: Assets/Scenes1/RestauranteScene.unity
     guid: 623ed61edd346154bb8b5aed53bd482c
+  - enabled: 1
+    path: Assets/Scenes1/EdificioTalleres.unity
+    guid: 6622cefcb1b7c0c4b9214f2e2299e8cd
+  - enabled: 1
+    path: Assets/Scenes1/Recomendaciones.unity
+    guid: 6ce8e0fa51bdaad4ab37e97cb6695143
+  - enabled: 1
+    path: Assets/Scenes1/Restaurantes.unity
+    guid: 4012f9263268ef340aaa12e14d9cfacd
+  - enabled: 1
+    path: Assets/Scenes1/Tutorial.unity
+    guid: 25d90941c1dd11544808db5d919cb81c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

@@ -8357,6 +8357,647 @@ function dbg(text) {
   	return !!Module.shouldQuit;
   }
 
+  var videoInstances = {};
+  var jsSupportedVideoFormats = [];
+  
+  var jsUnsupportedVideoFormats = [];
+  
+  
+  
+  function _JS_Video_CanPlayFormat(format)
+  {
+  	format = UTF8ToString(format);
+  	if (jsSupportedVideoFormats.indexOf(format) != -1) return true;
+  	if (jsUnsupportedVideoFormats.indexOf(format) != -1) return false;
+  	var video = document.createElement('video');
+  	var canPlay = video.canPlayType(format);
+  	if (canPlay) jsSupportedVideoFormats.push(format);
+  	else jsUnsupportedVideoFormats.push(format);
+  	return !!canPlay;
+  }
+
+  
+  var videoInstanceIdCounter = 0;
+  
+  
+  function jsVideoEnded() {
+  	var cb = this.onendedCallback;
+  	if (cb) getWasmTableEntry(cb)(this.onendedRef);
+  }
+  
+  var hasSRGBATextures = null;
+  
+  
+  function jsIsWebkit() {
+  	if (Module.SystemInfo.os == "iPhoneOS" || Module.SystemInfo.os == "iPadOS")
+  		return true;
+  
+      if (!navigator.userAgent.includes("AppleWebKit"))
+  		return false;
+  
+  	return Module.SystemInfo.browser === "Safari";
+  }
+  
+  
+  function _JS_Video_Create(url)
+  {
+  	var str = UTF8ToString(url);
+  	var video = document.createElement('video');
+  	video.style.display = 'none';
+  
+  	// Some browsers signal readiness by emitting the 'loaddata' event (Safari), others with
+  	// the video frame callback (Chrome). Supporting both.
+  	function loadedDataListener()
+  	{
+  		video.removeEventListener('loadeddata', loadedDataListener);
+  		video.isLoaded = true;
+  	}
+  	video.addEventListener('loadeddata', loadedDataListener);
+  
+  	if (/Chrome/i.test(navigator.userAgent) && typeof video.requestVideoFrameCallback === 'function')
+  	{
+  		// Chromium-based browsers have a hiccup early on in playback, between .5 and 1s after
+  		// start, that causes them to report frame updates without actually updating pixels (see
+  		// UUM-111608). Installing a recurring video frame callback influences the browser's
+  		// rendering/compositing scheduling in a way that eliminates the issue on all tested
+  		// browsers as of this writing (e.g.: version 139.0.7258.67 on Mac/Intel macOS 15.5).
+  		function updateHiccupWorkaround(now, metadata)
+  		{
+  			video.requestVideoFrameCallback(updateHiccupWorkaround);
+  		}
+  
+  		// We manage the "loaded" state explicitly via this initial callback for Chromium-based
+  		// browsers, or else the first frame never shows up after calling Pause(). But it causes
+  		// Safari to report the first frame of webms as loaded even if it isn't, so this really
+          // is a Chromium-specific quirk.
+  		video.requestVideoFrameCallback(function() {
+  			video.isLoaded = true;
+  		    video.requestVideoFrameCallback(updateHiccupWorkaround);
+  		});
+  	}
+  
+  	video.src = str;
+  	video.muted = true;
+  	// Fix for iOS: Set muted and playsinline attribute to disable fullscreen playback
+  	video.setAttribute("muted", "");
+  	video.setAttribute("playsinline", "");
+  
+  	// Enable CORS on the request fetching the video so the browser accepts
+  	// playing it.  This is needed since the data is fetched and used
+  	// programmatically - rendering into a canvas - and not displayed normally.
+  	video.crossOrigin = "anonymous";
+  
+  	videoInstances[++videoInstanceIdCounter] = video;
+  
+  	// Firefox (older than ver. 108) and Webkit have a bug that makes GLctx.SRGB8_ALPHA8 not work consistently.
+  	// This means linearized video textures will not have an alpha channel until we can get
+  	// that format working consistently.
+  	// https://bugzilla.mozilla.org/show_bug.cgi?id=1696693
+  	// https://bugs.webkit.org/show_bug.cgi?id=222822
+  	if (hasSRGBATextures == null)
+  	{
+  		hasSRGBATextures = true;
+  
+  		if (Module.SystemInfo.browser == "Firefox" && Module.SystemInfo.browserVersion < 108)
+  			hasSRGBATextures = false;
+  
+  		if (jsIsWebkit())
+  			hasSRGBATextures = false;
+  	}
+  
+  	return videoInstanceIdCounter;
+  }
+
+  var jsVideoPendingBlockedVideos = {};
+  
+  
+  
+  
+  
+  function jsVideoPlayPendingBlockedVideo(video) {
+  	jsVideoPendingBlockedVideos[video].play().then(function() {
+  		var v = jsVideoPendingBlockedVideos[video];
+  		jsVideoRemovePendingBlockedVideo(video);
+  		// WebGPU can't import the video frame until it has been completely loaded, as notified by
+  		// requestVideoFrameCallback
+  		if (typeof v.requestVideoFrameCallback === 'function')
+  			v.requestVideoFrameCallback(function() {
+  				v.isLoaded = true;
+  			});
+  	});
+  }
+  
+  
+  function jsVideoAttemptToPlayBlockedVideos() {
+  	for (var i in jsVideoPendingBlockedVideos) {
+  		if (jsVideoPendingBlockedVideos.hasOwnProperty(i)) jsVideoPlayPendingBlockedVideo(i);
+  	}
+  }
+  
+  function jsVideoRemovePendingBlockedVideo(video) {
+  	delete jsVideoPendingBlockedVideos[video];
+  	if (Object.keys(jsVideoPendingBlockedVideos).length == 0) {
+  		window.removeEventListener('mousedown', jsVideoAttemptToPlayBlockedVideos);
+  		window.removeEventListener('touchstart', jsVideoAttemptToPlayBlockedVideos);
+  	}
+  }
+  
+  function _JS_Video_Destroy(video)
+  {
+  	var v = videoInstances[video];
+  	if (v.loopEndPollInterval) {
+  		clearInterval(v.loopEndPollInterval);
+  	}
+  	jsVideoRemovePendingBlockedVideo(video);
+  	// Reset video source to cancel download of video file
+  	v.src = "";
+  	// Clear the registered event handlers so that we won't get any events from phantom videos.
+  	delete v.onendedCallback;
+  	v.onended = v.onerror = v.oncanplay = v.onseeked = null;
+  	// And let browser GC the video object itself.
+  	delete videoInstances[video];
+  }
+
+  function _JS_Video_Duration(video)
+  {
+  	return videoInstances[video].duration;
+  }
+
+  function _JS_Video_EnableAudioTrack(video, trackIndex, enabled)
+  {
+  	var v = videoInstances[video];
+  
+  	// Keep a manual track of enabled audio tracks for browsers that
+  	// do not support the <video>.audioTracks property
+  	if (!v.enabledTracks) v.enabledTracks = [];
+  	while (v.enabledTracks.length <= trackIndex) v.enabledTracks.push(true);
+  	v.enabledTracks[trackIndex] = enabled;
+  
+  	// Apply the enabled state to the audio track if browser supports it.
+  	var tracks = v.audioTracks;
+  	if (!tracks)
+  		return;
+  	var track = tracks[trackIndex];
+  	if (track)
+  		track.enabled = enabled ? true : false;
+  }
+
+  function _JS_Video_GetAudioLanguageCode(video, trackIndex, buffer, bufferSize)
+  {
+  	// See note in JS_Video_GetNumAudioTracks about the presence of 'audioTracks' property.
+  	var tracks = videoInstances[video].audioTracks;
+  	if (!tracks)
+  		return 0;
+  
+  	// Language may not be set in the track, but the web browser may also not be supporting
+  	// track language for some formats.
+  	var track = tracks[trackIndex];
+  	if (!track || !track.language)
+  		return 0;
+  
+  	if (buffer)
+  		stringToUTF8(track.language, buffer, bufferSize);
+  
+  	return lengthBytesUTF8(track.language);
+  }
+
+  function _JS_Video_GetNumAudioTracks(video)
+  {
+  	// For browsers that don't support the audioTracks property, let's assume
+  	// there is a single audio track.
+  	// As of this writing, 'audioTracks' property is not supported across the board. See
+  	//
+  	// https://caniuse.com/mdn-api_htmlmediaelement_audiotracks
+  	//
+  	// It can be enabled through experimental browser flags, but even there may not properly
+  	// reveal the number of tracks in the source.
+  	var tracks = videoInstances[video].audioTracks;
+  	return tracks ? tracks.length : 1;
+  }
+
+  function _JS_Video_GetPlaybackRate(video)
+  {
+  	return videoInstances[video].playbackRate;
+  }
+
+  function _JS_Video_Height(video)
+  {
+  	return videoInstances[video].videoHeight;
+  }
+
+  function _JS_Video_IsPlaying(video)
+  {
+  	var v = videoInstances[video];
+  	return !v.paused && !v.ended;
+  }
+
+  function _JS_Video_IsReady(video)
+  {
+  	var v = videoInstances[video];
+  	// Fix for iOS: readyState is only set to have HAVE_METADATA
+  	// until video.play() is called.
+  	// Fix for Firefox: when the network bandwidth is low, after multiple video.play() calls, the video readyState changes to HAVE_FUTURE_DATA.
+  	// Firefox bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1927698
+  	// Wait for HAVE_ENOUGH_DATA on other platforms.
+  	var targetReadyState = /(iPhone|iPad)/i.test(navigator.userAgent) ? v.HAVE_METADATA : /(Firefox)/i.test(navigator.userAgent) ? v.HAVE_FUTURE_DATA : v.HAVE_ENOUGH_DATA;
+  
+  	if (!v.isReady &&
+  		v.readyState >= targetReadyState)
+  		v.isReady = true;
+  	return v.isReady;
+  }
+
+  function _JS_Video_IsSeeking(video)
+  {
+  	var v = videoInstances[video];
+  	return v.seeking;
+  }
+
+  function _JS_Video_LastUpdateTime(video)
+  {
+  	return videoInstances[video].lastUpdateTextureTime;
+  }
+
+  
+  function _JS_Video_Pause(video)
+  {
+  	var v = videoInstances[video];
+  	v.pause();
+  
+  	jsVideoRemovePendingBlockedVideo(video);
+  
+  	// Clear loop end polling, if one is in effect, to conserve performance.
+  	if (v.loopEndPollInterval) {
+  		clearInterval(v.loopEndPollInterval);
+  	}
+  }
+
+  
+  function _JS_Video_SetLoop(video, loop)
+  {
+  	var v = videoInstances[video];
+  	if (v.loopEndPollInterval) {
+  		clearInterval(v.loopEndPollInterval);
+  	}
+  
+  	v.loop = loop;
+  	if (loop) {
+  		// When video is looping, we must manually poll to observe the completion
+  		// of a loop iteration. See https://bugzilla.mozilla.org/show_bug.cgi?id=1668591
+  		v.loopEndPollInterval = setInterval(function() {
+  			var cur = v.currentTime;
+  			var last = v.lastSeenPlaybackTime;
+  			if (cur < last) {
+  				// If time rewinds, we need to make sure it rewinds "enough" because
+  				// time sometimes rewinds "just a bit" while we're adjusting playback
+  				// speed to help keeping up with the clock source.
+  				var dur = v.duration;
+  				var margin = 0.2;
+  				var closeToBegin = margin * dur;
+  				var closeToEnd = dur - closeToBegin;
+  				if (cur < closeToBegin && last > closeToEnd)
+  					jsVideoEnded.apply(v);
+  			}
+  			v.lastSeenPlaybackTime = v.currentTime;
+  		}, 1000/30); // Poll loop completion at at 30fps
+  		v.lastSeenPlaybackTime = v.currentTime;
+  		v.onended = null;
+  	} else {
+  		// When video is not looping, we can use the usual onended handler.
+  		v.onended = jsVideoEnded;
+  	}
+  }
+  
+  function jsVideoAllAudioTracksAreDisabled(v) {
+  
+  	if (!v.enabledTracks)
+  	{
+  		// If we have not yet configured audio tracks, default to assuming we have one enabled track
+  		// unless we can see the number of audio tracks in the (optional)
+  		// HTMLMediaElement.audioTracks member.
+  		if (!v.audioTracks)
+  			return false;
+  
+  		return v.audioTracks.length == 0;
+  	}
+  
+  	// Check if none of the audio tracks are currenly enabled.
+  	for (var i = 0; i < v.enabledTracks.length; ++i) {
+  		if (v.enabledTracks[i])
+  			return false;
+  	}
+  	return true;
+  }
+  
+  
+  
+  function jsVideoAddPendingBlockedVideo(video, v) {
+  	if (Object.keys(jsVideoPendingBlockedVideos).length == 0) {
+  		window.addEventListener('mousedown', jsVideoAttemptToPlayBlockedVideos, true);
+  		window.addEventListener('touchstart', jsVideoAttemptToPlayBlockedVideos, true);
+  	}
+  
+  	jsVideoPendingBlockedVideos[video] = v;
+  }
+  
+  function _JS_Video_Play(video, muted)
+  {
+  	var v = videoInstances[video];
+  	v.muted = muted || jsVideoAllAudioTracksAreDisabled(v);
+  	var promise = v.play();
+  	if (promise) promise.catch(function(e) {
+  		if (e.name == 'NotAllowedError') jsVideoAddPendingBlockedVideo(video, v);
+  	});
+  	// WebGPU can't import the video frame until it has been completely loaded, as notified by requestVideoFrameCallback
+  	if (typeof v.requestVideoFrameCallback === 'function')
+  		v.requestVideoFrameCallback(function() {
+  			v.isLoaded = true;
+  		});
+  
+  	// Set up the loop ended handler.
+  	_JS_Video_SetLoop(video, v.loop);
+  }
+
+  function _JS_Video_Seek(video, time)
+  {
+  	var v = videoInstances[video];
+  	v.lastSeenPlaybackTime = v.currentTime = time;
+  }
+
+  function _JS_Video_SetEndedHandler(video, ref, onended)
+  {
+  	var v = videoInstances[video];
+  	v.onendedCallback = onended;
+  	v.onendedRef = ref;
+  }
+
+  
+  function _JS_Video_SetErrorHandler(video, ref, onerror)
+  {
+  	videoInstances[video].onerror = function(evt) {
+  		getWasmTableEntry(onerror)(ref, evt.target.error.code);
+  	};
+  }
+
+
+  
+  function _JS_Video_SetMute(video, muted)
+  {
+  	var v = videoInstances[video];
+  	v.muted = muted || jsVideoAllAudioTracksAreDisabled(v);
+  }
+
+  function _JS_Video_SetPlaybackRate(video, rate)
+  {
+  	videoInstances[video].playbackRate = rate;
+  }
+
+  
+  function _JS_Video_SetReadyHandler(video, ref, onready)
+  {
+  	videoInstances[video].oncanplay = function() {
+  		getWasmTableEntry(onready)(ref);
+  	};
+  }
+
+  
+  function _JS_Video_SetSeekedHandler(video, ref, onseeked)
+  {
+  	videoInstances[video].onseeked = function() {
+  		var v = videoInstances[video];
+  		// Clear the last update time so that the next texture update is not ignored.
+  		// The seek is triggered by setting currentTime, so when it settles, there will
+  		// not necessarily be a change of currentTime (e.g.: Safari does nudge the time
+  		// value a bit if needed to be perfectly aligned on frame boundary, but not
+  		// Chrome/macOS).
+  		v.lastUpdateTextureTime = null;
+  		getWasmTableEntry(onseeked)(ref);
+  	}
+  }
+
+  function _JS_Video_SetVolume(video, volume)
+  {
+  	videoInstances[video].volume = volume;
+  }
+
+  function _JS_Video_Time(video)
+  {
+  	return videoInstances[video].currentTime;
+  }
+
+  function jsVideoCreateTexture2D() {
+          var t = GLctx.createTexture();
+          GLctx.bindTexture(GLctx.TEXTURE_2D, t);
+          GLctx.texParameteri(GLctx.TEXTURE_2D, GLctx.TEXTURE_WRAP_S, GLctx.CLAMP_TO_EDGE);
+          GLctx.texParameteri(GLctx.TEXTURE_2D, GLctx.TEXTURE_WRAP_T, GLctx.CLAMP_TO_EDGE);
+          GLctx.texParameteri(GLctx.TEXTURE_2D, GLctx.TEXTURE_MIN_FILTER, GLctx.LINEAR);
+          return t;
+  }
+  
+  
+  var s2lTexture = null;
+  
+  var s2lFBO = null;
+  
+  var s2lVBO = null;
+  
+  var s2lProgram = null;
+  
+  var s2lVertexPositionNDC = null;
+  
+  function _JS_Video_UpdateToTexture(video, tex, adjustToLinearspace)
+  {
+  	var v = videoInstances[video];
+  
+  	// Some browsers (Fireforx)	do not support the requestVideoFrameCallback API, so we cannot use v.isLoaded
+  	if (typeof v.requestVideoFrameCallback === 'function')
+  	{
+  		if (!v.isLoaded)
+  			return false;
+  	}
+  	else
+  	{
+  		if (!v.isReady)
+  			return false;
+  	}
+  
+  	// If the source video has not yet loaded (size is reported as 0), ignore uploading
+  	// The videoReady property is set when the play promise resolves. The video isn't truly
+  	// ready, even if its resolution properties have been updated, until that promise resolves.
+  	if (!(v.videoWidth > 0 && v.videoHeight > 0))
+  		return false;
+  
+  	// If video is still going on the same video frame as before, ignore reuploading as well
+  	if (v.lastUpdateTextureTime === v.currentTime)
+  		return false;
+  
+  	// While seeking, currentTime will already have the new destination time, but the onseeked
+  	// callback has not been invoked yet, meaning the returned image is not updated (or at least,
+  	// this is undefined). So we avoid updating the texture during seek so that our frameReady
+  	// callbacks won't become ambiguous.
+  	if (v.seeking)
+  		return false;
+  
+  	v.lastUpdateTextureTime = v.currentTime;
+  
+  	GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, true);
+  
+  	// Instead of using GLcx.SRGB8_ALPHA8 or GLctx.SRGB8 for the internal format when linearizing
+  	// (and let the driver deal with the conversion) we perform the conversion to linear using a
+  	// shader to bypass performance issues observed on many browsers (Safari, Chrome/Win, Chrome/Mac,
+  	// Edge).
+  	//
+  	// For example, the frame rate drop when converting a 1080p clip to linear on these browsers
+  	// on Windows was from ~30fps (without linearization) to 17fps with linearization, and from 60
+  	// fps to 38 on Mac (test systems differed, but the relative fps drop is what matters).
+  	var internalFormat = adjustToLinearspace ? (hasSRGBATextures ? GLctx.RGBA : GLctx.RGB) : GLctx.RGBA;
+  	var format = adjustToLinearspace ? (hasSRGBATextures ? GLctx.RGBA : GLctx.RGB) : GLctx.RGBA;
+  
+  	// It is not possible to get the source pixel aspect ratio of the video from
+  	// HTMLViewElement, which is problematic when we get anamorphic content. The videoWidth &
+  	// videoHeight properties report the frame size _after_ the pixel aspect ratio stretch has
+  	// been applied, but without this ratio ever being exposed. The caller has presumably
+  	// created the destination texture using the width/height advertized with the
+  	// post-pixel-aspect-ratio info (from JS_Video_Width and JS_Video_Height), which means it
+  	// may be incorrectly sized. As a workaround, we re-create the texture _without_
+  	// initializing its storage. The call to texImage2D ends up creating the appropriately-sized
+  	// storage. This may break the caller's assumption if the texture was created with properties
+  	// other than what is selected below. But for the specific (and currently dominant) case of
+  	// using Video.js with the VideoPlayer, this provides a workable solution.
+  	//
+  	// We do this texture re-creation every time we notice the videoWidth/Height has changed in
+  	// case the stream changes resolution.
+  	//
+  	// We could constantly call texImage2D instead of using texSubImage2D on subsequent calls,
+  	// but texSubImage2D has less overhead because it does not reallocate the storage.
+  	if (v.previousUploadedWidth != v.videoWidth || v.previousUploadedHeight != v.videoHeight) {
+  		GLctx.deleteTexture(GL.textures[tex]);
+  		var t = jsVideoCreateTexture2D();
+  		t.name = tex;
+  		GL.textures[tex] = t;
+  
+  		v.previousUploadedWidth = v.videoWidth;
+  		v.previousUploadedHeight = v.videoHeight;
+  
+  		if (adjustToLinearspace) {
+  			GLctx.texImage2D(GLctx.TEXTURE_2D, 0, internalFormat, v.videoWidth, v.videoHeight, 0, format, GLctx.UNSIGNED_BYTE, null);
+  			if (!s2lTexture) {
+  				s2lTexture = jsVideoCreateTexture2D();
+  			} else {
+  				GLctx.bindTexture(GLctx.TEXTURE_2D, s2lTexture);
+  			}
+  		}
+  
+  		GLctx.texImage2D(GLctx.TEXTURE_2D, 0, internalFormat, format, GLctx.UNSIGNED_BYTE, v);
+  	} else {
+  		if (adjustToLinearspace) {
+  			if (!s2lTexture) {
+  				s2lTexture = jsVideoCreateTexture2D();
+  			} else {
+  				GLctx.bindTexture(GLctx.TEXTURE_2D, s2lTexture);
+  			}
+  		} else {
+  			GLctx.bindTexture(GLctx.TEXTURE_2D, GL.textures[tex]);
+  		}
+  		// Using texSubImage2D here would seem like the right thing to do for better
+  		// performance. However, this produces errors on (at least) Chrome/Mac, Chrome/Win
+  		// and Edge. The error is
+  		//
+  		//     GL_INVALID_OPERATION: The destination level of the destination texture must be defined.
+  		//
+  		// texSubImage2D does work on Firefox/Mac and Safari so we could enable this better
+  		// path on these browsers for better performance (at the cost of having more
+  		// complexity for browsers that are far from the majority).
+  		GLctx.texImage2D(GLctx.TEXTURE_2D, 0, internalFormat, format, GLctx.UNSIGNED_BYTE, v);
+  	}
+  
+  	GLctx.pixelStorei(GLctx.UNPACK_FLIP_Y_WEBGL, false);
+  
+  	if (adjustToLinearspace) {
+  		if (s2lProgram == null) {
+  			var vertexShaderCode = `precision lowp float;
+  				attribute vec2 vertexPositionNDC;
+  				varying vec2 vTexCoords;
+  				const vec2 scale = vec2(0.5, 0.5);
+  				void main() {
+  				    vTexCoords = vertexPositionNDC * scale + scale; // scale vertex attribute to [0,1] range
+  				    gl_Position = vec4(vertexPositionNDC, 0.0, 1.0);
+  				}`;
+  
+  			var fragmentShaderCode = `precision mediump float;
+  				uniform sampler2D colorMap;
+  				varying vec2 vTexCoords;
+  				vec4 toLinear(vec4 sRGB) {
+  				    vec3 c = sRGB.rgb;
+  				    return vec4(c * (c * (c * 0.305306011 + 0.682171111) + 0.012522878), sRGB.a);
+  				}
+  				void main() {
+  				    gl_FragColor = toLinear(texture2D(colorMap, vTexCoords));
+  				}`;
+  
+  			var vertexShader = GLctx.createShader(GLctx.VERTEX_SHADER);
+  			GLctx.shaderSource(vertexShader, vertexShaderCode);
+  			GLctx.compileShader(vertexShader);
+  
+  			var fragmentShader = GLctx.createShader(GLctx.FRAGMENT_SHADER);
+  			GLctx.shaderSource(fragmentShader, fragmentShaderCode);
+  			GLctx.compileShader(fragmentShader);
+  
+  			s2lProgram = GLctx.createProgram();
+  			GLctx.attachShader(s2lProgram, vertexShader);
+  			GLctx.attachShader(s2lProgram, fragmentShader);
+  			GLctx.linkProgram(s2lProgram);
+  
+  			s2lVertexPositionNDC = GLctx.getAttribLocation(s2lProgram, "vertexPositionNDC");
+  		}
+  
+  		if (s2lVBO == null) {
+  			s2lVBO = GLctx.createBuffer();
+  			GLctx.bindBuffer(GLctx.ARRAY_BUFFER, s2lVBO);
+  
+  			var verts = [
+  				// First triangle
+  				1.0,  1.0,
+  				-1.0,  1.0,
+  				-1.0, -1.0,
+  				// Second triangle
+  				-1.0, -1.0,
+  				1.0, -1.0,
+  				1.0,  1.0
+  			];
+  			GLctx.bufferData(GLctx.ARRAY_BUFFER, new Float32Array(verts), GLctx.STATIC_DRAW);
+  		}
+  
+  		if (!s2lFBO) {
+  			s2lFBO = GLctx.createFramebuffer();
+  		}
+  
+  		GLctx.bindFramebuffer(GLctx.FRAMEBUFFER, s2lFBO);
+  		GLctx.framebufferTexture2D(GLctx.FRAMEBUFFER, GLctx.COLOR_ATTACHMENT0, GLctx.TEXTURE_2D, GL.textures[tex], 0);
+  		GLctx.bindTexture(GLctx.TEXTURE_2D, s2lTexture);
+  
+  		GLctx.viewport(0, 0, v.videoWidth, v.videoHeight);
+  		GLctx.useProgram(s2lProgram);
+  		GLctx.bindBuffer(GLctx.ARRAY_BUFFER, s2lVBO);
+  		GLctx.enableVertexAttribArray(s2lVertexPositionNDC);
+  		GLctx.vertexAttribPointer(s2lVertexPositionNDC, 2, GLctx.FLOAT, false, 0, 0);
+  		GLctx.disable(GLctx.CULL_FACE);
+  		GLctx.drawArrays(GLctx.TRIANGLES, 0, 6);
+  
+  		// Have to reset the viewport rect ourselves, otherwise further drawing in
+  		// the scene will use the wrong viewport.
+  		GLctx.viewport(0, 0, GLctx.canvas.width, GLctx.canvas.height);
+  		GLctx.bindFramebuffer(GLctx.FRAMEBUFFER, null);
+  	}
+  
+  	return true;
+  }
+
+  function _JS_Video_Width(video)
+  {
+  	return videoInstances[video].videoWidth;
+  }
+
   var activeWebCams = {};
   function _JS_WebCamVideo_GetNativeHeight(deviceId) {
   		return activeWebCams[deviceId] && activeWebCams[deviceId].video.videoHeight;
@@ -8396,11 +9037,6 @@ function dbg(text) {
   		return 1; // Managed to capture a frame
   	}
 
-  function _JS_WebGPU_SetCommandEncoder(encoder)
-      {
-          Module["WebGPU"].commandEncoder = encoder;
-      }
-
   function utf8(ptr) {
       return UTF8ToString(ptr);
     }
@@ -8410,6 +9046,49 @@ function dbg(text) {
       return ptr >>> shift;
     }
   var wgpu = {};
+  
+  
+  var wgpuIdCounter = 2;
+  function wgpuStore(object) {
+      if (object) {
+        // WebGPU renderer usage can burn through a lot of object IDs each rendered frame
+        // (a number of GPUCommandEncoder, GPUTexture, GPUTextureView, GPURenderPassEncoder,
+        // GPUCommandBuffer objects are created each application frame)
+        // If we assume an upper bound of 1000 object IDs created per rendered frame, and a
+        // new mobile device with 120hz display, a signed int32 state space is exhausted in
+        // 2147483646 / 1000 / 120 / 60 / 60 = 4.97 hours, which is realistic for a page to
+        // stay open for that long. Therefore handle wraparound of the ID counter generation,
+        // and find free gaps in the object IDs for new objects.
+        while(wgpu[wgpuIdCounter]) wgpuIdCounter = wgpuIdCounter < 2147483647 ? wgpuIdCounter + 1 : 2;
+  
+        wgpu[wgpuIdCounter] = object;
+  
+        // Each persisted objects gets a custom 'wid' field (wasm ID) which stores the ID that
+        // this object is known by on Wasm side.
+        object.wid = wgpuIdCounter;
+  
+        ;
+  
+        return wgpuIdCounter++;
+      }
+      // Implicit return undefined to marshal ID 0 over to Wasm.
+    }
+  function _JS_WebGPU_ImportVideoTexture(device, video, colorSpace)
+      {
+          let videoSource = videoInstances[video];
+          // WebGPU only allows video to be used if it's loaded and playing.
+          if (videoSource.readyState != 4 || !videoSource.isLoaded)
+              return 0;
+          device = wgpu[device];
+          let externalTexture = device.importExternalTexture({source: videoSource});
+          return wgpuStore(externalTexture);
+      }
+
+  function _JS_WebGPU_SetCommandEncoder(encoder)
+      {
+          Module["WebGPU"].commandEncoder = encoder;
+      }
+
   function _JS_WebGPU_Setup(adapter, device)
       {
           Module["WebGPU"] = {};
@@ -15921,32 +16600,6 @@ function dbg(text) {
     }
 
   
-  var wgpuIdCounter = 2;
-  function wgpuStore(object) {
-      if (object) {
-        // WebGPU renderer usage can burn through a lot of object IDs each rendered frame
-        // (a number of GPUCommandEncoder, GPUTexture, GPUTextureView, GPURenderPassEncoder,
-        // GPUCommandBuffer objects are created each application frame)
-        // If we assume an upper bound of 1000 object IDs created per rendered frame, and a
-        // new mobile device with 120hz display, a signed int32 state space is exhausted in
-        // 2147483646 / 1000 / 120 / 60 / 60 = 4.97 hours, which is realistic for a page to
-        // stay open for that long. Therefore handle wraparound of the ID counter generation,
-        // and find free gaps in the object IDs for new objects.
-        while(wgpu[wgpuIdCounter]) wgpuIdCounter = wgpuIdCounter < 2147483647 ? wgpuIdCounter + 1 : 2;
-  
-        wgpu[wgpuIdCounter] = object;
-  
-        // Each persisted objects gets a custom 'wid' field (wasm ID) which stores the ID that
-        // this object is known by on Wasm side.
-        object.wid = wgpuIdCounter;
-  
-        ;
-  
-        return wgpuIdCounter++;
-      }
-      // Implicit return undefined to marshal ID 0 over to Wasm.
-    }
-  
   function _wgpuMuteJsExceptions(fn) {
       return (p) => { // only support one argument to function fn (we could do ...params, but we only ever need one arg so that's fine)
         try {
@@ -17484,6 +18137,14 @@ function dbg(text) {
       wgpu[o]['label'] = utf8(label);
     }
 
+  function _wgpu_pipeline_get_bind_group_layout(pipelineBase, index) {
+      
+      assert(pipelineBase != 0, "assert(pipelineBase != 0) failed!");
+      assert(wgpu[pipelineBase], "assert(wgpu[pipelineBase]) failed!");
+      assert(wgpu[pipelineBase] instanceof GPURenderPipeline || wgpu[pipelineBase] instanceof GPUComputePipeline, "assert(wgpu[pipelineBase] instanceof GPURenderPipeline || wgpu[pipelineBase] instanceof GPUComputePipeline) failed!");
+      return wgpuStore(wgpu[pipelineBase]['getBindGroupLayout'](index));
+    }
+
   
   function _wgpu_queue_submit_multiple_and_destroy(queue, commandBuffers, numCommandBuffers) {
       
@@ -18040,9 +18701,37 @@ var wasmImports = {
   "JS_SystemInfo_HasWebGL": _JS_SystemInfo_HasWebGL,
   "JS_SystemInfo_HasWebGPU": _JS_SystemInfo_HasWebGPU,
   "JS_UnityEngineShouldQuit": _JS_UnityEngineShouldQuit,
+  "JS_Video_CanPlayFormat": _JS_Video_CanPlayFormat,
+  "JS_Video_Create": _JS_Video_Create,
+  "JS_Video_Destroy": _JS_Video_Destroy,
+  "JS_Video_Duration": _JS_Video_Duration,
+  "JS_Video_EnableAudioTrack": _JS_Video_EnableAudioTrack,
+  "JS_Video_GetAudioLanguageCode": _JS_Video_GetAudioLanguageCode,
+  "JS_Video_GetNumAudioTracks": _JS_Video_GetNumAudioTracks,
+  "JS_Video_GetPlaybackRate": _JS_Video_GetPlaybackRate,
+  "JS_Video_Height": _JS_Video_Height,
+  "JS_Video_IsPlaying": _JS_Video_IsPlaying,
+  "JS_Video_IsReady": _JS_Video_IsReady,
+  "JS_Video_IsSeeking": _JS_Video_IsSeeking,
+  "JS_Video_LastUpdateTime": _JS_Video_LastUpdateTime,
+  "JS_Video_Pause": _JS_Video_Pause,
+  "JS_Video_Play": _JS_Video_Play,
+  "JS_Video_Seek": _JS_Video_Seek,
+  "JS_Video_SetEndedHandler": _JS_Video_SetEndedHandler,
+  "JS_Video_SetErrorHandler": _JS_Video_SetErrorHandler,
+  "JS_Video_SetLoop": _JS_Video_SetLoop,
+  "JS_Video_SetMute": _JS_Video_SetMute,
+  "JS_Video_SetPlaybackRate": _JS_Video_SetPlaybackRate,
+  "JS_Video_SetReadyHandler": _JS_Video_SetReadyHandler,
+  "JS_Video_SetSeekedHandler": _JS_Video_SetSeekedHandler,
+  "JS_Video_SetVolume": _JS_Video_SetVolume,
+  "JS_Video_Time": _JS_Video_Time,
+  "JS_Video_UpdateToTexture": _JS_Video_UpdateToTexture,
+  "JS_Video_Width": _JS_Video_Width,
   "JS_WebCamVideo_GetNativeHeight": _JS_WebCamVideo_GetNativeHeight,
   "JS_WebCamVideo_GetNativeWidth": _JS_WebCamVideo_GetNativeWidth,
   "JS_WebCamVideo_GrabFrame": _JS_WebCamVideo_GrabFrame,
+  "JS_WebGPU_ImportVideoTexture": _JS_WebGPU_ImportVideoTexture,
   "JS_WebGPU_SetCommandEncoder": _JS_WebGPU_SetCommandEncoder,
   "JS_WebGPU_Setup": _JS_WebGPU_Setup,
   "JS_WebPlayer_FinishInitialization": _JS_WebPlayer_FinishInitialization,
@@ -18368,6 +19057,7 @@ var wasmImports = {
   "wgpu_is_valid_object": _wgpu_is_valid_object,
   "wgpu_object_destroy": _wgpu_object_destroy,
   "wgpu_object_set_label": _wgpu_object_set_label,
+  "wgpu_pipeline_get_bind_group_layout": _wgpu_pipeline_get_bind_group_layout,
   "wgpu_queue_submit_multiple_and_destroy": _wgpu_queue_submit_multiple_and_destroy,
   "wgpu_queue_submit_one_and_destroy": _wgpu_queue_submit_one_and_destroy,
   "wgpu_queue_write_buffer": _wgpu_queue_write_buffer,
@@ -18576,15 +19266,6 @@ var missingLibrarySymbols = [
   'JS_OrientationEventHandler',
   'JS_RegisterCompass',
   'Microphone_UpdateDevices',
-  'videoInstanceIdCounter',
-  'jsVideoEnded',
-  'jsVideoAllAudioTracksAreDisabled',
-  'jsVideoAddPendingBlockedVideo',
-  'jsVideoPlayPendingBlockedVideo',
-  'jsVideoRemovePendingBlockedVideo',
-  'jsVideoAttemptToPlayBlockedVideos',
-  'jsVideoCreateTexture2D',
-  'jsIsWebkit',
   'cameraAccess',
   'webgpu_LoadCache',
   'getStringHash',
@@ -18915,13 +19596,22 @@ var unexportedSymbols = [
   'computeUnpackAlignedImageSize3D',
   'emscriptenWebGLGetTexPixelData3D',
   'videoInstances',
+  'videoInstanceIdCounter',
   'hasSRGBATextures',
   's2lTexture',
   's2lFBO',
   's2lVBO',
   's2lProgram',
   's2lVertexPositionNDC',
+  'jsVideoEnded',
+  'jsVideoAllAudioTracksAreDisabled',
   'jsVideoPendingBlockedVideos',
+  'jsVideoAddPendingBlockedVideo',
+  'jsVideoPlayPendingBlockedVideo',
+  'jsVideoRemovePendingBlockedVideo',
+  'jsVideoAttemptToPlayBlockedVideos',
+  'jsVideoCreateTexture2D',
+  'jsIsWebkit',
   'jsSupportedVideoFormats',
   'jsUnsupportedVideoFormats',
   'activeWebCams',

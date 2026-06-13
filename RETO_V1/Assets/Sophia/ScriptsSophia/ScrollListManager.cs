@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // Agregado para poder filtrar y limpiar duplicados fácilmente
+using System.Linq; 
 
-// Estructura de datos que mapea el JSON de Salesforce
+
 [System.Serializable]
 public class OrganizationData
 {
@@ -24,13 +24,13 @@ public class ScrollListManager : MonoBehaviour
     [SerializeField] private Transform contentContainer;  
 
     [Header("Control del Panel de Filtros")]
-    [SerializeField] private GameObject filterPanelObject; // El objeto del Panel Pop-up entero
-    [SerializeField] private GameObject togglePrefab;      // El prefab que tiene el script UIToggleFilter
-    [SerializeField] private Transform toggleContainer;    // El contenedor UI (Grid o Vertical Layout) del panel
-    [SerializeField] private UnityEngine.UI.Button openFilterButton; // El botón físico en pantalla para abrir/cerrar el filtro
+    [SerializeField] private GameObject filterPanelObject; 
+    [SerializeField] private GameObject togglePrefab;
+    [SerializeField] private Transform toggleContainer;    
+    [SerializeField] private UnityEngine.UI.Button openFilterButton; 
     
     [Header("NUEVO: Botón de Confirmación")]
-    [SerializeField] private UnityEngine.UI.Button confirmFilterButton; // El nuevo botón de "Confirmar" o "Aplicar"
+    [SerializeField] private UnityEngine.UI.Button confirmFilterButton; 
 
     [Header("Referencia al Popup del Pergamino")]
     [SerializeField] private PopupManager popupGeneral; 
@@ -42,24 +42,24 @@ public class ScrollListManager : MonoBehaviour
     private List<OrganizationData> allOrganizations = new List<OrganizationData>();
     private List<UIToggleFilter> activeToggles = new List<UIToggleFilter>();
     
-    private string currentCountryFilter = "";  // El filtro real aplicado actualmente en el scroll visible
-    private string temporaryCountryFilter = ""; // El filtro elegido temporalmente en el panel antes de confirmar
+    private string currentCountryFilter = "";  
+    private string temporaryCountryFilter = ""; 
 
     void Start()
     {
-        // Aseguramos que el panel de filtros empiece OCULTO al iniciar la escena
+        
         if (filterPanelObject != null)
         {
             filterPanelObject.SetActive(false);
         }
 
-        // Configuramos el botón principal para que abra o cierre el panel al hacer clic
+        
         if (openFilterButton != null)
         {
             openFilterButton.onClick.AddListener(ToggleFilterPanel);
         }
 
-        // NUEVO: Vinculamos el botón de confirmar con su nueva función
+        
         if (confirmFilterButton != null)
         {
             confirmFilterButton.onClick.AddListener(ConfirmAndApplyFilter);
@@ -68,7 +68,7 @@ public class ScrollListManager : MonoBehaviour
         StartCoroutine(FetchDataFromAPI());
     }
 
-    // Función que invierte el estado del panel
+    
     public void ToggleFilterPanel()
     {
         if (filterPanelObject != null)
@@ -76,7 +76,7 @@ public class ScrollListManager : MonoBehaviour
             bool willOpen = !filterPanelObject.activeSelf;
             filterPanelObject.SetActive(willOpen);
 
-            // Si el usuario abre el panel, sincronizamos la selección temporal con lo que esté guardado de antes
+            
             if (willOpen)
             {
                 temporaryCountryFilter = currentCountryFilter;
@@ -85,7 +85,7 @@ public class ScrollListManager : MonoBehaviour
         }
     }
 
-    // NUEVO: Aplica el filtro acumulado y cierra la ventana
+   
     private void ConfirmAndApplyFilter()
     {
         currentCountryFilter = temporaryCountryFilter;
@@ -93,7 +93,7 @@ public class ScrollListManager : MonoBehaviour
 
         if (filterPanelObject != null)
         {
-            filterPanelObject.SetActive(false); // Cierra el panel al confirmar
+            filterPanelObject.SetActive(false); 
         }
     }
 
@@ -167,7 +167,6 @@ public class ScrollListManager : MonoBehaviour
         }
     }
 
-    // MODIFICADO: Ahora este método solo altera variables temporales, no refresca el scroll del fondo
     internal void OnFilterToggleChanged(string countryName, bool isOn)
     {
         if (isOn)
@@ -191,7 +190,6 @@ public class ScrollListManager : MonoBehaviour
         }
     }
 
-    // NUEVO: Asegura que los checkboxes se marquen/desmarquen correctamente de acuerdo al filtro real actual al abrir
     private void SyncTogglesVisuals(string targetFilter)
     {
         foreach (var t in activeToggles)

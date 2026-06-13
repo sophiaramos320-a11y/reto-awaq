@@ -6,12 +6,11 @@ public class ScriptTallers : MonoBehaviour
 {
     [Header("Componentes de UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private GameObject ctaButton; // El botón web hacia la agenda
-
+    [SerializeField] private GameObject ctaButton;
     [Header("Configuración")]
     [SerializeField] private float typingSpeed = 0.03f;
 
-    // Las 3 líneas optimizadas para puro texto
+    
     private string[] dialogueLines = new string[]
     {
         "Te damos la bienvenida al área de talleres. Este espacio interactivo representa el componente práctico y de co-creación del Congreso Internacional ICEO...",
@@ -49,7 +48,7 @@ public class ScriptTallers : MonoBehaviour
 
     void StartDialogue()
     {
-        ctaButton.SetActive(false); // Oculto al inicio
+        ctaButton.SetActive(false); 
         currentLineIndex = 0;
         dialogueEnded = false;
         StartCoroutine(TypeText(dialogueLines[currentLineIndex]));
@@ -88,7 +87,7 @@ public class ScriptTallers : MonoBehaviour
         dialogueEnded = true;
         isTyping = false;
         
-        // El botón aparece mágicamente justo cuando terminan de leer el Diálogo 3
+        
         if (ctaButton != null)
         {
             ctaButton.SetActive(true);
