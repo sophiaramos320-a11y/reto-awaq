@@ -1,0 +1,30 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="BackToMap">
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+			<method name="GoToMap"/>
+		</type>
+		<type fullname="OrgEscena">
+			<method name="CargarRecomendaciones"/>
+		</type>
+		<type fullname="PopupManager">
+			<method name="CerrarPanel"/>
+		</type>
+		<type fullname="RestaurantButton">
+			<method name="OpenRestaurantURL"/>
+		</type>
+		<type fullname="StartButton">
+			<method name="LoadMapScene"/>
+		</type>
+		<type fullname="TalleresButton">
+			<method name="OpenAgendaURL"/>
+		</type>
+	</assembly>
+</linker>

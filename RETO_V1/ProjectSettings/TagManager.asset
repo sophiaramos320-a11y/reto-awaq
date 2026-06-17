@@ -3,17 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - notif
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Background Green
-  - 
+  - MoreUI
+  - Text
   - 
   - 
   - 
@@ -42,29 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: StoneSits
-    uniqueID: 393495871
+  - name: BG
+    uniqueID: 1702558577
     locked: 0
-  - name: BackgroundGreens
-    uniqueID: 4156085839
-    locked: 0
-  - name: Structure
-    uniqueID: 3624907513
-    locked: 0
-  - name: ParkingLot
-    uniqueID: 397533963
-    locked: 0
-  - name: Charac
-    uniqueID: 1649456947
-    locked: 0
-  - name: Dialogue
-    uniqueID: 2713183157
-    locked: 0
-  - name: CostumUi
-    uniqueID: 2930437251
-    locked: 0
-  - name: 
-    uniqueID: 2447751331
+  - name: Player
+    uniqueID: 2826071745
     locked: 0
   m_RenderingLayers:
   - Default
